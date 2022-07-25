@@ -38,6 +38,7 @@ with open('CAIQ4.0.1.csv', mode='r') as csv_file:
     print_annually=True
     print_annually_only=True
     print_answers=True
+    output_file_name="caiq-html-gen.txt"
 
     if print_annually == True :
         print(f'*** Printing annually ')

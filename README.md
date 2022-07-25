@@ -1,13 +1,14 @@
-# fullest-stack
-Components that go beyond a full stack
+This is https://github.com/bomonike/fullest-stack - 
 
-This monorepo is intended to eventually contain code to create a complete production system with the features and processes necessary in today's hostile internet.
+This monorepo is called "fullest-stack" because we want to go beyond what the mythical "full stack" software engineer can create and manage.
+
+It takes a team to have skill in all the tools needed to create a complete production system with these features and processes:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1658717953/fullest-stack-flow-3138x1166_fdihf8.jpg"><img width="3138" height="1166" atl="fullest-stack-flow" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1658717953/fullest-stack-flow-3138x1166_fdihf8.jpg"></a>
 
-We begin with the simplest set and gradually grow to that complete production system.
+We begin with the simplest set and gradually grow to that complete production-grade entity that in today's hostile internet.
 
-1. The initial capability is a static site generated from GitHub Markdown by Jekyll running within GitHub, based on a template.
+1. The initial capability is a public static site generated from <strong>GitHub Markdown</strong> by Jekyll running within GitHub, based on a template.
 
 1. The next level is using <strong>Python progams</strong> to generate GitHub Markdown code.
    The caiq-html-gen.py program generates Markeown based on a csv file in the same folder.
