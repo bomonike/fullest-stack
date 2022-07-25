@@ -1,15 +1,21 @@
 #!/usr/bin/env python3
-# caiq-html-gen.py
-# in prod-setup hashicups?
+# caiq-html-gen.py in https://github.com/bomonike/fullest-stack/blob/main/python/caiq-html-gen/caiq-html-gen.py
+# by Wilson Mar and Kermit Vestal
 
 import csv
-    # file-to-open='CAIQ4.0.1.csv'
     # See https://courses.cs.washington.edu/courses/cse140/13wi/csv-parsing.html
 
-def print_caiq_line():
-  print("Hello from a function") 
+# User selections: TODO: choose in parameters:
+file_to_open='CAIQ4.0.1.csv'
+
+# TODO: Output to file instead of STDOUT:
+output_file_name="caiq-html-gen.txt"
+
+print_annually=True
+print_annually_only=False
+print_answers=True
   
-with open('CAIQ4.0.1.csv', mode='r') as csv_file:
+with open(file_to_open, mode='r') as csv_file:
     csv_reader = csv.DictReader(csv_file)
     caiq_rows_read = 0
     caiq_rows_printed = 0
@@ -34,12 +40,6 @@ with open('CAIQ4.0.1.csv', mode='r') as csv_file:
     'UEM': 'Universal Endpoint Management'
     }
     
-    # User selections: TODO: choose in parameters:
-    print_annually=True
-    print_annually_only=True
-    print_answers=True
-    output_file_name="caiq-html-gen.txt"
-
     if print_annually == True :
         print(f'*** Printing annually ')
     else:

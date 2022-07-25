@@ -4,7 +4,7 @@ This monorepo is called "fullest-stack" because we want to go beyond what the my
 
 It takes a team to have skill in all the tools needed to create a complete production system with these features and processes:
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1658717953/fullest-stack-flow-3138x1166_fdihf8.jpg"><img width="3138" height="1166" atl="fullest-stack-flow" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1658717953/fullest-stack-flow-3138x1166_fdihf8.jpg"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1658717953/fullest-stack-flow-3138x1166_fdihf8.jpg"><img width="650" alt="fullest-stack-flow" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1658717953/fullest-stack-flow-3138x1166_fdihf8.jpg"></a>
 
 We begin with the simplest set and gradually grow to that complete production-grade entity that in today's hostile internet.
 
@@ -25,12 +25,16 @@ We begin with the simplest set and gradually grow to that complete production-gr
 
 1. An app data cache is used to handle more scale by minimizing rewriting of data.
 
+1. Apache Airflow for extracting and process data from databases.
+
 1. That database needs <strong>backups</strong> to ensure quick recovery from outages and complete disasters.
 
-1. That database stores data to be extracted and shwared as csv files.
+1. That database stores data to be extracted and shared as csv files.
 
-1. Logs and metrics are extracted for accumulation in a Time Series database.
+1. Logs and metrics are extracted for accumulation in <strong>Time Series</strong> and master reference databases, which <strong>Power BI</strong> displays as analytics.
 
-1. Policies are applied to identify (using OPA) violatations of rules defined.
+1. Open-sourced <strong>Grafana</strong> is commonly used to display dashboards.
+
+1. Violations of rules defined in the Rego language are identified by the <strong>OPA</strong> (Open Policy Agent).
 
 1. ML (Machine Language) is used to infer actions based on data accumulated over time.
