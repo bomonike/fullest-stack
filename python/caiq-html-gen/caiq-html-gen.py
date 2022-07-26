@@ -3,25 +3,60 @@
 # by Wilson Mar and Kermit Vestal
 
 import csv
-    # See https://courses.cs.washington.edu/courses/cse140/13wi/csv-parsing.html
+# from os.path import exists
+import os  
 
-# User selections: TODO: choose in parameters:
+    # See https://courses.cs.washington.edu/courses/cse140/13wi/csv-parsing.html
+# User selections: TODO: choose in parameters within a GUI:
 bool_output_console=True
 bool_output_file=True
 file_to_open='CAIQ4.0.1.csv' 
-output_file_name="caiq-html-gen.txt"
-f = open(output_file_name, "a")
-
+output_file_name="caiq-html-gen.md"  # GitHub Markdown format (no yaml)
 print_categories=True
 print_questions=True
 print_annually=True
-print_annually_only=False   # ignore lines with annual in question
+print_annually_only=False   # ignore lines with no annual in question
 print_answers=True
 print_answers_only=True     # ignore lines with no answers
 
-# Formatting user options:
+# Validate run parameters:
+output_file_delete_if_exists=True
+# To avoid io.UnsupportedOperation: not writable, first verify if file exists
+if os.path.exists(output_file_name) :
+    print(f'*** file {output_file_name} being removed for rewrite ...')
+    # No Prompt so this can run silent.
+    os.remove(output_file_name)      
+f = open(output_file_name, "a")
+
+# Show what setting were selected for this run:
+run_stats_line=""
+if bool_output_file == True :
+    if len(output_file_name) == 0 :
+        run_stats_line=run_stats_line + "output_file_name not specified. "
+        bool_output_file=False
+
+if print_annually == True :
+    run_stats_line=run_stats_line + "Printing annually. "
+else:
+    run_stats_line=run_stats_line + "NOT Printing annually. "
+
+if print_annually_only == True :
+    run_stats_line=run_stats_line + "Printing annually_only. "
+
+# Print only if there is an answer: Print only if there is no answer:
+if print_answers == True :
+    run_stats_line=run_stats_line + "Printing answers. "
+else:
+    run_stats_line=run_stats_line + "NOT Printing answers. "
+
+if bool_output_console == True :
+    print("*** "+ run_stats_line +"\r\n")
+if bool_output_file == True :
+    f.write("<-- "+ run_stats_line +" -->")
+
+# Internal formatting options:
 line_prefix="   "  # 3 chars
-category_format="bold"
+category_format="bold"  # or "Not"
 
 with open(file_to_open, mode='r') as csv_file:
     csv_reader = csv.DictReader(csv_file)
@@ -48,24 +83,6 @@ with open(file_to_open, mode='r') as csv_file:
     'UEM': 'Universal Endpoint Management'
     }
     
-    if print_annually == True :
-        print(f'*** Printing annually ')
-    else:
-       print(f'*** NOT Printing annually ')
-
-    if print_annually_only == True :
-        print(f'*** Printing annually_only ')
-    
-    # Print only if there is an answer: Print only if there is no answer:
-    if print_answers == True :
-       print(f'*** Printing answers ')
-    else:
-       print(f'*** NOT Printing answers ')
-
-    if bool_output_file == True :
-        if len(output_file_name) == 0 :
-            print("*** output_file_name not specified!")
-
     prev_title=""  # Def for next row.
 
     for row in csv_reader:
@@ -104,7 +121,7 @@ with open(file_to_open, mode='r') as csv_file:
                         category_display = "<strong>"+ first_qid_chars +" = "+ category_text + "</strong>"
                     else:
                         category_display = "### "+ first_qid_chars +" = "+ category_text
-                    category_line="\r\n"+ line_prefix + category_display +"\r\n"
+                    category_line="\r\n"+ line_prefix + category_display +"\r\n  \r\n"
                     if bool_output_console == True :
                         print(category_line)
                     if bool_output_file == True :
@@ -120,7 +137,7 @@ with open(file_to_open, mode='r') as csv_file:
             else :
                 caiq_title=row["_Title"]
             # Mix of ' and " works?
-            title_line='1. <a href="#'+ row["_QID"] +">"+ row["_QID"] +"</a> - "+ caiq_title +"<br /><br />\r\n"
+            title_line='1. <a href="#'+ row["_QID"] +">"+ row["_QID"] +"</a> - "+ caiq_title +"<br /><br />\r\n  \r\n"
                #print(f'1. <a href="#{row["_QID"]}">{row["_QID"]}</a> - {caiq_title}<br /><br />\r\n   {row["_Question"]} ')
             if bool_output_console == True :
                 print(title_line)
@@ -139,7 +156,7 @@ with open(file_to_open, mode='r') as csv_file:
                     answer_text=row["_Answer_ID"] + " : "+ row["_Answer"]
                 else :
                     answer_text=": "+ row["_Answer"]
-                answer_line=line_prefix+ "ANSWER "+ answer_text +"\r\n"
+                answer_line=line_prefix+ "ANSWER "+ answer_text +"\r\n  \r\n"
                 if bool_output_console == True :
                     print(answer_line)
                 if bool_output_file == True :
@@ -147,6 +164,10 @@ with open(file_to_open, mode='r') as csv_file:
 
         caiq_rows_read += 1
     
-    print(f'*** {caiq_rows_read} rows read, -1 title row. {caiq_rows_printed} rows printed.')
+    last_stats_line=str(caiq_rows_read) +" rows read, -1 title row. "+ str(caiq_rows_printed) +" rows printed."
+    if bool_output_console == True :
+        print("*** "+ last_stats_line)
+    if bool_output_file == True :
+        f.write("<-- "+ last_stats_line +" -->")
     
     f.close()

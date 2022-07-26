@@ -1,4 +1,4 @@
-﻿ID,_QID,_Title,_Apply,_Question,_Answer_ID,_Answer,
+﻿ID,_QID,_Title,_Apply,_Question,_Answer,_Answer_ID,
 ,A&A-01.1,Audit and Assurance Policy and Procedures,,"Are audit and assurance policies, procedures, and standards established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
 ,A&A-01.2,,,"Are audit and assurance policies, procedures, and standards reviewed and updated at least annually?
@@ -32,7 +32,7 @@
 ,AIS-06.1,Automated Secure Application Deployment,,"Are strategies and capabilities established and implemented to deploy application code in a secure, standardized, and compliant manner?
 ",,,
 ,AIS-06.2,,,"Is the deployment and integration of application code automated where possible?
-",,,
+",We installed Consul using automated CI/CD for repeatability.,,
 ,AIS-07.1,Application Vulnerability Remediation,,"Are application security vulnerabilities remediated following defined processes?
 ",,,
 ,AIS-07.2,,,"Is the remediation of application security vulnerabilities automated when possible?
@@ -58,11 +58,11 @@
 ,BCR-07.1,Communication,,"Do business continuity and resilience procedures establish communication with stakeholders and participants?
 ",,,
 ,BCR-08.1,Backup,,"Is cloud data periodically backed up?
-",,,
+","A Consul Enterprise feature is used to automatically back up snapshots of data in Consul, even what's in memory.",,
 ,BCR-08.2,,,"Is the confidentiality, integrity, and availability of backup data ensured?
-",,,
+",Snapshots of Consul data are encrypted and transferred to a separate cloud account which the account used for write cannot delete.,,
 ,BCR-08.3,,,"Can backups be restored appropriately for resiliency?
-",,,
+",Restore of Consul snapshots from backup is tested during the implementation.,,
 ,BCR-09.1,Disaster Response Plan,,"Is a disaster response plan established, documented, approved, applied, evaluated, and maintained to ensure recovery from natural and man-made disasters?
 ",,,
 ,BCR-09.2,,,"Is the disaster response plan updated at least annually, and when significant changes occur?
@@ -72,7 +72,7 @@
 ,BCR-10.2,,,"Are local emergency authorities included, if possible, in the exercise?
 ",,,
 ,BCR-11.1,Equipment Redundancy,,"Is business-critical equipment supplemented with redundant equipment independently located at a reasonable minimum distance in accordance with applicable industry standards?
-",,,
+",We configure each Consul datacenter to use 5 nodes over 3 AZs so that Consul's Gossip protocol can automatically recognize and reallocate work if up to two nodes fail. ,,
 ,CCC-01.1,Change Management Policy and Procedures,,"Are risk management policies and procedures associated with changing organizational assets including applications, systems, infrastructure, configuration, etc., established, documented, approved, communicated, applied, evaluated and maintained (regardless of whether asset management is internal or external)?
 ",,,
 ,CCC-01.2,,,"Are the policies and procedures reviewed and updated at least annually?
@@ -80,7 +80,7 @@
 ,CCC-02.1,Quality Testing,,"Is a defined quality change control, approval and testing process (with established baselines, testing, and release standards) followed?
 ",,,
 ,CCC-03.1,Change Management Technology,,"Are risks associated with changing organizational assets (including applications, systems, infrastructure, configuration, etc.) managed, regardless of whether asset management occurs internally or externally (i.e., outsourced)?
-",,,
+","The publisher of Consul, HashiCorp, publishes its CAIQ and SOC2 attestations at ____",,
 ,CCC-04.1,Unauthorized Change Protection,,"Is the unauthorized addition, removal, update, and management of organization assets restricted?
 ",,,
 ,CCC-05.1,Change Agreements,,"Are provisions to limit changes that directly impact CSC-owned environments and require tenants to authorize requests explicitly included within the service level agreements (SLAs) between CSPs and CSCs?
@@ -122,9 +122,9 @@
 ,CEK-11.1,Key Purpose,y,"Are private keys provisioned for a unique purpose managed, and is cryptography secret?
 ",,,
 ,CEK-12.1,Key Rotation,y,"Are cryptographic keys rotated based on a cryptoperiod calculated while considering information disclosure risks and legal and regulatory requirements?
-",,,
+",ACL Tokens used in Consul are rotated using HashiCorp Enterprise Vault. See https://learn.hashicorp.com/tutorials/consul/vault-consul-secrets,,
 ,CEK-13.1,Key Revocation,y,"Are cryptographic keys revoked and removed before the end of the established cryptoperiod (when a key is compromised, or an entity is no longer part of the organization) per defined, implemented, and evaluated processes, procedures, and technical measures to include legal and regulatory requirement provisions?
-",,,
+",The CRL to our implementation of Consul is managed by HashiCorp Vault.,,
 ,CEK-14.1,Key Destruction,y,"Are processes, procedures and technical measures to destroy unneeded keys defined, implemented and evaluated to address key destruction outside secure environments, revocation of keys stored in hardware security modules (HSMs), and include applicable legal and regulatory requirement provisions?
 ",,,
 ,CEK-15.1,Key Activation,y,"Are processes, procedures, and technical measures to create keys in a pre-activated state (i.e., when they have been generated but not authorized for use) being defined, implemented, and evaluated to include legal and regulatory requirement provisions?
@@ -140,7 +140,7 @@
 ,CEK-20.1,Key Recovery,y,"Are processes, procedures, and technical measures to assess operational continuity risks (versus the risk of losing control of keying material and exposing protected data) being defined, implemented, and evaluated to include legal and regulatory requirement provisions?
 ",,,
 ,CEK-21.1,Key Inventory Management,y,"Are key management system processes, procedures, and technical measures being defined, implemented, and evaluated to track and report all cryptographic materials and status changes that include legal and regulatory requirements provisions?
-",,,
+",We use Consul to maintain a Service Registry which tracks each service and other services it can communicate with (as Intentions) and what permissions (as ACLs).,,
 ,DCS-01.1,Off-Site Equipment Disposal Policy and Procedures,,"Are policies and procedures for the secure disposal of equipment used outside the organization's premises established, documented, approved, communicated, enforced, and maintained?
 ",,,
 ,DCS-01.2,,,"Is a data destruction procedure applied that renders information recovery information impossible if equipment is not physically destroyed?
@@ -186,9 +186,9 @@
 ,DCS-14.1,Secure Utilities,,"Are utility services secured, monitored, maintained, and tested at planned intervals for continual effectiveness?
 ",,,
 ,DCS-15.1,Equipment Location,,"Is business-critical equipment segregated from locations subject to a high probability of environmental risk events?
-",,,
+","We installed Enterprise Consul in the cloud region appropriate to the data laws of each country. For example, sensitive data of German citizens are stored in servers in a region in Germany.",,
 ,DSP-01.1,Security and Privacy Policy and Procedures,,"Are policies and procedures established, documented, approved, communicated, enforced, evaluated, and maintained for the classification, protection, and handling of data throughout its lifecycle according to all applicable laws and regulations, standards, and risk level?
-",,,
+","For Consul, see the Implementation Guide and Impact Assessment",,
 ,DSP-01.2,,,"Are data security and privacy policies and procedures reviewed and updated at least annually?
 ",,,
 ,DSP-02.1,Secure Disposal,,"Are industry-accepted methods applied for secure data disposal from storage media so information is not recoverable by any forensic means?
@@ -210,7 +210,7 @@
 ,DSP-08.1,Data Privacy by Design and Default,,"Are systems, products, and business practices based on privacy principles by design and according to industry best practices?
 ",,,
 ,DSP-08.2,,,"Are systems' privacy settings configured by default and according to all applicable laws and regulations?
-",,,
+","Consul works with internal services info, not customer data.",,
 ,DSP-09.1,Data Protection Impact Assessment,,"Is a data protection impact assessment (DPIA) conducted when processing personal data and evaluating the origin, nature, particularity, and severity of risks according to any applicable laws, regulations and industry best practices?
 ",,,
 ,DSP-10.1,Sensitive Data Transfer,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to ensure any transfer of personal or sensitive data is protected from unauthorized access and only processed within scope (as permitted by respective laws and regulations)?
@@ -242,13 +242,13 @@
 ,GRC-02.1,Risk Management Program,,"Is there an established formal, documented, and leadership-sponsored enterprise risk management (ERM) program that includes policies and procedures for identification, evaluation, ownership, treatment, and acceptance of cloud security and privacy risks?
 ",,,
 ,GRC-03.1,Organizational Policy Reviews,,"Are all relevant organizational policies and associated procedures reviewed at least annually, or when a substantial organizational change occurs?
-",,Review of GRC policies and procedures for ___ is in the team's calendar.,
+",,,
 ,GRC-04.1,Policy Exception Process,,"Is an approved exception process mandated by the governance program established and followed whenever a deviation from an established policy occurs?
 ",,,
 ,GRC-05.1,Information Security Program,,"Has an information security program (including programs of all relevant CCM domains) been developed and implemented?
 ",,,
 ,GRC-06.1,Governance Responsibility Model,,"Are roles and responsibilities for planning, implementing, operating, assessing, and improving governance programs defined and documented?
-",,,
+",The initial assessment of Consul includes identification of persona and stakeholders.,,
 ,GRC-07.1,Information System Regulatory Mapping,,"Are all relevant standards, regulations, legal/contractual, and statutory requirements applicable to your organization identified and documented?
 ",,,
 ,GRC-08.1,Special Interest Groups,,"Is contact established and maintained with cloud-related special interest groups and other relevant entities?
@@ -308,7 +308,7 @@
 ,IAM-05.1,Least Privilege,,"Is the least privilege principle employed when implementing information system access?
 ",,,
 ,IAM-06.1,User Access Provisioning,,"Is a user access provisioning process defined and implemented which authorizes, records, and communicates data and assets access changes?
-",,,
+","Because Consul is configured to continuously use Health Checks, Consul is able to only route traffic to healthy app services.",,
 ,IAM-07.1,User Access Changes and Revocation,,"Is a process in place to de-provision or modify the access, in a timely manner, of movers / leavers or system identity changes, to effectively adopt and communicate identity and access management policies?
 ",,,
 ,IAM-08.1,User Access Review,,"Are reviews and revalidation of user access for least privilege and separation of duties completed with a frequency commensurate with organizational risk tolerance?
@@ -322,11 +322,11 @@
 ,IAM-11.1,CSCs Approval for Agreed Privileged Access Roles,,"Are processes and procedures for customers to participate, where applicable, in granting access for agreed, high risk as (defined by the organizational risk assessment) privileged access roles defined, implemented and evaluated?
 ",,,
 ,IAM-12.1,Safeguard Logs Integrity,,"Are processes, procedures, and technical measures to ensure the logging infrastructure is ""read-only"" for all with write access (including privileged access roles) defined, implemented, and evaluated?
-",,,
+",Yes,,
 ,IAM-12.2,,,"Is the ability to disable the ""read-only"" configuration of logging infrastructure controlled through a procedure that ensures the segregation of duties and break glass procedures?
 ",,,
 ,IAM-13.1,Uniquely Identifiable Users,,"Are processes, procedures, and technical measures that ensure users are identifiable through unique identification (or can associate individuals with user identification usage) defined, implemented, and evaluated?
-",,,
+","We use Consul to control routing of traffic among apps based on Intentions and ACL (Access Control List) in the Consul KV (Key Value) store. Intentions determine the identities which an app may communicate with. ACLs determine whether specific permissions (such a Read, Write) are allowed or denied.",,
 ,IAM-14.1,Strong Authentication,,"Are processes, procedures, and technical measures for authenticating access to systems, application, and data assets including multifactor authentication for a least-privileged user and sensitive data access defined, implemented, and evaluated?
 ",,,
 ,IAM-14.2,,,"Are digital certificates or alternatives that achieve an equivalent security level for system identities adopted?
@@ -336,17 +336,17 @@
 ,IAM-16.1,Authorization Mechanisms,,"Are processes, procedures, and technical measures to verify access to data and system functions authorized, defined, implemented, and evaluated?
 ",,,
 ,IPY-01.1,Interoperability and Portability Policy and Procedures,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for communications between application services (e.g., APIs)?
-",,,
+","The Consul Global Service Mesh enables communication among services from inside Kubernetes out to Databases, VM instances, Serverless, etc.",,
 ,IPY-01.2,,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for information processing interoperability?
 ",,,
 ,IPY-01.3,,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for application development portability?
-",,,
+",Consul is designed to operate using legacy and modern operating systems on mult-platforms within multiple regions on multiple clouds.,,
 ,IPY-01.4,,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for information/data exchange, usage, portability, integrity, and persistence?
 ",,,
 ,IPY-01.5,,,"Are interoperability and portability policies and procedures reviewed and updated at least annually?
 ",,,
 ,IPY-02.1,Application Interface Availability,,"Are CSCs able to programmatically retrieve their data via an application interface(s) to enable interoperability and portability?
-",,,
+",Consul agents provide a clicable user interface as well as CLI and API.,,
 ,IPY-03.1,Secure Interoperability and Portability Management,,"Are cryptographically secure and standardized network protocols implemented for the management, import, and export of data?
 ",,,
 ,IPY-04.1,Data Portability Contractual Obligations,,"Do agreements include provisions specifying CSC data access upon contract termination, and have the following? a. Data format b. Duration data will be stored c. Scope of the data retained and made available to the CSCs d. Data deletion policy
@@ -356,11 +356,11 @@
 ,IVS-01.2,,,"Are infrastructure and virtualization security policies and procedures reviewed and updated at least annually?
 ",,,
 ,IVS-02.1,Capacity and Resource Planning,,"Is resource availability, quality, and capacity planned and monitored in a way that delivers required system performance, as determined by the business?
-",,,
+",Performance evaluation is part of the Reliability Plan of the Consul Aceleration Program.,,
 ,IVS-03.1,Network Security,,"Are communications between environments monitored?
-",,,
+",We configure Consul to emit a logs of each communication.,,
 ,IVS-03.2,,,"Are communications between environments encrypted?
-",,,
+",We configure Enterprise Consul to use a Consul Network Mesh to provide mTLS (Mutual TLS) communicatons between app services and also with services (through a Gateway) on a wide variety of services,,
 ,IVS-03.3,,,"Are communications between environments restricted to only authenticated and authorized connections, as justified by the business?
 ",,,
 ,IVS-03.4,,,"Are network configurations reviewed at least annually?
@@ -374,11 +374,11 @@
 ,IVS-06.1,Segmentation and Segregation,,"Are applications and infrastructures designed, developed, deployed, and configured such that CSP and CSC (tenant) user access and intra-tenant access is appropriately segmented, segregated, monitored, and restricted from other tenants?
 ",,,
 ,IVS-07.1,Migration to Cloud Environments,,"Are secure and encrypted communication channels including only up-to-date and approved protocols used when migrating servers, services, applications, or data to cloud environments?
-",,,
+",Yes,,
 ,IVS-08.1,Network Architecture Documentation,,"Are high-risk environments identified and documented?
 ",,,
 ,IVS-09.1,Network Defense,,"Are processes, procedures, and defense-in-depth techniques defined, implemented, and evaluated for protection, detection, and timely response to network-based attacks?
-",,,
+","We configure Consul to use the ""consul-terraform-sync"" (CTS) module broadcast changes recognized which can be used to update Terraform code dynamically for automatic resources reconfiguration -- This decreases the possibility of human error in manually editing configuration files and decreases time to propagate configuration changes to networks. ",,
 ,LOG-01.1,Logging and Monitoring Policy and Procedures,,"Are logging and monitoring policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
 ,LOG-01.2,,,"Are policies and procedures reviewed and updated at least annually?
@@ -404,17 +404,17 @@
 ,LOG-08.1,Log Records,,"Are audit records generated, and do they contain relevant security information?
 ",,,
 ,LOG-09.1,Log Protection,,"Does the information system protect audit records from unauthorized access, modification, and deletion?
-",,,
+",Snapshots of Consul data are encrypted and transferred to a separate cloud account which the account used for write cannot delete.,,
 ,LOG-10.1,Encryption Monitoring and Reporting,,"Are monitoring and internal reporting capabilities established to report on cryptographic operations, encryption, and key management policies, processes, procedures, and controls?
 ",,,
 ,LOG-11.1,Transaction/Activity Logging,,"Are key lifecycle management events logged and monitored to enable auditing and reporting on cryptographic keys' usage?
-",,,
+",Yes,,
 ,LOG-12.1,Access Control Logs,,"Is physical access logged and monitored using an auditable access control system?
 ",,,
 ,LOG-13.1,Failures and Anomalies Reporting,,"Are processes and technical measures for reporting monitoring system anomalies and failures defined, implemented, and evaluated?
 ",,,
 ,LOG-13.2,,,"Are accountable parties immediately notified about anomalies and failures?
-",,,
+","QUESTION: When ACL is turned off, the SOC is notified",,
 ,SEF-01.1,Security Incident Management Policy and Procedures,,"Are policies and procedures for security incident management, e-discovery, and cloud forensics established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
 ,SEF-01.2,,,"Are policies and procedures reviewed and updated annually?
@@ -519,4 +519,4 @@
 ,UEM-13.1,Remote Wipe,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to enable remote company data deletion on managed endpoint devices?
 ",,,
 ,UEM-14.1,Third-Party Endpoint Security Posture,,"Are processes, procedures, and technical and/or contractual measures defined, implemented, and evaluated to maintain proper security of third-party endpoints with access to organizational assets?
-","1","Hello",
+",,,
