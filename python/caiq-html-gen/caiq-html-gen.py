@@ -14,7 +14,7 @@ output_file_name="caiq-html-gen.txt"
 print_annually=True
 print_annually_only=True
 print_answers=False
-Category_format="bold"
+category_format="bold"
   
 with open(file_to_open, mode='r') as csv_file:
     csv_reader = csv.DictReader(csv_file)
@@ -84,11 +84,11 @@ with open(file_to_open, mode='r') as csv_file:
         if bool_print_caiq_line == True :
             caiq_rows_printed += 1
 
-            # TODO: Instead Lookup CategoryText from csv file?
+            # TODO: Instead Lookup CategoryText & CCM from csv file?
             # Lookup CategoryText from in-code table:
             if first_qid_chars != prev_first_qid_chars :
                 Category_text = caiq_categories[first_qid_chars]  # not work
-                if Category_format == "bold" :
+                if category_format == "bold" :
                     Category_display = "<strong>"+ first_qid_chars +" = "+ Category_text + "</strong>"
                 else:
                     print(f'\r\n   <a name="{first_qid_chars}-"></a> ')
@@ -99,6 +99,7 @@ with open(file_to_open, mode='r') as csv_file:
                 #   <a name="AIS-"></a>
                 #   ### AIS = Application & Interface Security  <- based on lookup of text for caiq-categories
 
+            # If no title, get from previous row:
             if len(row["_Title"]) == 0 :
                 caiq_title=prev_title
             else :
