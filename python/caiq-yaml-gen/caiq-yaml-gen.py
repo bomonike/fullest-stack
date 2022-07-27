@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# caiq-html-gen.py in https://github.com/bomonike/fullest-stack/blob/main/python/caiq-html-gen/caiq-html-gen.py
+# caiq-yaml-gen.py in https://github.com/bomonike/fullest-stack/blob/main/python/caiq-yaml-gen/caiq-yaml-gen.py
 # by Wilson Mar and Kermit Vestal
 
 import datetime
@@ -9,14 +9,26 @@ import os
 from datetime import datetime 
 from datetime import timezone
 
-this_program_name="caiq-html-gen.py"
+this_program_name="caiq-yaml-gen.py"
+# Display run stats:
+utc_dt = datetime.now(timezone.utc) # UTC time
+local_dt = utc_dt.astimezone() # local time
+output_file_date=str(local_dt)[0:10]
+file_subject_text="for Consul."
+file_to_open='CAIQ4.0.1.consul.csv' 
+output_file_prefix="CAIQ4.0.1.consul"
+output_file_name=output_file_date+"-"+output_file_prefix+".md"  # Like 2021-05-12-caiq-yaml-gen.md
+
+now = datetime.now()  # Get local time for tzname
+local_now = now.astimezone()
+local_tz = local_now.tzinfo
+local_tzname = local_tz.tzname(local_now)
 
     # See https://courses.cs.washington.edu/courses/cse140/13wi/csv-parsing.html
 # User selections: TODO: choose in parameters within a GUI:
 bool_output_console=True
 bool_output_file=True
-file_to_open='CAIQ4.0.1.csv' 
-output_file_name="caiq-html-gen.md"  # GitHub Markdown format (no yaml)
+
 print_categories=True
 print_questions=True
 print_annually=True
@@ -35,15 +47,6 @@ f = open(output_file_name, "a")
 
 # Show what setting were selected for this run:
 
-# Display run stats:
-utc_dt = datetime.now(timezone.utc) # UTC time
-local_dt = utc_dt.astimezone() # local time
-
-now = datetime.now()  # Get local time for tzname
-local_now = now.astimezone()
-local_tz = local_now.tzinfo
-local_tzname = local_tz.tzname(local_now)
-
 run_stats_line=""
 if bool_output_file == True :
     if len(output_file_name) == 0 :
@@ -51,23 +54,18 @@ if bool_output_file == True :
         bool_output_file=False
 
 # Print only if there is an answer: Print only if there is no answer:
-if print_answers == True :
-    run_stats_line=run_stats_line + "Printing answers. "
-else:
-    run_stats_line=run_stats_line + "NOT Printing answers. "
-
 if print_annually == True :
-    run_stats_line=run_stats_line + "Printing annually. "
-else:
-    run_stats_line=run_stats_line + "NOT Printing annually. "
+    if print_annually_only == True :
+        run_stats_line=run_stats_line + "Annual questions only. "
 
-if print_annually_only == True :
-    run_stats_line=run_stats_line + "Printing annually_only. "
-
+if print_answers == True :
+    if print_answers_only == True :
+       run_stats_line=run_stats_line + "With answers only."
 
 # Internal formatting options:
 line_prefix="   "  # 3 chars
 category_format="###"  # "bold" or "Not"
+
 
 # Output yaml heading:
 if bool_output_console == True :
@@ -76,13 +74,14 @@ if bool_output_console == True :
 if bool_output_file == True :
     f.write("---" +"\r\n")
     f.write("layout: post" +"\r\n")
-    f.write("date: "+ str(local_dt) +" "+ local_tzname  +"\r\n")
-   #f.write("date: "2022-07-21")
-    f.write("file: "+ output_file_name  +"\r\n")
-    f.write("title: Gen'd by "+ this_program_name +" reading "+ file_to_open +"\r\n")
-    f.write("excerpt: CAIQ (Consensus Assessment Initiative Questionnaire) " + run_stats_line +"\r\n")
+    f.write("date: \""+ output_file_date +"\"\r\n")
+    f.write("file: \""+ output_file_prefix  +"\"\r\n")
+    f.write("title: \"CAIQ (Consensus Assessment Initiative Questionnaire) " + file_subject_text +" "+ run_stats_line  +"\"\r\n")
+    f.write("excerpt: \"Gen'd from "+ file_to_open +" by "+ this_program_name +" "+ str(local_dt) +" "+ local_tzname +"\"\r\n")
     f.write("tags: [cloud, security, management, audit]" +"\r\n")
     f.write("---" +"\r\n")
+    f.write("\r\n")
+    f.write("From https://github.com/bomonike/fullest-stack/blob/main/python/caiq-yaml-gen/\r\n")
 
 with open(file_to_open, mode='r') as csv_file:
     csv_reader = csv.DictReader(csv_file)
@@ -109,7 +108,7 @@ with open(file_to_open, mode='r') as csv_file:
     'UEM': 'Universal Endpoint Management'
     }
     
-    title_lines_out=0
+    category_lines_out=0
     prev_title=""  # Def for next row.
 
     for row in csv_reader:
@@ -137,24 +136,30 @@ with open(file_to_open, mode='r') as csv_file:
         # if print_filter == "all" or len(row["_Answer"]) > 0 :
         if bool_print_caiq_line == True :
             caiq_rows_printed += 1
-            prev_title=row["_Title"]  # for next row.
 
             # TODO: Instead Lookup CategoryText & CCM from csv file?
             # Lookup CategoryText from in-code table:
             if print_categories == True :
                 if first_qid_chars != prev_first_qid_chars :
                     category_text = caiq_categories[first_qid_chars]  # not work
-                    if category_format == "bold" :
-                        category_display = "<strong>"+ first_qid_chars +" = "+ category_text + "</strong>"
+
+                    # For GitHub Markdown weirdness:
+                    if category_lines_out == 0 :  # Except first line 
+                        category_prefix=""       # for GitHub Markdown weirdness
                     else:
-                        category_display = "### "+ first_qid_chars +" = "+ category_text
-                    category_line="\r\n"+ line_prefix + category_display +"\r\n  \r\n"
+                        category_prefix=line_prefix
+
+                    if category_format == "bold" :
+                        category_display = line_prefix+"<strong>"+ first_qid_chars +" = "+ category_text + "</strong>"
+                    else:
+                        category_display = category_prefix+"### "+ first_qid_chars +" = "+ category_text
+                    category_line="\r\n"+ category_display +"\r\n  \r\n"
                     if bool_output_console == True :
                         print(category_line)
                     if bool_output_file == True :
                         f.write(category_line)
 
-                    title_lines_out += 1
+                    category_lines_out += 1
                     prev_first_qid_chars=first_qid_chars  # for next row.
                     #   <a name="AIS-"></a>
                     #   ### AIS = Application & Interface Security  <- based on lookup of text for caiq-categories
@@ -191,8 +196,9 @@ with open(file_to_open, mode='r') as csv_file:
                     f.write(answer_line)
 
         caiq_rows_read += 1
-    
-    last_stats_line=str(caiq_rows_read) +" rows read, -1 heading row. "+ str(title_lines_out) +" titles printed"+ str(caiq_rows_printed) +" rows printed.")
+        prev_title=row["_Title"]  # Save for next row if title is blank
+
+    last_stats_line=str(caiq_rows_read) +" rows read, "+ str(category_lines_out) +" categories, "+ str(caiq_rows_printed) +" rows printed."
     if bool_output_console == True :
         print("*** "+ last_stats_line)
     if bool_output_file == True :
