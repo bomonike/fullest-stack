@@ -5,11 +5,11 @@
 import datetime
 import time
 import csv
-# from os.path import exists
 import os
 from datetime import datetime 
 from datetime import timezone
 
+this_program_name="caiq-html-gen.py"
 
     # See https://courses.cs.washington.edu/courses/cse140/13wi/csv-parsing.html
 # User selections: TODO: choose in parameters within a GUI:
@@ -34,25 +34,27 @@ if os.path.exists(output_file_name) :
 f = open(output_file_name, "a")
 
 # Show what setting were selected for this run:
+
 # Display run stats:
 utc_dt = datetime.now(timezone.utc) # UTC time
 local_dt = utc_dt.astimezone() # local time
 
-now = datetime.now()  # Local time
+now = datetime.now()  # Get local time for tzname
 local_now = now.astimezone()
 local_tz = local_now.tzinfo
 local_tzname = local_tz.tzname(local_now)
-
-if bool_output_console == True :
-    print("*** "+ str(local_dt) +" "+ local_tzname +" \r\n")
-if bool_output_file == True :
-    f.write("<-- "+ str(local_dt) +" "+ local_tzname +" -->\r\n")
 
 run_stats_line=""
 if bool_output_file == True :
     if len(output_file_name) == 0 :
         run_stats_line=run_stats_line + "output_file_name not specified. "
         bool_output_file=False
+
+# Print only if there is an answer: Print only if there is no answer:
+if print_answers == True :
+    run_stats_line=run_stats_line + "Printing answers. "
+else:
+    run_stats_line=run_stats_line + "NOT Printing answers. "
 
 if print_annually == True :
     run_stats_line=run_stats_line + "Printing annually. "
@@ -62,20 +64,25 @@ else:
 if print_annually_only == True :
     run_stats_line=run_stats_line + "Printing annually_only. "
 
-# Print only if there is an answer: Print only if there is no answer:
-if print_answers == True :
-    run_stats_line=run_stats_line + "Printing answers. "
-else:
-    run_stats_line=run_stats_line + "NOT Printing answers. "
-
-if bool_output_console == True :
-    print("*** "+ run_stats_line +"\r\n")
-if bool_output_file == True :
-    f.write("<-- "+ run_stats_line +" -->\r\n")
 
 # Internal formatting options:
 line_prefix="   "  # 3 chars
-category_format="bold"  # or "Not"
+category_format="###"  # "bold" or "Not"
+
+# Output yaml heading:
+if bool_output_console == True :
+    print("*** "+ str(local_dt) +" "+ local_tzname +"\r\n")
+    print("*** "+ run_stats_line +"\r\n")
+if bool_output_file == True :
+    f.write("---" +"\r\n")
+    f.write("layout: post" +"\r\n")
+    f.write("date: "+ str(local_dt) +" "+ local_tzname  +"\r\n")
+   #f.write("date: "2022-07-21")
+    f.write("file: "+ output_file_name  +"\r\n")
+    f.write("title: Gen'd by "+ this_program_name +" reading "+ file_to_open +"\r\n")
+    f.write("excerpt: CAIQ (Consensus Assessment Initiative Questionnaire) " + run_stats_line +"\r\n")
+    f.write("tags: [cloud, security, management, audit]" +"\r\n")
+    f.write("---" +"\r\n")
 
 with open(file_to_open, mode='r') as csv_file:
     csv_reader = csv.DictReader(csv_file)
@@ -102,6 +109,7 @@ with open(file_to_open, mode='r') as csv_file:
     'UEM': 'Universal Endpoint Management'
     }
     
+    title_lines_out=0
     prev_title=""  # Def for next row.
 
     for row in csv_reader:
@@ -146,6 +154,7 @@ with open(file_to_open, mode='r') as csv_file:
                     if bool_output_file == True :
                         f.write(category_line)
 
+                    title_lines_out += 1
                     prev_first_qid_chars=first_qid_chars  # for next row.
                     #   <a name="AIS-"></a>
                     #   ### AIS = Application & Interface Security  <- based on lookup of text for caiq-categories
@@ -183,7 +192,7 @@ with open(file_to_open, mode='r') as csv_file:
 
         caiq_rows_read += 1
     
-    last_stats_line=str(caiq_rows_read) +" rows read, -1 title row. "+ str(caiq_rows_printed) +" rows printed."
+    last_stats_line=str(caiq_rows_read) +" rows read, -1 heading row. "+ str(title_lines_out) +" titles printed"+ str(caiq_rows_printed) +" rows printed.")
     if bool_output_console == True :
         print("*** "+ last_stats_line)
     if bool_output_file == True :

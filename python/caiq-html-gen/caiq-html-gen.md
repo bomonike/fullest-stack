@@ -1,216 +1,222 @@
-<-- 2022-07-26 18:36:15.406114-06:00 MDT -->
-<-- Printing annually. Printing answers.  -->
+---
+layout: post
+date: 2022-07-27 08:28:37.173087-06:00 MDT
+file: caiq-html-gen.md
+title: Gen'd by caiq-html-gen.py reading CAIQ4.0.1.csv
+excerpt: CAIQ (Consensus Assessment Initiative Questionnaire) Printing answers. Printing annually. 
+tags: [cloud, security, management, audit]
+---
 
-   <strong>AIS = Application & Interface Security</strong>
+   ### AIS = Application & Interface Security
   
-1. <a href="#AIS-06.2>AIS-06.2</a> - <br /><br />
+1. <a href="#AIS-06.2">AIS-06.2</a> - <br /><br />
   
    Is the deployment and integration of application code automated where possible?
 
    ANSWER : We installed Consul using automated CI/CD for repeatability.
   
 
-   <strong>BCR = Business Continuing Management & Operational Resilience</strong>
+   ### BCR = Business Continuing Management & Operational Resilience
   
-1. <a href="#BCR-08.1>BCR-08.1</a> - Backup<br /><br />
+1. <a href="#BCR-08.1">BCR-08.1</a> - Backup<br /><br />
   
    Is cloud data periodically backed up?
 
    ANSWER : A Consul Enterprise feature is used to automatically back up snapshots of data in Consul, even what's in memory.
   
-1. <a href="#BCR-08.2>BCR-08.2</a> - <br /><br />
+1. <a href="#BCR-08.2">BCR-08.2</a> - <br /><br />
   
    Is the confidentiality, integrity, and availability of backup data ensured?
 
    ANSWER : Snapshots of Consul data are encrypted and transferred to a separate cloud account which the account used for write cannot delete.
   
-1. <a href="#BCR-08.3>BCR-08.3</a> - <br /><br />
+1. <a href="#BCR-08.3">BCR-08.3</a> - <br /><br />
   
    Can backups be restored appropriately for resiliency?
 
    ANSWER : Restore of Consul snapshots from backup is tested during the implementation.
   
-1. <a href="#BCR-11.1>BCR-11.1</a> - Equipment Redundancy<br /><br />
+1. <a href="#BCR-11.1">BCR-11.1</a> - Equipment Redundancy<br /><br />
   
    Is business-critical equipment supplemented with redundant equipment independently located at a reasonable minimum distance in accordance with applicable industry standards?
 
    ANSWER : We configure each Consul datacenter to use 5 nodes over 3 AZs so that Consul's Gossip protocol can automatically recognize and reallocate work if up to two nodes fail. 
   
 
-   <strong>CCC = Change Control & Configuration Management</strong>
+   ### CCC = Change Control & Configuration Management
   
-1. <a href="#CCC-03.1>CCC-03.1</a> - Change Management Technology<br /><br />
+1. <a href="#CCC-03.1">CCC-03.1</a> - Change Management Technology<br /><br />
   
    Are risks associated with changing organizational assets (including applications, systems, infrastructure, configuration, etc.) managed, regardless of whether asset management occurs internally or externally (i.e., outsourced)?
 
    ANSWER : The publisher of Consul, HashiCorp, publishes its CAIQ and SOC2 attestations at ____
   
 
-   <strong>CEK = Cryptography, Encryption, and Key Management</strong>
+   ### CEK = Cryptography, Encryption, and Key Management
   
-1. <a href="#CEK-12.1>CEK-12.1</a> - Key Rotation<br /><br />
+1. <a href="#CEK-12.1">CEK-12.1</a> - Key Rotation<br /><br />
   
    Are cryptographic keys rotated based on a cryptoperiod calculated while considering information disclosure risks and legal and regulatory requirements?
 
    ANSWER : ACL Tokens used in Consul are rotated using HashiCorp Enterprise Vault. See https://learn.hashicorp.com/tutorials/consul/vault-consul-secrets
   
-1. <a href="#CEK-13.1>CEK-13.1</a> - Key Revocation<br /><br />
+1. <a href="#CEK-13.1">CEK-13.1</a> - Key Revocation<br /><br />
   
    Are cryptographic keys revoked and removed before the end of the established cryptoperiod (when a key is compromised, or an entity is no longer part of the organization) per defined, implemented, and evaluated processes, procedures, and technical measures to include legal and regulatory requirement provisions?
 
    ANSWER : The CRL to our implementation of Consul is managed by HashiCorp Vault.
   
-1. <a href="#CEK-21.1>CEK-21.1</a> - Key Inventory Management<br /><br />
+1. <a href="#CEK-21.1">CEK-21.1</a> - Key Inventory Management<br /><br />
   
    Are key management system processes, procedures, and technical measures being defined, implemented, and evaluated to track and report all cryptographic materials and status changes that include legal and regulatory requirements provisions?
 
    ANSWER : We use Consul to maintain a Service Registry which tracks each service and other services it can communicate with (as Intentions) and what permissions (as ACLs).
   
 
-   <strong>DCS = Datacenter Security</strong>
+   ### DCS = Datacenter Security
   
-1. <a href="#DCS-15.1>DCS-15.1</a> - Equipment Location<br /><br />
+1. <a href="#DCS-15.1">DCS-15.1</a> - Equipment Location<br /><br />
   
    Is business-critical equipment segregated from locations subject to a high probability of environmental risk events?
 
    ANSWER : We installed Enterprise Consul in the cloud region appropriate to the data laws of each country. For example, sensitive data of German citizens are stored in servers in a region in Germany.
   
 
-   <strong>DSP = Data Security & Privacy Lifecycle Management</strong>
+   ### DSP = Data Security & Privacy Lifecycle Management
   
-1. <a href="#DSP-01.1>DSP-01.1</a> - Security and Privacy Policy and Procedures<br /><br />
+1. <a href="#DSP-01.1">DSP-01.1</a> - Security and Privacy Policy and Procedures<br /><br />
   
    Are policies and procedures established, documented, approved, communicated, enforced, evaluated, and maintained for the classification, protection, and handling of data throughout its lifecycle according to all applicable laws and regulations, standards, and risk level?
 
    ANSWER : For Consul, see the Implementation Guide and Impact Assessment
   
-1. <a href="#DSP-08.2>DSP-08.2</a> - <br /><br />
+1. <a href="#DSP-08.2">DSP-08.2</a> - <br /><br />
   
    Are systems' privacy settings configured by default and according to all applicable laws and regulations?
 
    ANSWER : Consul works with internal services info, not customer data.
   
 
-   <strong>GRC = Governance, Risk Management, and Compliance</strong>
+   ### GRC = Governance, Risk Management, and Compliance
   
-1. <a href="#GRC-06.1>GRC-06.1</a> - Governance Responsibility Model<br /><br />
+1. <a href="#GRC-06.1">GRC-06.1</a> - Governance Responsibility Model<br /><br />
   
    Are roles and responsibilities for planning, implementing, operating, assessing, and improving governance programs defined and documented?
 
    ANSWER : The initial assessment of Consul includes identification of persona and stakeholders.
   
 
-   <strong>HRS = Human Resources</strong>
+   ### HRS = Human Resources
   
-1. <a href="#HRS-02.2>HRS-02.2</a> - <br /><br />
+1. <a href="#HRS-02.2">HRS-02.2</a> - <br /><br />
   
    Are the policies and procedures for defining allowances and conditions for the acceptable use of organizationally-owned or managed assets reviewed and updated at least annually?
 
    ANSWER Review of HRS policies and procedures for ___ organizationally-owned assets is in the team's calendar. : 
   
-1. <a href="#HRS-03.2>HRS-03.2</a> - <br /><br />
+1. <a href="#HRS-03.2">HRS-03.2</a> - <br /><br />
   
    Are policies and procedures requiring unattended workspaces to conceal confidential data reviewed and updated at least annually?
 
    ANSWER Review of HRC policies and procedures for concealing ___ data is in the team's calendar. : 
   
-1. <a href="#HRS-04.2>HRS-04.2</a> - <br /><br />
+1. <a href="#HRS-04.2">HRS-04.2</a> - <br /><br />
   
    Are policies and procedures to protect information accessed, processed, or stored at remote sites and locations reviewed and updated at least annually?
 
    ANSWER Review of HRC policies and procedures for remote ___ data is in the team's calendar. : 
   
 
-   <strong>IAM = Identity & Access Management</strong>
+   ### IAM = Identity & Access Management
   
-1. <a href="#IAM-06.1>IAM-06.1</a> - User Access Provisioning<br /><br />
+1. <a href="#IAM-06.1">IAM-06.1</a> - User Access Provisioning<br /><br />
   
    Is a user access provisioning process defined and implemented which authorizes, records, and communicates data and assets access changes?
 
    ANSWER : Because Consul is configured to continuously use Health Checks, Consul is able to only route traffic to healthy app services.
   
-1. <a href="#IAM-12.1>IAM-12.1</a> - Safeguard Logs Integrity<br /><br />
+1. <a href="#IAM-12.1">IAM-12.1</a> - Safeguard Logs Integrity<br /><br />
   
    Are processes, procedures, and technical measures to ensure the logging infrastructure is "read-only" for all with write access (including privileged access roles) defined, implemented, and evaluated?
 
    ANSWER : Yes
   
-1. <a href="#IAM-13.1>IAM-13.1</a> - Uniquely Identifiable Users<br /><br />
+1. <a href="#IAM-13.1">IAM-13.1</a> - Uniquely Identifiable Users<br /><br />
   
    Are processes, procedures, and technical measures that ensure users are identifiable through unique identification (or can associate individuals with user identification usage) defined, implemented, and evaluated?
 
    ANSWER : We use Consul to control routing of traffic among apps based on Intentions and ACL (Access Control List) in the Consul KV (Key Value) store. Intentions determine the identities which an app may communicate with. ACLs determine whether specific permissions (such a Read, Write) are allowed or denied.
   
 
-   <strong>IPY = Interoperability & Portability</strong>
+   ### IPY = Interoperability & Portability
   
-1. <a href="#IPY-01.1>IPY-01.1</a> - Interoperability and Portability Policy and Procedures<br /><br />
+1. <a href="#IPY-01.1">IPY-01.1</a> - Interoperability and Portability Policy and Procedures<br /><br />
   
    Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for communications between application services (e.g., APIs)?
 
    ANSWER : The Consul Global Service Mesh enables communication among services from inside Kubernetes out to Databases, VM instances, Serverless, etc.
   
-1. <a href="#IPY-01.3>IPY-01.3</a> - <br /><br />
+1. <a href="#IPY-01.3">IPY-01.3</a> - <br /><br />
   
    Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for application development portability?
 
    ANSWER : Consul is designed to operate using legacy and modern operating systems on mult-platforms within multiple regions on multiple clouds.
   
-1. <a href="#IPY-02.1>IPY-02.1</a> - Application Interface Availability<br /><br />
+1. <a href="#IPY-02.1">IPY-02.1</a> - Application Interface Availability<br /><br />
   
    Are CSCs able to programmatically retrieve their data via an application interface(s) to enable interoperability and portability?
 
    ANSWER : Consul agents provide a clicable user interface as well as CLI and API.
   
 
-   <strong>IVS = Infrastructure & Virtualization Security</strong>
+   ### IVS = Infrastructure & Virtualization Security
   
-1. <a href="#IVS-02.1>IVS-02.1</a> - Capacity and Resource Planning<br /><br />
+1. <a href="#IVS-02.1">IVS-02.1</a> - Capacity and Resource Planning<br /><br />
   
    Is resource availability, quality, and capacity planned and monitored in a way that delivers required system performance, as determined by the business?
 
    ANSWER : Performance evaluation is part of the Reliability Plan of the Consul Aceleration Program.
   
-1. <a href="#IVS-03.1>IVS-03.1</a> - Network Security<br /><br />
+1. <a href="#IVS-03.1">IVS-03.1</a> - Network Security<br /><br />
   
    Are communications between environments monitored?
 
    ANSWER : We configure Consul to emit a logs of each communication.
   
-1. <a href="#IVS-03.2>IVS-03.2</a> - <br /><br />
+1. <a href="#IVS-03.2">IVS-03.2</a> - <br /><br />
   
    Are communications between environments encrypted?
 
    ANSWER : We configure Enterprise Consul to use a Consul Network Mesh to provide mTLS (Mutual TLS) communicatons between app services and also with services (through a Gateway) on a wide variety of services
   
-1. <a href="#IVS-07.1>IVS-07.1</a> - Migration to Cloud Environments<br /><br />
+1. <a href="#IVS-07.1">IVS-07.1</a> - Migration to Cloud Environments<br /><br />
   
    Are secure and encrypted communication channels including only up-to-date and approved protocols used when migrating servers, services, applications, or data to cloud environments?
 
    ANSWER : Yes
   
-1. <a href="#IVS-09.1>IVS-09.1</a> - Network Defense<br /><br />
+1. <a href="#IVS-09.1">IVS-09.1</a> - Network Defense<br /><br />
   
    Are processes, procedures, and defense-in-depth techniques defined, implemented, and evaluated for protection, detection, and timely response to network-based attacks?
 
    ANSWER : We configure Consul to use the "consul-terraform-sync" (CTS) module broadcast changes recognized which can be used to update Terraform code dynamically for automatic resources reconfiguration -- This decreases the possibility of human error in manually editing configuration files and decreases time to propagate configuration changes to networks. 
   
 
-   <strong>LOG = Logging and Monitoring</strong>
+   ### LOG = Logging and Monitoring
   
-1. <a href="#LOG-09.1>LOG-09.1</a> - Log Protection<br /><br />
+1. <a href="#LOG-09.1">LOG-09.1</a> - Log Protection<br /><br />
   
    Does the information system protect audit records from unauthorized access, modification, and deletion?
 
    ANSWER : Snapshots of Consul data are encrypted and transferred to a separate cloud account which the account used for write cannot delete.
   
-1. <a href="#LOG-11.1>LOG-11.1</a> - Transaction/Activity Logging<br /><br />
+1. <a href="#LOG-11.1">LOG-11.1</a> - Transaction/Activity Logging<br /><br />
   
    Are key lifecycle management events logged and monitored to enable auditing and reporting on cryptographic keys' usage?
 
    ANSWER : Yes
   
-1. <a href="#LOG-13.2>LOG-13.2</a> - <br /><br />
+1. <a href="#LOG-13.2">LOG-13.2</a> - <br /><br />
   
    Are accountable parties immediately notified about anomalies and failures?
 
