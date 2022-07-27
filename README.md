@@ -9,7 +9,7 @@ It takes a team to have skill in all the tools needed to create a complete produ
 We begin with the <strong>simplest</strong> capability set and gradually mature over time to that full production-grade system we call "Fullest-stack" needed today.
 <strong>Join us!</strong>
 
-1. The initial capability uses a <strong>site generator</strong>. There are many available, but <strong>Jekyll<strong> that runs in GitHub.com. It works by taking applying its template CSS and JavaScript to 
+1. The initial capability uses a <strong>site generator</strong>. There are many available, but <strong>Jekyll</strong> that runs in GitHub.com. It works by taking applying its template CSS and JavaScript to 
 
 1. Text files writtin in <strong>GitHub Markdown</strong> format and transforms them to 
 
