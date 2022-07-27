@@ -156,7 +156,7 @@ with open(file_to_open, mode='r') as csv_file:
             else :
                 caiq_title=row["_Title"]
             # Mix of ' and " works?
-            title_line='1. <a href="#'+ row["_QID"] +">"+ row["_QID"] +"</a> - "+ caiq_title +"<br /><br />\r\n  \r\n"
+            title_line='1. <a href="#'+ row["_QID"] +'">'+ row["_QID"] +"</a> - "+ caiq_title +"<br /><br />\r\n  \r\n"
                #print(f'1. <a href="#{row["_QID"]}">{row["_QID"]}</a> - {caiq_title}<br /><br />\r\n   {row["_Question"]} ')
             if bool_output_console == True :
                 print(title_line)
