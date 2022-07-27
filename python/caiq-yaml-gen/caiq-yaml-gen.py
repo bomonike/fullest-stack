@@ -2,29 +2,28 @@
 # caiq-yaml-gen.py in https://github.com/bomonike/fullest-stack/blob/main/python/caiq-yaml-gen/caiq-yaml-gen.py
 # by Wilson Mar and Kermit Vestal
 
-import datetime
-import time
+# This outputs a yaml-formatted file based on lines input from a csv file.
+# The output file will be copied to a GitHub repo's _posts folder for generation for display in a github.io site.
+# There is a hierarchy in the inputs and outputs: Category, Title, Question, Answer.
+# Output is filtered according to various boolean flags.
+
 import csv
 import os
 from datetime import datetime 
 from datetime import timezone
 
 this_program_name="caiq-yaml-gen.py"
-# Display run stats:
+
+# Capture date/time with local offset:
 utc_dt = datetime.now(timezone.utc) # UTC time
 local_dt = utc_dt.astimezone() # local time
-output_file_date=str(local_dt)[0:10]
-file_subject_text="for Consul."
-file_to_open='CAIQ4.0.1.consul.csv' 
-output_file_prefix="CAIQ4.0.1.consul"
-output_file_name=output_file_date+"-"+output_file_prefix+".md"  # Like 2021-05-12-caiq-yaml-gen.md
 
-now = datetime.now()  # Get local time for tzname
+now = datetime.now()  # Get tzname from https://www.timeanddate.com/time/zones/
 local_now = now.astimezone()
 local_tz = local_now.tzinfo
 local_tzname = local_tz.tzname(local_now)
 
-    # See https://courses.cs.washington.edu/courses/cse140/13wi/csv-parsing.html
+
 # User selections: TODO: choose in parameters within a GUI:
 bool_output_console=True
 bool_output_file=True
@@ -36,6 +35,14 @@ print_annually_only=False   # ignore lines with no annual in question
 print_answers=True
 print_answers_only=True     # ignore lines with no answers
 
+file_subject_text="for Consul."
+file_to_open='CAIQ4.0.1.consul.csv' 
+output_file_prefix="CAIQ4.0.1.consul"
+
+
+output_file_date=str(local_dt)[0:10]
+output_file_name=output_file_date+"-"+output_file_prefix+".md"  # Like 2021-05-12-caiq-yaml-gen.md
+    # See https://courses.cs.washington.edu/courses/cse140/13wi/csv-parsing.html
 # Validate run parameters:
 output_file_delete_if_exists=True
 # To avoid io.UnsupportedOperation: not writable, first verify if file exists
