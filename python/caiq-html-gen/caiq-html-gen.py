@@ -2,9 +2,14 @@
 # caiq-html-gen.py in https://github.com/bomonike/fullest-stack/blob/main/python/caiq-html-gen/caiq-html-gen.py
 # by Wilson Mar and Kermit Vestal
 
+import datetime
+import time
 import csv
 # from os.path import exists
-import os  
+import os
+from datetime import datetime 
+from datetime import timezone
+
 
     # See https://courses.cs.washington.edu/courses/cse140/13wi/csv-parsing.html
 # User selections: TODO: choose in parameters within a GUI:
@@ -29,6 +34,20 @@ if os.path.exists(output_file_name) :
 f = open(output_file_name, "a")
 
 # Show what setting were selected for this run:
+# Display run stats:
+utc_dt = datetime.now(timezone.utc) # UTC time
+local_dt = utc_dt.astimezone() # local time
+
+now = datetime.now()  # Local time
+local_now = now.astimezone()
+local_tz = local_now.tzinfo
+local_tzname = local_tz.tzname(local_now)
+
+if bool_output_console == True :
+    print("*** "+ str(local_dt) +" "+ local_tzname +" \r\n")
+if bool_output_file == True :
+    f.write("<-- "+ str(local_dt) +" "+ local_tzname +" -->\r\n")
+
 run_stats_line=""
 if bool_output_file == True :
     if len(output_file_name) == 0 :
@@ -52,7 +71,7 @@ else:
 if bool_output_console == True :
     print("*** "+ run_stats_line +"\r\n")
 if bool_output_file == True :
-    f.write("<-- "+ run_stats_line +" -->")
+    f.write("<-- "+ run_stats_line +" -->\r\n")
 
 # Internal formatting options:
 line_prefix="   "  # 3 chars
@@ -169,5 +188,8 @@ with open(file_to_open, mode='r') as csv_file:
         print("*** "+ last_stats_line)
     if bool_output_file == True :
         f.write("<-- "+ last_stats_line +" -->")
-    
+
+    # from dateutil import relativedelta
+    # relativedelta.relativedelta(end_time,start_time).seconds
+
     f.close()
