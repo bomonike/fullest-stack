@@ -5,7 +5,8 @@
 # This outputs a yaml-formatted file based on lines input from a csv file.
 # The output file will be copied to a GitHub repo's _posts folder for generation for display in a github.io site.
 # There is a hierarchy in the inputs and outputs: Category, Title, Question, Answer.
-# Output is filtered according to various boolean flags.
+# Text is carries over from previous row so the assumed value is displayed if blank.
+# Output is filtered and formatted according to various boolean flags.
 
 import csv
 import os
@@ -35,7 +36,7 @@ print_annually_only=False   # ignore lines with no annual in question
 print_answers=True
 print_answers_only=True     # ignore lines with no answers
 
-file_subject_text="for Consul."
+file_subject_text="for Consul users' auditors."
 file_to_open='CAIQ4.0.1.consul.csv' 
 output_file_prefix="CAIQ4.0.1.consul"
 
@@ -67,7 +68,7 @@ if print_annually == True :
 
 if print_answers == True :
     if print_answers_only == True :
-       run_stats_line=run_stats_line + "With answers only."
+       run_stats_line=run_stats_line + "Only rows with answers."
 
 # Internal formatting options:
 line_prefix="   "  # 3 chars
@@ -160,7 +161,7 @@ with open(file_to_open, mode='r') as csv_file:
                         category_display = line_prefix+"<strong>"+ first_qid_chars +" = "+ category_text + "</strong>"
                     else:
                         category_display = category_prefix+"### "+ first_qid_chars +" = "+ category_text
-                    category_line="\r\n"+ category_display +"\r\n  \r\n"
+                    category_line="\r\n"+ category_display +"<br /><br />\r\n \r\n"
                     if bool_output_console == True :
                         print(category_line)
                     if bool_output_file == True :
@@ -177,8 +178,7 @@ with open(file_to_open, mode='r') as csv_file:
             else :
                 caiq_title=row["_Title"]
             # Mix of ' and " works?
-            title_line='1. <a href="#'+ row["_QID"] +'">'+ row["_QID"] +"</a> - "+ caiq_title +"<br /><br />\r\n  \r\n"
-               #print(f'1. <a href="#{row["_QID"]}">{row["_QID"]}</a> - {caiq_title}<br /><br />\r\n   {row["_Question"]} ')
+            title_line='1. <a href="#'+ row["_QID"] +'"></a>'+ row["_QID"] +" - "+ caiq_title +"\r\n \r\n"
             if bool_output_console == True :
                 print(title_line)
             if bool_output_file == True :
@@ -203,7 +203,8 @@ with open(file_to_open, mode='r') as csv_file:
                     f.write(answer_line)
 
         caiq_rows_read += 1
-        prev_title=row["_Title"]  # Save for next row if title is blank
+        if len(row["_Title"]) > 0 :
+           prev_title=row["_Title"]  # Save for next row if title is blank
 
     last_stats_line=str(caiq_rows_read) +" rows read, "+ str(category_lines_out) +" categories, "+ str(caiq_rows_printed) +" rows printed."
     if bool_output_console == True :
@@ -211,6 +212,7 @@ with open(file_to_open, mode='r') as csv_file:
     if bool_output_file == True :
         f.write("<-- "+ last_stats_line +" -->")
 
+    # TODO: Display elapsed time for run:
     # from dateutil import relativedelta
     # relativedelta.relativedelta(end_time,start_time).seconds
 
