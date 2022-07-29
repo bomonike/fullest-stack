@@ -36,7 +36,7 @@ print_annually_only=False   # ignore lines with no annual in question
 print_answers=True
 print_answers_only=True     # ignore lines with no answers
 
-file_subject_text="for Consul users' auditors."
+file_subject_text="for Consul users' auditors"
 file_to_open='CAIQ4.0.1.consul.csv' 
 output_file_prefix="CAIQ4.0.1.consul"
 
@@ -54,21 +54,20 @@ if os.path.exists(output_file_name) :
 f = open(output_file_name, "a")
 
 # Show what setting were selected for this run:
-
 run_stats_line=""
 if bool_output_file == True :
     if len(output_file_name) == 0 :
-        run_stats_line=run_stats_line + "output_file_name not specified. "
+        run_stats_line=run_stats_line + "output_file_name not specified"
         bool_output_file=False
 
 # Print only if there is an answer: Print only if there is no answer:
 if print_annually == True :
     if print_annually_only == True :
-        run_stats_line=run_stats_line + "Annual questions only. "
+        run_stats_line=run_stats_line + "Annual questions only"
 
 if print_answers == True :
     if print_answers_only == True :
-       run_stats_line=run_stats_line + "Only rows with answers."
+       run_stats_line=run_stats_line + "Only questions with answers"
 
 # Internal formatting options:
 line_prefix="   "  # 3 chars
@@ -84,19 +83,20 @@ if bool_output_file == True :
     f.write("layout: post" +"\r\n")
     f.write("date: \""+ output_file_date +"\"\r\n")
     f.write("file: \""+ output_file_prefix  +"\"\r\n")
-    f.write("title: \"CAIQ (Consensus Assessment Initiative Questionnaire) " + file_subject_text +" "+ run_stats_line  +"\"\r\n")
-    f.write("excerpt: \"Gen'd from "+ file_to_open +" by "+ this_program_name +" "+ str(local_dt) +" "+ local_tzname +"\"\r\n")
+    f.write("title: \"CAIQ (Consensus Assessment Initiative Questionnaire) " + file_subject_text +".\"\r\n")
+    f.write("excerpt: \""+ run_stats_line +" generated from file "+ file_to_open +" by "+ this_program_name +"\"\r\n")
     f.write("tags: [cloud, security, management, audit]" +"\r\n")
     f.write("---" +"\r\n")
-    f.write("\r\n")
-    f.write("From https://github.com/bomonike/fullest-stack/blob/main/python/caiq-yaml-gen/\r\n")
 
-with open(file_to_open, mode='r') as csv_file:
-    csv_reader = csv.DictReader(csv_file)
-    caiq_rows_read = 0
-    caiq_rows_printed = 0
-    prev_first_qid_chars=""
-    caiq_categories = {
+    f.write("\r\n")
+    f.write("<!-- At https://github.com/bomonike/fullest-stack/blob/main/python/caiq-yaml-gen/ -->\r\n")
+    f.write("\r\n")
+
+    f.write("## Categories in the CAIQ\r\n")
+    f.write("\r\n")
+
+# Output Category summary:
+caiq_categories = {
     'A&A': 'Audit Assurance & Compliance',
     'AIS': 'Application & Interface Security',
     'BCR': 'Business Continuing Management & Operational Resilience',
@@ -115,6 +115,30 @@ with open(file_to_open, mode='r') as csv_file:
     'TVM': 'Threat and Vulnerability Management',
     'UEM': 'Universal Endpoint Management'
     }
+for key, value in caiq_categories.items():
+    print_line="1. <a href=\"#"+ key +"-\"><tt>"+ key +"</tt></a> = "+ value
+    if bool_output_console == True :
+        print(f'{print_line}')
+    if bool_output_file == True :
+        f.write(f'{print_line} \r\n')
+
+if bool_output_console == True :
+    print("\r\n---------")
+if bool_output_file == True :
+    f.write("\r\n<hr />\r\n")
+
+
+# Output yaml heading:
+if bool_output_file == True :
+    f.write("\r\n")
+    f.write("## "+ run_stats_line +" in the CAIQ "+ file_subject_text +" (by Category)\r\n")
+    f.write("\r\n")
+
+with open(file_to_open, mode='r') as csv_file:
+    csv_reader = csv.DictReader(csv_file)
+    caiq_rows_read = 0
+    caiq_rows_printed = 0
+    prev_first_qid_chars=""
     
     category_lines_out=0
     prev_title=""  # Def for next row.
@@ -149,13 +173,19 @@ with open(file_to_open, mode='r') as csv_file:
             # Lookup CategoryText from in-code table:
             if print_categories == True :
                 if first_qid_chars != prev_first_qid_chars :
-                    category_text = caiq_categories[first_qid_chars]  # not work
 
                     # For GitHub Markdown weirdness:
                     if category_lines_out == 0 :  # Except first line 
                         category_prefix=""       # for GitHub Markdown weirdness
                     else:
                         category_prefix=line_prefix
+
+                    category_text = caiq_categories[first_qid_chars]  # not work
+                    category_line="<a name=\""+ first_qid_chars +"-\"></a>\r\n"
+                    if bool_output_console == True :
+                        print(category_prefix+category_line)
+                    if bool_output_file == True :
+                        f.write(category_prefix+category_line)
 
                     if category_format == "bold" :
                         category_display = line_prefix+"<strong>"+ first_qid_chars +" = "+ category_text + "</strong>"
