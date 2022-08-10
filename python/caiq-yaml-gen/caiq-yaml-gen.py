@@ -28,6 +28,7 @@ local_tzname = local_tz.tzname(local_now)
 # User selections: TODO: choose in parameters within a GUI:
 bool_output_console=True
 bool_output_file=True
+bool_output_table=True
 
 print_categories=True
 print_questions=True
@@ -38,10 +39,10 @@ print_answers_only=True     # ignore lines with no answers
 
 file_subject_text="for Consul users' auditors"
 file_to_open='CAIQ4.0.1.consul.csv' 
+
+#output_file_date=str(local_dt)[0:10]
+output_file_date="2022-08-09"
 output_file_prefix="CAIQ4.0.1.consul"
-
-
-output_file_date=str(local_dt)[0:10]
 output_file_name=output_file_date+"-"+output_file_prefix+".md"  # Like 2021-05-12-caiq-yaml-gen.md
     # See https://courses.cs.washington.edu/courses/cse140/13wi/csv-parsing.html
 # Validate run parameters:
@@ -133,6 +134,10 @@ if bool_output_file == True :
     f.write("\r\n")
     f.write("## "+ run_stats_line +" in the CAIQ "+ file_subject_text +" (by Category)\r\n")
     f.write("\r\n")
+    if bool_output_table == True :
+        f.write('<table border="1" cellpadding="4" cellspacing="0">\r\n')
+        f.write('<tr valign="bottom"><th> CAIQ Item & Title </th><th> Question </th><th>Imp?</th><th> Answer </th></tr>\r\n')
+        f.write("\r\n")
 
 with open(file_to_open, mode='r') as csv_file:
     csv_reader = csv.DictReader(csv_file)
@@ -181,21 +186,28 @@ with open(file_to_open, mode='r') as csv_file:
                         category_prefix=line_prefix
 
                     category_text = caiq_categories[first_qid_chars]  # not work
-                    category_line="<a name=\""+ first_qid_chars +"-\"></a>\r\n"
+                    category_line="<a name=\""+ first_qid_chars +"-\"></a>"
                     if bool_output_console == True :
-                        print(category_prefix+category_line)
+                        print(category_prefix+category_line+"\r\n")
                     if bool_output_file == True :
-                        f.write(category_prefix+category_line)
+                        if bool_output_table == True :
+                            f.write('\r\n<tr valign="top"><td colspan="4">' + category_prefix+category_line )
+                        else:
+                            f.write(category_prefix+category_line)
 
                     if category_format == "bold" :
                         category_display = line_prefix+"<strong>"+ first_qid_chars +" = "+ category_text + "</strong>"
                     else:
                         category_display = category_prefix+"### "+ first_qid_chars +" = "+ category_text
+
                     category_line="\r\n"+ category_display +"<br /><br />\r\n \r\n"
                     if bool_output_console == True :
                         print(category_line)
                     if bool_output_file == True :
-                        f.write(category_line)
+                        if bool_output_table == True :
+                            f.write("<bold>"+ first_qid_chars +" = "+ category_text + '</bold></td></tr>\r\n')
+                        else:
+                            f.write(category_line)
 
                     category_lines_out += 1
                     prev_first_qid_chars=first_qid_chars  # for next row.
@@ -212,14 +224,23 @@ with open(file_to_open, mode='r') as csv_file:
             if bool_output_console == True :
                 print(title_line)
             if bool_output_file == True :
-                f.write(title_line)
+                if bool_output_table == True :
+                    f.write('<tr valign="top"><td>'+ str(caiq_rows_printed) +'. <a href="#'+ row["_QID"] +'"></a>'+ row["_QID"] +" - "+ caiq_title )
+                else:
+                    f.write(title_line)
 
             if print_questions == True :
                 question_text=line_prefix+ row["_Question"] +"\r\n"
                 if bool_output_console == True :
                     print(question_text)
                 if bool_output_file == True :
-                    f.write(question_text)
+                    if bool_output_table == True :
+                        f.write("</td><td> " + row["_Question"] )
+                    else:
+                        f.write(question_text)
+
+            if bool_output_table == True :
+                f.write("</td><td> Y ")
 
             if print_answers == True :
                 if len(row["_Answer_ID"]) != 0 :  # blank value
@@ -230,7 +251,13 @@ with open(file_to_open, mode='r') as csv_file:
                 if bool_output_console == True :
                     print(answer_line)
                 if bool_output_file == True :
-                    f.write(answer_line)
+                    if bool_output_table == True :
+                        f.write("</td><td> " + row["_Answer"] )
+                    else:
+                        f.write(answer_line)
+
+            if bool_output_table == True :
+                f.write('\r\n</td></tr>\r\n')
 
         caiq_rows_read += 1
         if len(row["_Title"]) > 0 :
@@ -240,6 +267,9 @@ with open(file_to_open, mode='r') as csv_file:
     if bool_output_console == True :
         print("*** "+ last_stats_line)
     if bool_output_file == True :
+        if bool_output_table == True :
+            f.write('</table>')
+            f.write("\r\n")
         f.write("<-- "+ last_stats_line +" -->")
 
     # TODO: Display elapsed time for run:
