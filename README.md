@@ -9,9 +9,9 @@ It takes a team to have skill in all the tools needed to create a complete produ
 We begin with the <strong>simplest</strong> capability set and gradually mature over time to that full production-grade system we call "Fullest-stack" needed today.
 <strong>Join us!</strong>
 
-1. The initial capability uses a <strong>site generator</strong>. There are many available, but <strong>Jekyll</strong> that runs in GitHub.com. It works by taking applying its template CSS and JavaScript to 
+1. The initial capability uses a <strong>site generator</strong>. There are many available, but <strong>Jekyll</strong> runs in GitHub.com with minimal setup. It works by applying a template of CSS and JavaScript to ...
 
-1. Text files writtin in <strong>GitHub Markdown</strong> format and transforms them to 
+1. text files writtin in <strong>GitHub Markdown</strong> format and transforms them to ...
 
 1. <strong>static web pages</strong> hosted on a subdomain of github.io managed by GitHub.
 
@@ -48,7 +48,7 @@ We begin with the <strong>simplest</strong> capability set and gradually mature 
 
 1. Trends are illustrated in a <strong>dashboard</strong> application. <strong>Power BI</strong> has been rated as a top tool for that. It's from Microsoft, so its users tend to also use  
 
-1. <strong>analytics</strong> databases and tools in Microsoft's Azure cloud.
+1. The <strong>OLAP (Analytics)</strong> database can be constructed using a Star Schema, Snowflake Schema, or Galaxy Schema.
 
 1. The decision regarding which cloud to standarize on relates to a choice of and other services. Azure has 
 
@@ -67,4 +67,9 @@ We begin with the <strong>simplest</strong> capability set and gradually mature 
 For your domain to keep up with competitors, consider how quickly you can adopt the progression of technologies.
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1658950646/fullest-stack-flow-1692x621_mj7lax.jpg"><img width="750" alt="fullest-stack" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1658950646/fullest-stack-flow-1692x621_mj7lax.jpg"></a>
+
+## References
+
+https://www.youtube.com/watch?v=jpRTonLCAjk
+How To Be A Full Stack Developer In 2022
 
