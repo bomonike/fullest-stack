@@ -49,12 +49,13 @@ print_category_list=False
 bool_print_categories=True
 
 bool_print_metrics=True
-
 print_questions=True
 print_annually=True
 print_annually_only=False   # True to ignore lines with no annual in question
 print_answers=True
 print_answers_only=False     # True to ignore lines with no answers
+
+stop_after_caiq_item=18
 
 # This provides an example of how vendors of software can provide a customer-centric use of CAIQ.
 # > PROTIP: Phrase what your customer can say in a CAIQ after installing your product. That would save them the agony of drafting paragraphs for their auditors. That's the customer-centric approach.
@@ -259,25 +260,31 @@ with open(caiq_file_to_open, mode='r') as csv_file:
 
 
             if bool_print_metrics == True :
-                # TODO: Loop for multiple metrics per CAIQ item
                 caiq_ccm_id=row["_QID"][0:6]       # such as "A&A-01" to lookup metric 
                 metrics_line=""  # clear from previous.
                 if caiq_ccm_id != prev_caiq_ccm_id :
                     try:
                         # TODO: If CCM_ID is a Series in dataframe (not unique):
 
-                        metrics_line='<a name="'+ df.loc[caiq_ccm_id,'_Metric_ID'] +'">CCM '+ df.loc[caiq_ccm_id,'_Metric_ID'] +"</a> METRIC = "+ df.loc[caiq_ccm_id,'_Metric_Desc'] +" (SLO "+ str(df.loc[caiq_ccm_id,'_SLO']) +")"
+                        metrics_line='<a name="'+ df.loc[caiq_ccm_id,'_Metric_ID'] +'">'+ df.loc[caiq_ccm_id,'_Metric_ID'] +"</a> CCM METRIC SLO = "+ str(df.loc[caiq_ccm_id,'_SLO']) +" " + df.loc[caiq_ccm_id,'_Metric_Desc']
                         if bool_output_console == True :
-                            print(line_prefix+metrics_line +"\r\n")
+                            print("\r\n"+line_prefix+metrics_line +"\r\n")
                         if bool_output_file == True :
                             if bool_output_table == True :
-                                f.write(metrics_line)
+                                f.write('<tr valign="top" colspan="4"><td>'+metrics_line+'</td></tr')
                             else:
-                                f.write("\r\n"+line_prefix+ metrics_line +"\r\n")
+                                f.write("\r\n\r\n"+line_prefix+ metrics_line +"\r\n")
                         metric_rows_printed += 1
                     except:
+                        # FIX: error when more than one metric for a CAIQ CCM ID. AIS-07-M3 & AIS-07-M6
+                        # TODO: Check in dataframe if response
+                            # SEF-06         <a name="SEF-06-M1">CCM SEF-06-M1</a> MET...
+                            # SEF-06         <a name="SEF-06-M2">CCM SEF-06-M2</a> MET...
+                            # dtype: object
+                        # TODO: Loop for multiple metrics per CAIQ item
                         if bool_output_console == True :
                             print(line_prefix+"*** No metric for "+ caiq_ccm_id )
+                            quit
                     prev_caiq_ccm_id=caiq_ccm_id  # for next row.
 
 
@@ -325,6 +332,8 @@ with open(caiq_file_to_open, mode='r') as csv_file:
                 f.write('\r\n</td></tr>\r\n')
 
         caiq_rows_read += 1
+        if caiq_rows_read > stop_after_caiq_item :  # after AIS-07 at 18
+           quit
         if len(row["_Title"]) > 0 :
            prev_title=row["_Title"]  # Save for next row if title is blank
 
