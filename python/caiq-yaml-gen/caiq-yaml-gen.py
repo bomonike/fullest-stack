@@ -212,30 +212,36 @@ with open(caiq_file_to_open, mode='r') as csv_file:
         # if print_filter == "all" or len(row["_Answer"]) > 0 :
         if bool_print_caiq_line == True :
             caiq_rows_printed += 1
+            if caiq_rows_printed < 10 :
+               line_prefix="   "  # 3 spaces
+            elif caiq_rows_printed < 100 :
+               line_prefix="    "  # 4 spaces
+            else:  # more than 999:
+               line_prefix="     "  # 5 spaces
 
             # TODO: Instead Lookup CategoryText & CCM from csv file?
             # Lookup CategoryText from in-code table:
             if bool_print_categories == True :
                 if first_qid_chars != prev_first_qid_chars :
 
-                    # For GitHub Markdown weirdness:
-                    if category_lines_out == 0 :  # Except first line 
+                    # For GitHub Markdown weirdness:x
+                    if category_lines_out <= 1 :  # Except first line 
                         category_prefix=""       # for GitHub Markdown weirdness
                     else:
                         category_prefix=line_prefix
 
-                    category_text = caiq_categories[first_qid_chars]  # not work
-                    category_line="<a name=\""+ first_qid_chars +"-\"></a>\r\n"
+                    category_text = caiq_categories[first_qid_chars]
+                    category_line='<a name="'+ first_qid_chars +'-"></a>\r\n'
                     if bool_output_console == True :
                         print("\r\n"+ category_prefix+category_line+"\r\n")
                     if bool_output_file == True :
                         if bool_output_table == True :
-                            f.write('\r\n<tr valign="top"><td colspan="4">' + category_prefix+category_line )
+                            f.write('\r\n<tr valign="top"><td colspan="4">' +category_line )
                         else:
-                            f.write("\r\n"+ category_prefix+category_line)
+                            f.write("\r\n"+ category_prefix + category_line)
 
                     if category_format == "bold" :
-                        category_display = line_prefix+"<strong>"+ first_qid_chars +" = "+ category_text + "</strong>"
+                        category_display = category_prefix+"<strong>"+ first_qid_chars +" = "+ category_text + "</strong>"
                     else:
                         category_display = category_prefix+"### "+ first_qid_chars +" = "+ category_text
 
@@ -260,14 +266,14 @@ with open(caiq_file_to_open, mode='r') as csv_file:
                     try:
                         # TODO: If CCM_ID is a Series in dataframe (not unique):
 
-                        metrics_line='CCM <a name="'+ df.loc[caiq_ccm_id,'_Metric_ID'] +'">'+ df.loc[caiq_ccm_id,'_Metric_ID'] +"</a> METRIC = "+ df.loc[caiq_ccm_id,'_Metric_Desc'] +" (SLO "+ str(df.loc[caiq_ccm_id,'_SLO']) +")"
+                        metrics_line='<a name="'+ df.loc[caiq_ccm_id,'_Metric_ID'] +'">CCM '+ df.loc[caiq_ccm_id,'_Metric_ID'] +"</a> METRIC = "+ df.loc[caiq_ccm_id,'_Metric_Desc'] +" (SLO "+ str(df.loc[caiq_ccm_id,'_SLO']) +")"
                         if bool_output_console == True :
-                            print(metrics_line +"\r\n")
+                            print(line_prefix+metrics_line +"\r\n")
                         if bool_output_file == True :
                             if bool_output_table == True :
                                 f.write(metrics_line)
                             else:
-                                f.write("\r\n"+ metrics_line +"\r\n")
+                                f.write("\r\n"+line_prefix+ metrics_line +"\r\n")
                         metric_rows_printed += 1
                     except:
                         if bool_output_console == True :
@@ -291,7 +297,7 @@ with open(caiq_file_to_open, mode='r') as csv_file:
                     f.write(title_line)
 
             if print_questions == True :
-                question_text=line_prefix+ row["_Question"]
+                question_text=line_prefix + row["_Question"]
                 if bool_output_console == True :
                     print("\r\n"+question_text)
                 if bool_output_file == True :
@@ -329,7 +335,7 @@ with open(caiq_file_to_open, mode='r') as csv_file:
         if bool_output_table == True :
             f.write('</table>')
             f.write("\r\n")
-        f.write("<-- "+ last_stats_line +" -->")
+        f.write("\r\n<-- "+ last_stats_line +" -->")
 
     # TODO: Display elapsed time for run:
     # from dateutil import relativedelta
