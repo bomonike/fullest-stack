@@ -95,7 +95,6 @@ if print_answers == True :
        run_stats_line=run_stats_line + "Only questions with answers"
 
 # Internal formatting options:
-line_prefix="   "  # 3 chars
 category_format="###"  # "bold" or "Not"
 
 
@@ -157,10 +156,14 @@ if print_category_list == True :
 if bool_print_metrics == True :
    # pd=pandas, df=dataframe (table) instead of default encoding="utf-8" :
    df = pd.read_csv(metrics_file_to_open, encoding="ISO-8859-1", sep = ",")
+      # Alternately, into dict: a = pd.read_csv("File1.txt", delimiter=" ", header = None).to_dict()[0]
    # print(df)  # display entire dataframe
+   # print(pd.options.display.max_rows) 
    df.set_index("_CCM_ID", inplace = True)
+       # See https://pandas.pydata.org/docs/user_guide/indexing.html#indexing
    if bool_output_console == True :
       print( "*** "+ str(len(df.index)) +" rows (excluding title row) in dataframe "+ metrics_file_to_open )
+         # Alternately, print(pd.options.display.max_rows) 
 
    # TODO: Print list of CCM metrics described at https://cloudsecurityalliance.org/artifacts/metrics-and-measurements-for-the-csa-ccm/ and PDF downloaded from https://cloudsecurityalliance.org/download/artifacts/metrics-and-measurements-for-the-csa-ccm/
 
@@ -251,7 +254,7 @@ with open(caiq_file_to_open, mode='r') as csv_file:
                         print(category_line)
                     if bool_output_file == True :
                         if bool_output_table == True :
-                            f.write("<bold>"+ first_qid_chars +" = "+ category_text + '</bold></td></tr>\r\n')
+                            f.write("<strong>"+ first_qid_chars +" = "+ category_text + '</strong></td></tr>\r\n')
                         else:
                             f.write(category_line)
 
@@ -266,7 +269,7 @@ with open(caiq_file_to_open, mode='r') as csv_file:
                     try:
                         # TODO: If CCM_ID is a Series in dataframe (not unique):
 
-                        metrics_line='<a name="'+ df.loc[caiq_ccm_id,'_Metric_ID'] +'">'+ df.loc[caiq_ccm_id,'_Metric_ID'] +"</a> CCM METRIC SLO = "+ str(df.loc[caiq_ccm_id,'_SLO']) +" " + df.loc[caiq_ccm_id,'_Metric_Desc']
+                        metrics_line='<a name="'+ df.loc[caiq_ccm_id,'_Metric_ID'] +'"></a>'+ df.loc[caiq_ccm_id,'_Metric_ID'] +" CCM METRIC SLO = "+ str(df.loc[caiq_ccm_id,'_SLO']) +" " + df.loc[caiq_ccm_id,'_Metric_Desc']
                         if bool_output_console == True :
                             print("\r\n"+line_prefix+metrics_line +"\r\n")
                         if bool_output_file == True :
@@ -294,7 +297,7 @@ with open(caiq_file_to_open, mode='r') as csv_file:
             else :
                 caiq_title=row["_Title"]
             # Mix of ' and " works?
-            title_line="\r\n"+ str(caiq_rows_printed) +'. <a name="'+ row["_QID"] +'">'+ row["_QID"] +" - "+ caiq_title +"</a>\r\n"
+            title_line="\r\n"+ str(caiq_rows_printed) +'. <a name="'+ row["_QID"] +'"></a>'+ row["_QID"] +" - "+ caiq_title +"\r\n"
             if bool_output_console == True :
                 print(title_line)
             if bool_output_file == True :
@@ -332,8 +335,8 @@ with open(caiq_file_to_open, mode='r') as csv_file:
                 f.write('\r\n</td></tr>\r\n')
 
         caiq_rows_read += 1
-        if caiq_rows_read > stop_after_caiq_item :  # after AIS-07 at 18
-           quit
+#        if caiq_rows_read > stop_after_caiq_item :  # after AIS-07 at 18
+#           quit
         if len(row["_Title"]) > 0 :
            prev_title=row["_Title"]  # Save for next row if title is blank
 
