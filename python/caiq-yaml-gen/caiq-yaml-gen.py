@@ -157,7 +157,7 @@ if bool_print_metrics == True :
    # pd=pandas, df=dataframe (table) instead of default encoding="utf-8" :
    df = pd.read_csv(metrics_file_to_open, encoding="ISO-8859-1", sep = ",")
       # Alternately, into dict: a = pd.read_csv("File1.txt", delimiter=" ", header = None).to_dict()[0]
-   # print(df)  # display entire dataframe
+   # print(df)  # display entire dataframe. Alternately: df.head()
    # print(pd.options.display.max_rows) 
    df.set_index("_CCM_ID", inplace = True)
        # See https://pandas.pydata.org/docs/user_guide/indexing.html#indexing
@@ -276,7 +276,7 @@ with open(caiq_file_to_open, mode='r') as csv_file:
                             if bool_output_table == True :
                                 f.write('<tr valign="top" colspan="4"><td>'+metrics_line+'</td></tr')
                             else:
-                                f.write("\r\n\r\n"+line_prefix+ metrics_line +"\r\n")
+                                f.write('\r\n\r\n'+line_prefix+'<table border="1" cellpadding="4" cellspacing="0"><tr valign="top"><td>'+ metrics_line +'</td></tr></table>\r\n')
                         metric_rows_printed += 1
                     except:
                         # FIX: error when more than one metric for a CAIQ CCM ID. AIS-07-M3 & AIS-07-M6

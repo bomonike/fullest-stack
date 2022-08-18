@@ -1,522 +1,522 @@
 ﻿ID,_QID,_Title,_Apply,_Question,_Answer,_Answer_ID,
-,A&A-01.1,Audit and Assurance Policy and Procedures,,"Are audit and assurance policies, procedures, and standards established, documented, approved, communicated, applied, evaluated, and maintained?
+1,A&A-01.1,Audit and Assurance Policy and Procedures,,"Are audit and assurance policies, procedures, and standards established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
-,A&A-01.2,,,"Are audit and assurance policies, procedures, and standards reviewed and updated at least annually?
+2,A&A-01.2,,,"Are audit and assurance policies, procedures, and standards reviewed and updated at least annually?
 ",,,
-,A&A-02.1,Independent Assessments,,"Are independent audit and assurance assessments conducted according to relevant standards at least annually?
+3,A&A-02.1,Independent Assessments,,"Are independent audit and assurance assessments conducted according to relevant standards at least annually?
 ",,,
-,A&A-03.1,Risk Based Planning Assessment,,"Are independent audit and assurance assessments performed according to risk-based plans and policies?
+4,A&A-03.1,Risk Based Planning Assessment,,"Are independent audit and assurance assessments performed according to risk-based plans and policies?
 ",,,
-,A&A-04.1,Requirements Compliance,,"Is compliance verified regarding all relevant standards, regulations, legal/contractual, and statutory requirements applicable to the audit?
+5,A&A-04.1,Requirements Compliance,,"Is compliance verified regarding all relevant standards, regulations, legal/contractual, and statutory requirements applicable to the audit?
 ",,,
-,A&A-05.1,Audit Management Process,,"Is an audit management process defined and implemented to support audit planning, risk analysis, security control assessments, conclusions, remediation schedules, report generation, and reviews of past reports and supporting evidence?
+6,A&A-05.1,Audit Management Process,,"Is an audit management process defined and implemented to support audit planning, risk analysis, security control assessments, conclusions, remediation schedules, report generation, and reviews of past reports and supporting evidence?
 ",,,
-,A&A-06.1,Remediation,,"Is a risk-based corrective action plan to remediate audit findings established, documented, approved, communicated, applied, evaluated, and maintained?
+7,A&A-06.1,Remediation,,"Is a risk-based corrective action plan to remediate audit findings established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
-,A&A-06.2,,,"Is the remediation status of audit findings reviewed and reported to relevant stakeholders?
+8,A&A-06.2,,,"Is the remediation status of audit findings reviewed and reported to relevant stakeholders?
 ",,,
-,AIS-01.1,Application and Interface Security Policy and Procedures,,"Are application security policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained to guide appropriate planning, delivery, and support of the organization's application security capabilities?
+9,AIS-01.1,Application and Interface Security Policy and Procedures,,"Are application security policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained to guide appropriate planning, delivery, and support of the organization's application security capabilities?
 ",,,
-,AIS-01.2,,,"Are application security policies and procedures reviewed and updated at least annually?
+10,AIS-01.2,,,"Are application security policies and procedures reviewed and updated at least annually?
 ",,,
-,AIS-02.1,Application Security Baseline Requirements,,"Are baseline requirements to secure different applications established, documented, and maintained?
+11,AIS-02.1,Application Security Baseline Requirements,,"Are baseline requirements to secure different applications established, documented, and maintained?
 ",,,
-,AIS-03.1,Application Security Metrics,,"Are technical and operational metrics defined and implemented according to business objectives, security requirements, and compliance obligations?
+12,AIS-03.1,Application Security Metrics,,"Are technical and operational metrics defined and implemented according to business objectives, security requirements, and compliance obligations?
 ",,,
-,AIS-04.1,Secure Application Design and Development,,"Is an SDLC process defined and implemented for application design, development, deployment, and operation per organizationally designed security requirements?
+13,AIS-04.1,Secure Application Design and Development,,"Is an SDLC process defined and implemented for application design, development, deployment, and operation per organizationally designed security requirements?
 ",,,
-,AIS-05.1,Automated Application Security Testing,,"Does the testing strategy outline criteria to accept new information systems, upgrades, and new versions while ensuring application security, compliance adherence, and organizational speed of delivery goals?
+14,AIS-05.1,Automated Application Security Testing,,"Does the testing strategy outline criteria to accept new information systems, upgrades, and new versions while ensuring application security, compliance adherence, and organizational speed of delivery goals?
 ",,,
-,AIS-05.2,,,"Is testing automated when applicable and possible?
+15,AIS-05.2,,,"Is testing automated when applicable and possible?
 ",,,
-,AIS-06.1,Automated Secure Application Deployment,,"Are strategies and capabilities established and implemented to deploy application code in a secure, standardized, and compliant manner?
+16,AIS-06.1,Automated Secure Application Deployment,,"Are strategies and capabilities established and implemented to deploy application code in a secure, standardized, and compliant manner?
 ",,,
-,AIS-06.2,,,"Is the deployment and integration of application code automated where possible?
+17,AIS-06.2,,,"Is the deployment and integration of application code automated where possible?
 ",We installed Consul using automated CI/CD for repeatability.,,
-,AIS-07.1,Application Vulnerability Remediation,,"Are application security vulnerabilities remediated following defined processes?
+18,AIS-07.1,Application Vulnerability Remediation,,"Are application security vulnerabilities remediated following defined processes?
 ",,,
-,AIS-07.2,,,"Is the remediation of application security vulnerabilities automated when possible?
+19,AIS-07.2,,,"Is the remediation of application security vulnerabilities automated when possible?
 ",,,
-,BCR-01.1,Business Continuity Management Policy and Procedures,,"Are business continuity management and operational resilience policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained?
+20,BCR-01.1,Business Continuity Management Policy and Procedures,,"Are business continuity management and operational resilience policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
-,BCR-01.2,,,"Are the policies and procedures reviewed and updated at least annually?
+21,BCR-01.2,,,"Are the policies and procedures reviewed and updated at least annually?
 ",,,
-,BCR-02.1,Risk Assessment and Impact Analysis,,"Are criteria for developing business continuity and operational resiliency strategies and capabilities established based on business disruption and risk impacts?
+22,BCR-02.1,Risk Assessment and Impact Analysis,,"Are criteria for developing business continuity and operational resiliency strategies and capabilities established based on business disruption and risk impacts?
 ",,,
-,BCR-03.1,Business Continuity Strategy,,"Are strategies developed to reduce the impact of, withstand, and recover from business disruptions in accordance with risk appetite?
+23,BCR-03.1,Business Continuity Strategy,,"Are strategies developed to reduce the impact of, withstand, and recover from business disruptions in accordance with risk appetite?
 ",,,
-,BCR-04.1,Business Continuity Planning,,"Are operational resilience strategies and capability results incorporated to establish, document, approve, communicate, apply, evaluate, and maintain a business continuity plan?
+24,BCR-04.1,Business Continuity Planning,,"Are operational resilience strategies and capability results incorporated to establish, document, approve, communicate, apply, evaluate, and maintain a business continuity plan?
 ",,,
-,BCR-05.1,Documentation,,"Is relevant documentation developed, identified, and acquired to support business continuity and operational resilience plans?
+25,BCR-05.1,Documentation,,"Is relevant documentation developed, identified, and acquired to support business continuity and operational resilience plans?
 ",,,
-,BCR-05.2,,,"Is business continuity and operational resilience documentation available to authorized stakeholders?
+26,BCR-05.2,,,"Is business continuity and operational resilience documentation available to authorized stakeholders?
 ",,,
-,BCR-05.3,,,"Is business continuity and operational resilience documentation reviewed periodically?
+27,BCR-05.3,,,"Is business continuity and operational resilience documentation reviewed periodically?
 ",,,
-,BCR-06.1,Business Continuity Exercises,,"Are the business continuity and operational resilience plans exercised and tested at least annually and when significant changes occur?
+28,BCR-06.1,Business Continuity Exercises,,"Are the business continuity and operational resilience plans exercised and tested at least annually and when significant changes occur?
 ",,,
-,BCR-07.1,Communication,,"Do business continuity and resilience procedures establish communication with stakeholders and participants?
+29,BCR-07.1,Communication,,"Do business continuity and resilience procedures establish communication with stakeholders and participants?
 ",,,
-,BCR-08.1,Backup,,"Is cloud data periodically backed up?
+30,BCR-08.1,Backup,,"Is cloud data periodically backed up?
 ","A Consul Enterprise feature is used to automatically back up snapshots of data in Consul, even what's in memory.",,
-,BCR-08.2,,,"Is the confidentiality, integrity, and availability of backup data ensured?
+31,BCR-08.2,,,"Is the confidentiality, integrity, and availability of backup data ensured?
 ",Snapshots of Consul data are encrypted and transferred to a separate cloud account which the account used for write cannot delete.,,
-,BCR-08.3,,,"Can backups be restored appropriately for resiliency?
+32,BCR-08.3,,,"Can backups be restored appropriately for resiliency?
 ",Restore of Consul snapshots from backup is tested during the implementation.,,
-,BCR-09.1,Disaster Response Plan,,"Is a disaster response plan established, documented, approved, applied, evaluated, and maintained to ensure recovery from natural and man-made disasters?
+33,BCR-09.1,Disaster Response Plan,,"Is a disaster response plan established, documented, approved, applied, evaluated, and maintained to ensure recovery from natural and man-made disasters?
 ",,,
-,BCR-09.2,,,"Is the disaster response plan updated at least annually, and when significant changes occur?
+34,BCR-09.2,,,"Is the disaster response plan updated at least annually, and when significant changes occur?
 ",,,
-,BCR-10.1,Response Plan Exercise,,"Is the disaster response plan exercised annually or when significant changes occur?
+35,BCR-10.1,Response Plan Exercise,,"Is the disaster response plan exercised annually or when significant changes occur?
 ",,,
-,BCR-10.2,,,"Are local emergency authorities included, if possible, in the exercise?
+36,BCR-10.2,,,"Are local emergency authorities included, if possible, in the exercise?
 ",,,
-,BCR-11.1,Equipment Redundancy,,"Is business-critical equipment supplemented with redundant equipment independently located at a reasonable minimum distance in accordance with applicable industry standards?
+37,BCR-11.1,Equipment Redundancy,,"Is business-critical equipment supplemented with redundant equipment independently located at a reasonable minimum distance in accordance with applicable industry standards?
 ",We configure each Consul datacenter to use 5 nodes over 3 AZs so that Consul's Gossip protocol can automatically recognize and reallocate work if up to two nodes fail. ,,
-,CCC-01.1,Change Management Policy and Procedures,,"Are risk management policies and procedures associated with changing organizational assets including applications, systems, infrastructure, configuration, etc., established, documented, approved, communicated, applied, evaluated and maintained (regardless of whether asset management is internal or external)?
+38,CCC-01.1,Change Management Policy and Procedures,,"Are risk management policies and procedures associated with changing organizational assets including applications, systems, infrastructure, configuration, etc., established, documented, approved, communicated, applied, evaluated and maintained (regardless of whether asset management is internal or external)?
 ",,,
-,CCC-01.2,,,"Are the policies and procedures reviewed and updated at least annually?
+39,CCC-01.2,,,"Are the policies and procedures reviewed and updated at least annually?
 ",,,
-,CCC-02.1,Quality Testing,,"Is a defined quality change control, approval and testing process (with established baselines, testing, and release standards) followed?
+40,CCC-02.1,Quality Testing,,"Is a defined quality change control, approval and testing process (with established baselines, testing, and release standards) followed?
 ",,,
-,CCC-03.1,Change Management Technology,,"Are risks associated with changing organizational assets (including applications, systems, infrastructure, configuration, etc.) managed, regardless of whether asset management occurs internally or externally (i.e., outsourced)?
+41,CCC-03.1,Change Management Technology,,"Are risks associated with changing organizational assets (including applications, systems, infrastructure, configuration, etc.) managed, regardless of whether asset management occurs internally or externally (i.e., outsourced)?
 ","The publisher of Consul, HashiCorp, publishes its CAIQ and SOC2 attestations at ____",,
-,CCC-04.1,Unauthorized Change Protection,,"Is the unauthorized addition, removal, update, and management of organization assets restricted?
+42,CCC-04.1,Unauthorized Change Protection,,"Is the unauthorized addition, removal, update, and management of organization assets restricted?
 ",,,
-,CCC-05.1,Change Agreements,,"Are provisions to limit changes that directly impact CSC-owned environments and require tenants to authorize requests explicitly included within the service level agreements (SLAs) between CSPs and CSCs?
+43,CCC-05.1,Change Agreements,,"Are provisions to limit changes that directly impact CSC-owned environments and require tenants to authorize requests explicitly included within the service level agreements (SLAs) between CSPs and CSCs?
 ",,,
-,CCC-06.1,Change Management Baseline,,"Are change management baselines established for all relevant authorized changes on organizational assets?
+44,CCC-06.1,Change Management Baseline,,"Are change management baselines established for all relevant authorized changes on organizational assets?
 ",,,
-,CCC-07.1,Detection of Baseline Deviation,,"Are detection measures implemented with proactive notification if changes deviate from established baselines?
+45,CCC-07.1,Detection of Baseline Deviation,,"Are detection measures implemented with proactive notification if changes deviate from established baselines?
 ",,,
-,CCC-08.1,Exception Management,,"Is a procedure implemented to manage exceptions, including emergencies, in the change and configuration process?
+46,CCC-08.1,Exception Management,,"Is a procedure implemented to manage exceptions, including emergencies, in the change and configuration process?
 ",,,
-,CCC-08.2,,,"Is the procedure aligned with the requirements of the GRC-04: Policy Exception Process?'
+47,CCC-08.2,,,"Is the procedure aligned with the requirements of the GRC-04: Policy Exception Process?'
 ",,,
-,CCC-09.1,Change Restoration,,"Is a process to proactively roll back changes to a previously known ""good state"" defined and implemented in case of errors or security concerns?
+48,CCC-09.1,Change Restoration,,"Is a process to proactively roll back changes to a previously known ""good state"" defined and implemented in case of errors or security concerns?
 ",,,
-,CEK-01.1,Encryption and Key Management Policy and Procedures,y,"Are cryptography, encryption, and key management policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained?
+49,CEK-01.1,Encryption and Key Management Policy and Procedures,y,"Are cryptography, encryption, and key management policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
-,CEK-01.2,,y,"Are cryptography, encryption, and key management policies and procedures reviewed and updated at least annually?
+50,CEK-01.2,,y,"Are cryptography, encryption, and key management policies and procedures reviewed and updated at least annually?
 ",,,
-,CEK-02.1,CEK Roles and Responsibilities,y,"Are cryptography, encryption, and key management roles and responsibilities defined and implemented?
+51,CEK-02.1,CEK Roles and Responsibilities,y,"Are cryptography, encryption, and key management roles and responsibilities defined and implemented?
 ",,,
-,CEK-03.1,Data Encryption,y,"Are data at-rest and in-transit cryptographically protected using cryptographic libraries certified to approved standards?
+52,CEK-03.1,Data Encryption,y,"Are data at-rest and in-transit cryptographically protected using cryptographic libraries certified to approved standards?
 ",,,
-,CEK-04.1,Encryption Algorithm,y,"Are appropriate data protection encryption algorithms used that consider data classification, associated risks, and encryption technology usability?
+53,CEK-04.1,Encryption Algorithm,y,"Are appropriate data protection encryption algorithms used that consider data classification, associated risks, and encryption technology usability?
 ",,,
-,CEK-05.1,Encryption Change Management,y,"Are standard change management procedures established to review, approve, implement and communicate cryptography, encryption, and key management technology changes that accommodate internal and external sources?
+54,CEK-05.1,Encryption Change Management,y,"Are standard change management procedures established to review, approve, implement and communicate cryptography, encryption, and key management technology changes that accommodate internal and external sources?
 ",,,
-,CEK-06.1,Encryption Change Cost Benefit Analysis,y,"Are changes to cryptography-, encryption- and key management-related systems, policies, and procedures, managed and adopted in a manner that fully accounts for downstream effects of proposed changes, including residual risk, cost, and benefits analysis?
+55,CEK-06.1,Encryption Change Cost Benefit Analysis,y,"Are changes to cryptography-, encryption- and key management-related systems, policies, and procedures, managed and adopted in a manner that fully accounts for downstream effects of proposed changes, including residual risk, cost, and benefits analysis?
 ",,,
-,CEK-07.1,Encryption Risk Management,y,"Is a cryptography, encryption, and key management risk program established and maintained that includes risk assessment, risk treatment, risk context, monitoring, and feedback provisions?
+56,CEK-07.1,Encryption Risk Management,y,"Is a cryptography, encryption, and key management risk program established and maintained that includes risk assessment, risk treatment, risk context, monitoring, and feedback provisions?
 ",,,
-,CEK-08.1,CSC Key Management Capability,y,"Are CSPs providing CSCs with the capacity to manage their own data encryption keys?
+57,CEK-08.1,CSC Key Management Capability,y,"Are CSPs providing CSCs with the capacity to manage their own data encryption keys?
 ",,,
-,CEK-09.1,Encryption and Key Management Audit,y,"Are encryption and key management systems, policies, and processes audited with a frequency proportional to the system's risk exposure, and after any security event?
+58,CEK-09.1,Encryption and Key Management Audit,y,"Are encryption and key management systems, policies, and processes audited with a frequency proportional to the system's risk exposure, and after any security event?
 ",,,
-,CEK-09.2,,y,"Are encryption and key management systems, policies, and processes audited (preferably continuously but at least annually)?
+59,CEK-09.2,,y,"Are encryption and key management systems, policies, and processes audited (preferably continuously but at least annually)?
 ",,,
-,CEK-10.1,Key Generation,y,"Are cryptographic keys generated using industry-accepted and approved cryptographic libraries that specify algorithm strength and random number generator specifications?
+60,CEK-10.1,Key Generation,y,"Are cryptographic keys generated using industry-accepted and approved cryptographic libraries that specify algorithm strength and random number generator specifications?
 ",,,
-,CEK-11.1,Key Purpose,y,"Are private keys provisioned for a unique purpose managed, and is cryptography secret?
+61,CEK-11.1,Key Purpose,y,"Are private keys provisioned for a unique purpose managed, and is cryptography secret?
 ",,,
-,CEK-12.1,Key Rotation,y,"Are cryptographic keys rotated based on a cryptoperiod calculated while considering information disclosure risks and legal and regulatory requirements?
+62,CEK-12.1,Key Rotation,y,"Are cryptographic keys rotated based on a cryptoperiod calculated while considering information disclosure risks and legal and regulatory requirements?
 ",ACL Tokens used in Consul are rotated using HashiCorp Enterprise Vault. See https://learn.hashicorp.com/tutorials/consul/vault-consul-secrets,,
-,CEK-13.1,Key Revocation,y,"Are cryptographic keys revoked and removed before the end of the established cryptoperiod (when a key is compromised, or an entity is no longer part of the organization) per defined, implemented, and evaluated processes, procedures, and technical measures to include legal and regulatory requirement provisions?
+63,CEK-13.1,Key Revocation,y,"Are cryptographic keys revoked and removed before the end of the established cryptoperiod (when a key is compromised, or an entity is no longer part of the organization) per defined, implemented, and evaluated processes, procedures, and technical measures to include legal and regulatory requirement provisions?
 ",The CRL to our implementation of Consul is managed by HashiCorp Vault.,,
-,CEK-14.1,Key Destruction,y,"Are processes, procedures and technical measures to destroy unneeded keys defined, implemented and evaluated to address key destruction outside secure environments, revocation of keys stored in hardware security modules (HSMs), and include applicable legal and regulatory requirement provisions?
+64,CEK-14.1,Key Destruction,y,"Are processes, procedures and technical measures to destroy unneeded keys defined, implemented and evaluated to address key destruction outside secure environments, revocation of keys stored in hardware security modules (HSMs), and include applicable legal and regulatory requirement provisions?
 ",,,
-,CEK-15.1,Key Activation,y,"Are processes, procedures, and technical measures to create keys in a pre-activated state (i.e., when they have been generated but not authorized for use) being defined, implemented, and evaluated to include legal and regulatory requirement provisions?
+65,CEK-15.1,Key Activation,y,"Are processes, procedures, and technical measures to create keys in a pre-activated state (i.e., when they have been generated but not authorized for use) being defined, implemented, and evaluated to include legal and regulatory requirement provisions?
 ",,,
-,CEK-16.1,Key Suspension,y,"Are processes, procedures, and technical measures to monitor, review and approve key transitions (e.g., from any state to/from suspension) being defined, implemented, and evaluated to include legal and regulatory requirement provisions?
+66,CEK-16.1,Key Suspension,y,"Are processes, procedures, and technical measures to monitor, review and approve key transitions (e.g., from any state to/from suspension) being defined, implemented, and evaluated to include legal and regulatory requirement provisions?
 ",,,
-,CEK-17.1,Key Deactivation,y,"Are processes, procedures, and technical measures to deactivate keys (at the time of their expiration date) being defined, implemented, and evaluated to include legal and regulatory requirement provisions?
+67,CEK-17.1,Key Deactivation,y,"Are processes, procedures, and technical measures to deactivate keys (at the time of their expiration date) being defined, implemented, and evaluated to include legal and regulatory requirement provisions?
 ",,,
-,CEK-18.1,Key Archival,y,"Are processes, procedures, and technical measures to manage archived keys in a secure repository (requiring least privilege access) being defined, implemented, and evaluated to include legal and regulatory requirement provisions?
+68,CEK-18.1,Key Archival,y,"Are processes, procedures, and technical measures to manage archived keys in a secure repository (requiring least privilege access) being defined, implemented, and evaluated to include legal and regulatory requirement provisions?
 ",,,
-,CEK-19.1,Key Compromise,y,"Are processes, procedures, and technical measures to encrypt information in specific scenarios (e.g., only in controlled circumstances and thereafter only for data decryption and never for encryption) being defined, implemented, and evaluated to include legal and regulatory requirement provisions?
+69,CEK-19.1,Key Compromise,y,"Are processes, procedures, and technical measures to encrypt information in specific scenarios (e.g., only in controlled circumstances and thereafter only for data decryption and never for encryption) being defined, implemented, and evaluated to include legal and regulatory requirement provisions?
 ",,,
-,CEK-20.1,Key Recovery,y,"Are processes, procedures, and technical measures to assess operational continuity risks (versus the risk of losing control of keying material and exposing protected data) being defined, implemented, and evaluated to include legal and regulatory requirement provisions?
+70,CEK-20.1,Key Recovery,y,"Are processes, procedures, and technical measures to assess operational continuity risks (versus the risk of losing control of keying material and exposing protected data) being defined, implemented, and evaluated to include legal and regulatory requirement provisions?
 ",,,
-,CEK-21.1,Key Inventory Management,y,"Are key management system processes, procedures, and technical measures being defined, implemented, and evaluated to track and report all cryptographic materials and status changes that include legal and regulatory requirements provisions?
+71,CEK-21.1,Key Inventory Management,y,"Are key management system processes, procedures, and technical measures being defined, implemented, and evaluated to track and report all cryptographic materials and status changes that include legal and regulatory requirements provisions?
 ",We use Consul to maintain a Service Registry which tracks each service and other services it can communicate with (as Intentions) and what permissions (as ACLs).,,
-,DCS-01.1,Off-Site Equipment Disposal Policy and Procedures,,"Are policies and procedures for the secure disposal of equipment used outside the organization's premises established, documented, approved, communicated, enforced, and maintained?
+72,DCS-01.1,Off-Site Equipment Disposal Policy and Procedures,,"Are policies and procedures for the secure disposal of equipment used outside the organization's premises established, documented, approved, communicated, enforced, and maintained?
 ",,,
-,DCS-01.2,,,"Is a data destruction procedure applied that renders information recovery information impossible if equipment is not physically destroyed?
+73,DCS-01.2,,,"Is a data destruction procedure applied that renders information recovery information impossible if equipment is not physically destroyed?
 ",,,
-,DCS-01.3,,,"Are policies and procedures for the secure disposal of equipment used outside the organization's premises reviewed and updated at least annually?
+74,DCS-01.3,,,"Are policies and procedures for the secure disposal of equipment used outside the organization's premises reviewed and updated at least annually?
 ",,,
-,DCS-02.1,Off-Site Transfer Authorization Policy and Procedures,,"Are policies and procedures for the relocation or transfer of hardware, software, or data/information to an offsite or alternate location established, documented, approved, communicated, implemented, enforced, maintained?
+75,DCS-02.1,Off-Site Transfer Authorization Policy and Procedures,,"Are policies and procedures for the relocation or transfer of hardware, software, or data/information to an offsite or alternate location established, documented, approved, communicated, implemented, enforced, maintained?
 ",,,
-,DCS-02.2,,,"Does a relocation or transfer request require written or cryptographically verifiable authorization?
+76,DCS-02.2,,,"Does a relocation or transfer request require written or cryptographically verifiable authorization?
 ",,,
-,DCS-02.3,,,"Are policies and procedures for the relocation or transfer of hardware, software, or data/information to an offsite or alternate location reviewed and updated at least annually?
+77,DCS-02.3,,,"Are policies and procedures for the relocation or transfer of hardware, software, or data/information to an offsite or alternate location reviewed and updated at least annually?
 ",,,
-,DCS-03.1,Secure Area Policy and Procedures,,"Are policies and procedures for maintaining a safe and secure working environment (in offices, rooms, and facilities) established, documented, approved, communicated, enforced, and maintained?
+78,DCS-03.1,Secure Area Policy and Procedures,,"Are policies and procedures for maintaining a safe and secure working environment (in offices, rooms, and facilities) established, documented, approved, communicated, enforced, and maintained?
 ",,,
-,DCS-03.2,,,"Are policies and procedures for maintaining safe, secure working environments (e.g., offices, rooms) reviewed and updated at least annually?
+79,DCS-03.2,,,"Are policies and procedures for maintaining safe, secure working environments (e.g., offices, rooms) reviewed and updated at least annually?
 ",,,
-,DCS-04.1,Secure Media Transportation Policy and Procedures,,"Are policies and procedures for the secure transportation of physical media established, documented, approved, communicated, enforced, evaluated, and maintained?
+80,DCS-04.1,Secure Media Transportation Policy and Procedures,,"Are policies and procedures for the secure transportation of physical media established, documented, approved, communicated, enforced, evaluated, and maintained?
 ",,,
-,DCS-04.2,,,"Are policies and procedures for the secure transportation of physical media reviewed and updated at least annually?
+81,DCS-04.2,,,"Are policies and procedures for the secure transportation of physical media reviewed and updated at least annually?
 ",,,
-,DCS-05.1,Assets Classification,,"Is the classification and documentation of physical and logical assets based on the organizational business risk?
+82,DCS-05.1,Assets Classification,,"Is the classification and documentation of physical and logical assets based on the organizational business risk?
 ",,,
-,DCS-06.1,Assets Cataloguing and Tracking,,"Are all relevant physical and logical assets at all CSP sites cataloged and tracked within a secured system?
+83,DCS-06.1,Assets Cataloguing and Tracking,,"Are all relevant physical and logical assets at all CSP sites cataloged and tracked within a secured system?
 ",,,
-,DCS-07.1,Controlled Access Points,,"Are physical security perimeters implemented to safeguard personnel, data, and information systems?
+84,DCS-07.1,Controlled Access Points,,"Are physical security perimeters implemented to safeguard personnel, data, and information systems?
 ",,,
-,DCS-07.2,,,"Are physical security perimeters established between administrative and business areas, data storage, and processing facilities?
+85,DCS-07.2,,,"Are physical security perimeters established between administrative and business areas, data storage, and processing facilities?
 ",,,
-,DCS-08.1,Equipment Identification,,"Is equipment identification used as a method for connection authentication?
+86,DCS-08.1,Equipment Identification,,"Is equipment identification used as a method for connection authentication?
 ",,,
-,DCS-09.1,Secure Area Authorization,,"Are solely authorized personnel able to access secure areas, with all ingress and egress areas restricted, documented, and monitored by physical access control mechanisms?
+87,DCS-09.1,Secure Area Authorization,,"Are solely authorized personnel able to access secure areas, with all ingress and egress areas restricted, documented, and monitored by physical access control mechanisms?
 ",,,
-,DCS-09.2,,,"Are access control records retained periodically, as deemed appropriate by the organization?
+88,DCS-09.2,,,"Are access control records retained periodically, as deemed appropriate by the organization?
 ",,,
-,DCS-10.1,Surveillance System,,"Are external perimeter datacenter surveillance systems and surveillance systems at all ingress and egress points implemented, maintained, and operated?
+89,DCS-10.1,Surveillance System,,"Are external perimeter datacenter surveillance systems and surveillance systems at all ingress and egress points implemented, maintained, and operated?
 ",,,
-,DCS-11.1,Unauthorized Access Response Training,,"Are datacenter personnel trained to respond to unauthorized access or egress attempts?
+90,DCS-11.1,Unauthorized Access Response Training,,"Are datacenter personnel trained to respond to unauthorized access or egress attempts?
 ",,,
-,DCS-12.1,Cabling Security,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to ensure risk-based protection of power and telecommunication cables from interception, interference, or damage threats at all facilities, offices, and rooms?
+91,DCS-12.1,Cabling Security,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to ensure risk-based protection of power and telecommunication cables from interception, interference, or damage threats at all facilities, offices, and rooms?
 ",,,
-,DCS-13.1,Environmental Systems,,"Are data center environmental control systems designed to monitor, maintain, and test that on-site temperature and humidity conditions fall within accepted industry standards effectively implemented and maintained?
+92,DCS-13.1,Environmental Systems,,"Are data center environmental control systems designed to monitor, maintain, and test that on-site temperature and humidity conditions fall within accepted industry standards effectively implemented and maintained?
 ",,,
-,DCS-14.1,Secure Utilities,,"Are utility services secured, monitored, maintained, and tested at planned intervals for continual effectiveness?
+93,DCS-14.1,Secure Utilities,,"Are utility services secured, monitored, maintained, and tested at planned intervals for continual effectiveness?
 ",,,
-,DCS-15.1,Equipment Location,,"Is business-critical equipment segregated from locations subject to a high probability of environmental risk events?
+94,DCS-15.1,Equipment Location,,"Is business-critical equipment segregated from locations subject to a high probability of environmental risk events?
 ","We installed Enterprise Consul in the cloud region appropriate to the data laws of each country. For example, sensitive data of German citizens are stored in servers in a region in Germany.",,
-,DSP-01.1,Security and Privacy Policy and Procedures,,"Are policies and procedures established, documented, approved, communicated, enforced, evaluated, and maintained for the classification, protection, and handling of data throughout its lifecycle according to all applicable laws and regulations, standards, and risk level?
+95,DSP-01.1,Security and Privacy Policy and Procedures,,"Are policies and procedures established, documented, approved, communicated, enforced, evaluated, and maintained for the classification, protection, and handling of data throughout its lifecycle according to all applicable laws and regulations, standards, and risk level?
 ","For Consul, see the Implementation Guide and Impact Assessment",,
-,DSP-01.2,,,"Are data security and privacy policies and procedures reviewed and updated at least annually?
+96,DSP-01.2,,,"Are data security and privacy policies and procedures reviewed and updated at least annually?
 ",,,
-,DSP-02.1,Secure Disposal,,"Are industry-accepted methods applied for secure data disposal from storage media so information is not recoverable by any forensic means?
+97,DSP-02.1,Secure Disposal,,"Are industry-accepted methods applied for secure data disposal from storage media so information is not recoverable by any forensic means?
 ",,,
-,DSP-03.1,Data Inventory,,"Is a data inventory created and maintained for sensitive and personal information (at a minimum)?
+98,DSP-03.1,Data Inventory,,"Is a data inventory created and maintained for sensitive and personal information (at a minimum)?
 ",,,
-,DSP-04.1,Data Classification,,"Is data classified according to type and sensitivity levels?
+99,DSP-04.1,Data Classification,,"Is data classified according to type and sensitivity levels?
 ",,,
-,DSP-05.1,Data Flow Documentation,,"Is data flow documentation created to identify what data is processed and where it is stored and transmitted?
+100,DSP-05.1,Data Flow Documentation,,"Is data flow documentation created to identify what data is processed and where it is stored and transmitted?
 ",,,
-,DSP-05.2,,,"Is data flow documentation reviewed at defined intervals, at least annually, and after any change?
+101,DSP-05.2,,,"Is data flow documentation reviewed at defined intervals, at least annually, and after any change?
 ",,,
-,DSP-06.1,Data Ownership and Stewardship,,"Is the ownership and stewardship of all relevant personal and sensitive data documented?
+102,DSP-06.1,Data Ownership and Stewardship,,"Is the ownership and stewardship of all relevant personal and sensitive data documented?
 ",,,
-,DSP-06.2,,,"Is data ownership and stewardship documentation reviewed at least annually?
+103,DSP-06.2,,,"Is data ownership and stewardship documentation reviewed at least annually?
 ",,,
-,DSP-07.1,Data Protection by Design and Default,,"Are systems, products, and business practices based on security principles by design and per industry best practices?
+104,DSP-07.1,Data Protection by Design and Default,,"Are systems, products, and business practices based on security principles by design and per industry best practices?
 ",,,
-,DSP-08.1,Data Privacy by Design and Default,,"Are systems, products, and business practices based on privacy principles by design and according to industry best practices?
+105,DSP-08.1,Data Privacy by Design and Default,,"Are systems, products, and business practices based on privacy principles by design and according to industry best practices?
 ",,,
-,DSP-08.2,,,"Are systems' privacy settings configured by default and according to all applicable laws and regulations?
+106,DSP-08.2,,,"Are systems' privacy settings configured by default and according to all applicable laws and regulations?
 ","Consul works with internal services info, not customer data.",,
-,DSP-09.1,Data Protection Impact Assessment,,"Is a data protection impact assessment (DPIA) conducted when processing personal data and evaluating the origin, nature, particularity, and severity of risks according to any applicable laws, regulations and industry best practices?
+107,DSP-09.1,Data Protection Impact Assessment,,"Is a data protection impact assessment (DPIA) conducted when processing personal data and evaluating the origin, nature, particularity, and severity of risks according to any applicable laws, regulations and industry best practices?
 ",,,
-,DSP-10.1,Sensitive Data Transfer,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to ensure any transfer of personal or sensitive data is protected from unauthorized access and only processed within scope (as permitted by respective laws and regulations)?
+108,DSP-10.1,Sensitive Data Transfer,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to ensure any transfer of personal or sensitive data is protected from unauthorized access and only processed within scope (as permitted by respective laws and regulations)?
 ",,,
-,DSP-11.1,"Personal Data Access, Reversal, Rectification and Deletion",,"Are processes, procedures, and technical measures defined, implemented, and evaluated to enable data subjects to request access to, modify, or delete personal data (per applicable laws and regulations)?
+109,DSP-11.1,"Personal Data Access, Reversal, Rectification and Deletion",,"Are processes, procedures, and technical measures defined, implemented, and evaluated to enable data subjects to request access to, modify, or delete personal data (per applicable laws and regulations)?
 ",,,
-,DSP-12.1,Limitation of Purpose in Personal Data Processing,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to ensure personal data is processed (per applicable laws and regulations and for the purposes declared to the data subject)?
+110,DSP-12.1,Limitation of Purpose in Personal Data Processing,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to ensure personal data is processed (per applicable laws and regulations and for the purposes declared to the data subject)?
 ",,,
-,DSP-13.1,Personal Data Sub-processing,,"Are processes, procedures, and technical measures defined, implemented, and evaluated for the transfer and sub-processing of personal data within the service supply chain (according to any applicable laws and regulations)?
+111,DSP-13.1,Personal Data Sub-processing,,"Are processes, procedures, and technical measures defined, implemented, and evaluated for the transfer and sub-processing of personal data within the service supply chain (according to any applicable laws and regulations)?
 ",,,
-,DSP-14.1,Disclosure of Data Sub-processors,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to disclose details to the data owner of any personal or sensitive data access by sub-processors before processing initiation?
+112,DSP-14.1,Disclosure of Data Sub-processors,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to disclose details to the data owner of any personal or sensitive data access by sub-processors before processing initiation?
 ",,,
-,DSP-15.1,Limitation of Production Data Use,,"Is authorization from data owners obtained, and the associated risk managed, before replicating or using production data in non-production environments?
+113,DSP-15.1,Limitation of Production Data Use,,"Is authorization from data owners obtained, and the associated risk managed, before replicating or using production data in non-production environments?
 ",,,
-,DSP-16.1,Data Retention and Deletion,,"Do data retention, archiving, and deletion practices follow business requirements, applicable laws, and regulations?
+114,DSP-16.1,Data Retention and Deletion,,"Do data retention, archiving, and deletion practices follow business requirements, applicable laws, and regulations?
 ",,,
-,DSP-17.1,Sensitive Data Protection,,"Are processes, procedures, and technical measures defined and implemented to protect sensitive data throughout its lifecycle?
+115,DSP-17.1,Sensitive Data Protection,,"Are processes, procedures, and technical measures defined and implemented to protect sensitive data throughout its lifecycle?
 ",,,
-,DSP-18.1,Disclosure Notification,,"Does the CSP have in place, and describe to CSCs, the procedure to manage and respond to requests for disclosure of Personal Data by Law Enforcement Authorities according to applicable laws and regulations?
+116,DSP-18.1,Disclosure Notification,,"Does the CSP have in place, and describe to CSCs, the procedure to manage and respond to requests for disclosure of Personal Data by Law Enforcement Authorities according to applicable laws and regulations?
 ",,,
-,DSP-18.2,,,"Does the CSP give special attention to the notification procedure to interested CSCs, unless otherwise prohibited, such as a prohibition under criminal law to preserve confidentiality of a law enforcement investigation?
+117,DSP-18.2,,,"Does the CSP give special attention to the notification procedure to interested CSCs, unless otherwise prohibited, such as a prohibition under criminal law to preserve confidentiality of a law enforcement investigation?
 ",,,
-,DSP-19.1,Data Location,,"Are processes, procedures, and technical measures defined and implemented to specify and document physical data locations, including locales where data is processed or backed up?
+118,DSP-19.1,Data Location,,"Are processes, procedures, and technical measures defined and implemented to specify and document physical data locations, including locales where data is processed or backed up?
 ",,,
-,GRC-01.1,Governance Program Policy and Procedures,,"Are information governance program policies and procedures sponsored by organizational leadership established, documented, approved, communicated, applied, evaluated, and maintained?
+119,GRC-01.1,Governance Program Policy and Procedures,,"Are information governance program policies and procedures sponsored by organizational leadership established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
-,GRC-01.2,,,"Are the policies and procedures reviewed and updated at least annually?
+120,GRC-01.2,,,"Are the policies and procedures reviewed and updated at least annually?
 ",,,
-,GRC-02.1,Risk Management Program,,"Is there an established formal, documented, and leadership-sponsored enterprise risk management (ERM) program that includes policies and procedures for identification, evaluation, ownership, treatment, and acceptance of cloud security and privacy risks?
+121,GRC-02.1,Risk Management Program,,"Is there an established formal, documented, and leadership-sponsored enterprise risk management (ERM) program that includes policies and procedures for identification, evaluation, ownership, treatment, and acceptance of cloud security and privacy risks?
 ",,,
-,GRC-03.1,Organizational Policy Reviews,,"Are all relevant organizational policies and associated procedures reviewed at least annually, or when a substantial organizational change occurs?
+122,GRC-03.1,Organizational Policy Reviews,,"Are all relevant organizational policies and associated procedures reviewed at least annually, or when a substantial organizational change occurs?
 ",,,
-,GRC-04.1,Policy Exception Process,,"Is an approved exception process mandated by the governance program established and followed whenever a deviation from an established policy occurs?
+123,GRC-04.1,Policy Exception Process,,"Is an approved exception process mandated by the governance program established and followed whenever a deviation from an established policy occurs?
 ",,,
-,GRC-05.1,Information Security Program,,"Has an information security program (including programs of all relevant CCM domains) been developed and implemented?
+124,GRC-05.1,Information Security Program,,"Has an information security program (including programs of all relevant CCM domains) been developed and implemented?
 ",,,
-,GRC-06.1,Governance Responsibility Model,,"Are roles and responsibilities for planning, implementing, operating, assessing, and improving governance programs defined and documented?
+125,GRC-06.1,Governance Responsibility Model,,"Are roles and responsibilities for planning, implementing, operating, assessing, and improving governance programs defined and documented?
 ",The initial assessment of Consul includes identification of persona and stakeholders.,,
-,GRC-07.1,Information System Regulatory Mapping,,"Are all relevant standards, regulations, legal/contractual, and statutory requirements applicable to your organization identified and documented?
+126,GRC-07.1,Information System Regulatory Mapping,,"Are all relevant standards, regulations, legal/contractual, and statutory requirements applicable to your organization identified and documented?
 ",,,
-,GRC-08.1,Special Interest Groups,,"Is contact established and maintained with cloud-related special interest groups and other relevant entities?
+127,GRC-08.1,Special Interest Groups,,"Is contact established and maintained with cloud-related special interest groups and other relevant entities?
 ",,,
-,HRS-01.1,Background Screening Policy and Procedures,,"Are background verification policies and procedures of all new employees (including but not limited to remote employees, contractors, and third parties) established, documented, approved, communicated, applied, evaluated, and maintained?
+128,HRS-01.1,Background Screening Policy and Procedures,,"Are background verification policies and procedures of all new employees (including but not limited to remote employees, contractors, and third parties) established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
-,HRS-01.2,,,"Are background verification policies and procedures designed according to local laws, regulations, ethics, and contractual constraints and proportional to the data classification to be accessed, business requirements, and acceptable risk?
+129,HRS-01.2,,,"Are background verification policies and procedures designed according to local laws, regulations, ethics, and contractual constraints and proportional to the data classification to be accessed, business requirements, and acceptable risk?
 ",,,
-,HRS-01.3,,,"Are background verification policies and procedures reviewed and updated at least annually?
+130,HRS-01.3,,,"Are background verification policies and procedures reviewed and updated at least annually?
 ",,,
-,HRS-02.1,Acceptable Use of Technology Policy and Procedures,,"Are policies and procedures for defining allowances and conditions for the acceptable use of organizationally-owned or managed assets established, documented, approved, communicated, applied, evaluated, and maintained?
+131,HRS-02.1,Acceptable Use of Technology Policy and Procedures,,"Are policies and procedures for defining allowances and conditions for the acceptable use of organizationally-owned or managed assets established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
-,HRS-02.2,,,"Are the policies and procedures for defining allowances and conditions for the acceptable use of organizationally-owned or managed assets reviewed and updated at least annually?
+132,HRS-02.2,,,"Are the policies and procedures for defining allowances and conditions for the acceptable use of organizationally-owned or managed assets reviewed and updated at least annually?
 ",,Review of HRS policies and procedures for ___ organizationally-owned assets is in the team's calendar.,
-,HRS-03.1,Clean Desk Policy and Procedures,,"Are policies and procedures requiring unattended workspaces to conceal confidential data established, documented, approved, communicated, applied, evaluated, and maintained?
+133,HRS-03.1,Clean Desk Policy and Procedures,,"Are policies and procedures requiring unattended workspaces to conceal confidential data established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
-,HRS-03.2,,,"Are policies and procedures requiring unattended workspaces to conceal confidential data reviewed and updated at least annually?
+134,HRS-03.2,,,"Are policies and procedures requiring unattended workspaces to conceal confidential data reviewed and updated at least annually?
 ",,Review of HRC policies and procedures for concealing ___ data is in the team's calendar.,
-,HRS-04.1,Remote and Home Working Policy and Procedures,,"Are policies and procedures to protect information accessed, processed, or stored at remote sites and locations established, documented, approved, communicated, applied, evaluated, and maintained?
+135,HRS-04.1,Remote and Home Working Policy and Procedures,,"Are policies and procedures to protect information accessed, processed, or stored at remote sites and locations established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
-,HRS-04.2,,,"Are policies and procedures to protect information accessed, processed, or stored at remote sites and locations reviewed and updated at least annually?
+136,HRS-04.2,,,"Are policies and procedures to protect information accessed, processed, or stored at remote sites and locations reviewed and updated at least annually?
 ",,Review of HRC policies and procedures for remote ___ data is in the team's calendar.,
-,HRS-05.1,Asset returns,,"Are return procedures of organizationally-owned assets by terminated employees established and documented?
+137,HRS-05.1,Asset returns,,"Are return procedures of organizationally-owned assets by terminated employees established and documented?
 ",,,
-,HRS-06.1,Employment Termination,,"Are procedures outlining the roles and responsibilities concerning changes in employment established, documented, and communicated to all personnel?
+138,HRS-06.1,Employment Termination,,"Are procedures outlining the roles and responsibilities concerning changes in employment established, documented, and communicated to all personnel?
 ",,,
-,HRS-07.1,Employment Agreement Process,,"Are employees required to sign an employment agreement before gaining access to organizational information systems, resources, and assets?
+139,HRS-07.1,Employment Agreement Process,,"Are employees required to sign an employment agreement before gaining access to organizational information systems, resources, and assets?
 ",,,
-,HRS-08.1,Employment Agreement Content,,"Are provisions and/or terms for adherence to established information governance and security policies included within employment agreements?
+140,HRS-08.1,Employment Agreement Content,,"Are provisions and/or terms for adherence to established information governance and security policies included within employment agreements?
 ",,,
-,HRS-09.1,Personnel Roles and Responsibilities,,"Are employee roles and responsibilities relating to information assets and security documented and communicated?
+141,HRS-09.1,Personnel Roles and Responsibilities,,"Are employee roles and responsibilities relating to information assets and security documented and communicated?
 ",,,
-,HRS-10.1,Non-Disclosure Agreements,,"Are requirements for non-disclosure/confidentiality agreements reflecting organizational data protection needs and operational details identified, documented, and reviewed at planned intervals?
+142,HRS-10.1,Non-Disclosure Agreements,,"Are requirements for non-disclosure/confidentiality agreements reflecting organizational data protection needs and operational details identified, documented, and reviewed at planned intervals?
 ",,,
-,HRS-11.1,Security Awareness Training,,"Is a security awareness training program for all employees of the organization established, documented, approved, communicated, applied, evaluated and maintained?
+143,HRS-11.1,Security Awareness Training,,"Is a security awareness training program for all employees of the organization established, documented, approved, communicated, applied, evaluated and maintained?
 ",,,
-,HRS-11.2,,,"Are regular security awareness training updates provided?
+144,HRS-11.2,,,"Are regular security awareness training updates provided?
 ",,,
-,HRS-12.1,Personal and Sensitive Data Awareness and Training,,"Are all employees granted access to sensitive organizational and personal data provided with appropriate security awareness training?
+145,HRS-12.1,Personal and Sensitive Data Awareness and Training,,"Are all employees granted access to sensitive organizational and personal data provided with appropriate security awareness training?
 ",,,
-,HRS-12.2,,,"Are all employees granted access to sensitive organizational and personal data provided with regular updates in procedures, processes, and policies relating to their professional function?
+146,HRS-12.2,,,"Are all employees granted access to sensitive organizational and personal data provided with regular updates in procedures, processes, and policies relating to their professional function?
 ",,,
-,HRS-13.1,Compliance User Responsibility,,"Are employees notified of their roles and responsibilities to maintain awareness and compliance with established policies, procedures, and applicable legal, statutory, or regulatory compliance obligations?
+147,HRS-13.1,Compliance User Responsibility,,"Are employees notified of their roles and responsibilities to maintain awareness and compliance with established policies, procedures, and applicable legal, statutory, or regulatory compliance obligations?
 ",,,
-,IAM-01.1,Identity and Access Management Policy and Procedures,,"Are identity and access management policies and procedures established, documented, approved, communicated, implemented, applied, evaluated, and maintained?
+148,IAM-01.1,Identity and Access Management Policy and Procedures,,"Are identity and access management policies and procedures established, documented, approved, communicated, implemented, applied, evaluated, and maintained?
 ",,,
-,IAM-01.2,,,"Are identity and access management policies and procedures reviewed and updated at least annually?
+149,IAM-01.2,,,"Are identity and access management policies and procedures reviewed and updated at least annually?
 ",,,Review of IAM policies and procedures for ___ is in the team's calendar.
-,IAM-02.1,Strong Password Policy and Procedures,,"Are strong password policies and procedures established, documented, approved, communicated, implemented, applied, evaluated, and maintained?
+150,IAM-02.1,Strong Password Policy and Procedures,,"Are strong password policies and procedures established, documented, approved, communicated, implemented, applied, evaluated, and maintained?
 ",,,
-,IAM-02.2,,,"Are strong password policies and procedures reviewed and updated at least annually?
+151,IAM-02.2,,,"Are strong password policies and procedures reviewed and updated at least annually?
 ",,,
-,IAM-03.1,Identity Inventory,,"Is system identity information and levels of access managed, stored, and reviewed?
+152,IAM-03.1,Identity Inventory,,"Is system identity information and levels of access managed, stored, and reviewed?
 ",,,
-,IAM-04.1,Separation of Duties,,"Is the separation of duties principle employed when implementing information system access?
+153,IAM-04.1,Separation of Duties,,"Is the separation of duties principle employed when implementing information system access?
 ",,,
-,IAM-05.1,Least Privilege,,"Is the least privilege principle employed when implementing information system access?
+154,IAM-05.1,Least Privilege,,"Is the least privilege principle employed when implementing information system access?
 ",,,
-,IAM-06.1,User Access Provisioning,,"Is a user access provisioning process defined and implemented which authorizes, records, and communicates data and assets access changes?
+155,IAM-06.1,User Access Provisioning,,"Is a user access provisioning process defined and implemented which authorizes, records, and communicates data and assets access changes?
 ","Because Consul is configured to continuously use Health Checks, Consul is able to only route traffic to healthy app services.",,
-,IAM-07.1,User Access Changes and Revocation,,"Is a process in place to de-provision or modify the access, in a timely manner, of movers / leavers or system identity changes, to effectively adopt and communicate identity and access management policies?
+156,IAM-07.1,User Access Changes and Revocation,,"Is a process in place to de-provision or modify the access, in a timely manner, of movers / leavers or system identity changes, to effectively adopt and communicate identity and access management policies?
 ",,,
-,IAM-08.1,User Access Review,,"Are reviews and revalidation of user access for least privilege and separation of duties completed with a frequency commensurate with organizational risk tolerance?
+157,IAM-08.1,User Access Review,,"Are reviews and revalidation of user access for least privilege and separation of duties completed with a frequency commensurate with organizational risk tolerance?
 ",,,
-,IAM-09.1,Segregation of Privileged Access Roles,,"Are processes, procedures, and technical measures for the segregation of privileged access roles defined, implemented, and evaluated such that administrative data access, encryption, key management capabilities, and logging capabilities are distinct and separate?
+158,IAM-09.1,Segregation of Privileged Access Roles,,"Are processes, procedures, and technical measures for the segregation of privileged access roles defined, implemented, and evaluated such that administrative data access, encryption, key management capabilities, and logging capabilities are distinct and separate?
 ",,,
-,IAM-10.1,Management of Privileged Access Roles,,"Is an access process defined and implemented to ensure privileged access roles and rights are granted for a limited period?
+159,IAM-10.1,Management of Privileged Access Roles,,"Is an access process defined and implemented to ensure privileged access roles and rights are granted for a limited period?
 ",,,
-,IAM-10.2,,,"Are procedures implemented to prevent the culmination of segregated privileged access?
+160,IAM-10.2,,,"Are procedures implemented to prevent the culmination of segregated privileged access?
 ",,,
-,IAM-11.1,CSCs Approval for Agreed Privileged Access Roles,,"Are processes and procedures for customers to participate, where applicable, in granting access for agreed, high risk as (defined by the organizational risk assessment) privileged access roles defined, implemented and evaluated?
+161,IAM-11.1,CSCs Approval for Agreed Privileged Access Roles,,"Are processes and procedures for customers to participate, where applicable, in granting access for agreed, high risk as (defined by the organizational risk assessment) privileged access roles defined, implemented and evaluated?
 ",,,
-,IAM-12.1,Safeguard Logs Integrity,,"Are processes, procedures, and technical measures to ensure the logging infrastructure is ""read-only"" for all with write access (including privileged access roles) defined, implemented, and evaluated?
+162,IAM-12.1,Safeguard Logs Integrity,,"Are processes, procedures, and technical measures to ensure the logging infrastructure is ""read-only"" for all with write access (including privileged access roles) defined, implemented, and evaluated?
 ",Yes,,
-,IAM-12.2,,,"Is the ability to disable the ""read-only"" configuration of logging infrastructure controlled through a procedure that ensures the segregation of duties and break glass procedures?
+163,IAM-12.2,,,"Is the ability to disable the ""read-only"" configuration of logging infrastructure controlled through a procedure that ensures the segregation of duties and break glass procedures?
 ",,,
-,IAM-13.1,Uniquely Identifiable Users,,"Are processes, procedures, and technical measures that ensure users are identifiable through unique identification (or can associate individuals with user identification usage) defined, implemented, and evaluated?
+164,IAM-13.1,Uniquely Identifiable Users,,"Are processes, procedures, and technical measures that ensure users are identifiable through unique identification (or can associate individuals with user identification usage) defined, implemented, and evaluated?
 ","We use Consul to control routing of traffic among apps based on Intentions and ACL (Access Control List) in the Consul KV (Key Value) store. Intentions determine the identities which an app may communicate with. ACLs determine whether specific permissions (such a Read, Write) are allowed or denied.",,
-,IAM-14.1,Strong Authentication,,"Are processes, procedures, and technical measures for authenticating access to systems, application, and data assets including multifactor authentication for a least-privileged user and sensitive data access defined, implemented, and evaluated?
+165,IAM-14.1,Strong Authentication,,"Are processes, procedures, and technical measures for authenticating access to systems, application, and data assets including multifactor authentication for a least-privileged user and sensitive data access defined, implemented, and evaluated?
 ",,,
-,IAM-14.2,,,"Are digital certificates or alternatives that achieve an equivalent security level for system identities adopted?
+166,IAM-14.2,,,"Are digital certificates or alternatives that achieve an equivalent security level for system identities adopted?
 ",,,
-,IAM-15.1,Passwords Management,,"Are processes, procedures, and technical measures for the secure management of passwords defined, implemented, and evaluated?
+167,IAM-15.1,Passwords Management,,"Are processes, procedures, and technical measures for the secure management of passwords defined, implemented, and evaluated?
 ",,,
-,IAM-16.1,Authorization Mechanisms,,"Are processes, procedures, and technical measures to verify access to data and system functions authorized, defined, implemented, and evaluated?
+168,IAM-16.1,Authorization Mechanisms,,"Are processes, procedures, and technical measures to verify access to data and system functions authorized, defined, implemented, and evaluated?
 ",,,
-,IPY-01.1,Interoperability and Portability Policy and Procedures,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for communications between application services (e.g., APIs)?
+169,IPY-01.1,Interoperability and Portability Policy and Procedures,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for communications between application services (e.g., APIs)?
 ","The Consul Global Service Mesh enables communication among services from inside Kubernetes out to Databases, VM instances, Serverless, etc.",,
-,IPY-01.2,,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for information processing interoperability?
+170,IPY-01.2,,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for information processing interoperability?
 ",,,
-,IPY-01.3,,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for application development portability?
+171,IPY-01.3,,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for application development portability?
 ",Consul is designed to operate using legacy and modern operating systems on mult-platforms within multiple regions on multiple clouds.,,
-,IPY-01.4,,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for information/data exchange, usage, portability, integrity, and persistence?
+172,IPY-01.4,,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for information/data exchange, usage, portability, integrity, and persistence?
 ",,,
-,IPY-01.5,,,"Are interoperability and portability policies and procedures reviewed and updated at least annually?
+173,IPY-01.5,,,"Are interoperability and portability policies and procedures reviewed and updated at least annually?
 ",,,
-,IPY-02.1,Application Interface Availability,,"Are CSCs able to programmatically retrieve their data via an application interface(s) to enable interoperability and portability?
+174,IPY-02.1,Application Interface Availability,,"Are CSCs able to programmatically retrieve their data via an application interface(s) to enable interoperability and portability?
 ",Consul agents provide a clicable user interface as well as CLI and API.,,
-,IPY-03.1,Secure Interoperability and Portability Management,,"Are cryptographically secure and standardized network protocols implemented for the management, import, and export of data?
+175,IPY-03.1,Secure Interoperability and Portability Management,,"Are cryptographically secure and standardized network protocols implemented for the management, import, and export of data?
 ",,,
-,IPY-04.1,Data Portability Contractual Obligations,,"Do agreements include provisions specifying CSC data access upon contract termination, and have the following? a. Data format b. Duration data will be stored c. Scope of the data retained and made available to the CSCs d. Data deletion policy
+176,IPY-04.1,Data Portability Contractual Obligations,,"Do agreements include provisions specifying CSC data access upon contract termination, and have the following? a. Data format b. Duration data will be stored c. Scope of the data retained and made available to the CSCs d. Data deletion policy
 ",,,
-,IVS-01.1,Infrastructure and Virtualization Security Policy and Procedures,,"Are infrastructure and virtualization security policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained?
+177,IVS-01.1,Infrastructure and Virtualization Security Policy and Procedures,,"Are infrastructure and virtualization security policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
-,IVS-01.2,,,"Are infrastructure and virtualization security policies and procedures reviewed and updated at least annually?
+178,IVS-01.2,,,"Are infrastructure and virtualization security policies and procedures reviewed and updated at least annually?
 ",,,
-,IVS-02.1,Capacity and Resource Planning,,"Is resource availability, quality, and capacity planned and monitored in a way that delivers required system performance, as determined by the business?
+179,IVS-02.1,Capacity and Resource Planning,,"Is resource availability, quality, and capacity planned and monitored in a way that delivers required system performance, as determined by the business?
 ",Performance evaluation is part of the Reliability Plan of the Consul Aceleration Program.,,
-,IVS-03.1,Network Security,,"Are communications between environments monitored?
+180,IVS-03.1,Network Security,,"Are communications between environments monitored?
 ",We configure Consul to emit a logs of each communication.,,
-,IVS-03.2,,,"Are communications between environments encrypted?
+181,IVS-03.2,,,"Are communications between environments encrypted?
 ",We installed Enterprise Consul to use a Consul Network Mesh to provide mTLS (Mutual TLS) communicatons between app services and also with services (through a Gateway) on a wide variety of services,,
-,IVS-03.3,,,"Are communications between environments restricted to only authenticated and authorized connections, as justified by the business?
+182,IVS-03.3,,,"Are communications between environments restricted to only authenticated and authorized connections, as justified by the business?
 ",We installed Enterprise Consul to ensure that communicatons between app services are authenticated based on the cryptographic identity of sender and receiver.,,
-,IVS-03.4,,,"Are network configurations reviewed at least annually?
+183,IVS-03.4,,,"Are network configurations reviewed at least annually?
 ",,,
-,IVS-03.5,,,"Are network configurations supported by the documented justification of all allowed services, protocols, ports, and compensating controls?
+184,IVS-03.5,,,"Are network configurations supported by the documented justification of all allowed services, protocols, ports, and compensating controls?
 ",,,
-,IVS-04.1,OS Hardening and Base Controls,,"Is every host and guest OS, hypervisor, or infrastructure control plane hardened (according to their respective best practices) and supported by technical controls as part of a security baseline?
+185,IVS-04.1,OS Hardening and Base Controls,,"Is every host and guest OS, hypervisor, or infrastructure control plane hardened (according to their respective best practices) and supported by technical controls as part of a security baseline?
 ",We configure each service to route traffic through the Consul agent so only authorized ports are used with the authorization.,,
-,IVS-05.1,Production and Non-Production Environments,,"Are production and non-production environments separated?
+186,IVS-05.1,Production and Non-Production Environments,,"Are production and non-production environments separated?
 ",,,
-,IVS-06.1,Segmentation and Segregation,,"Are applications and infrastructures designed, developed, deployed, and configured such that CSP and CSC (tenant) user access and intra-tenant access is appropriately segmented, segregated, monitored, and restricted from other tenants?
+187,IVS-06.1,Segmentation and Segregation,,"Are applications and infrastructures designed, developed, deployed, and configured such that CSP and CSC (tenant) user access and intra-tenant access is appropriately segmented, segregated, monitored, and restricted from other tenants?
 ",,,
-,IVS-07.1,Migration to Cloud Environments,,"Are secure and encrypted communication channels including only up-to-date and approved protocols used when migrating servers, services, applications, or data to cloud environments?
+188,IVS-07.1,Migration to Cloud Environments,,"Are secure and encrypted communication channels including only up-to-date and approved protocols used when migrating servers, services, applications, or data to cloud environments?
 ",Yes,,
-,IVS-08.1,Network Architecture Documentation,,"Are high-risk environments identified and documented?
+189,IVS-08.1,Network Architecture Documentation,,"Are high-risk environments identified and documented?
 ",This is identified during part of the Consul Acellerator Program.,,
-,IVS-09.1,Network Defense,,"Are processes, procedures, and defense-in-depth techniques defined, implemented, and evaluated for protection, detection, and timely response to network-based attacks?
+190,IVS-09.1,Network Defense,,"Are processes, procedures, and defense-in-depth techniques defined, implemented, and evaluated for protection, detection, and timely response to network-based attacks?
 ","We configure Consul to use the ""consul-terraform-sync"" (CTS) module broadcast changes recognized which can be used to update Terraform code dynamically for automatic resources reconfiguration -- This decreases the possibility of human error in manually editing configuration files and decreases time to propagate configuration changes to networks. ",,
-,LOG-01.1,Logging and Monitoring Policy and Procedures,,"Are logging and monitoring policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained?
+191,LOG-01.1,Logging and Monitoring Policy and Procedures,,"Are logging and monitoring policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
-,LOG-01.2,,,"Are policies and procedures reviewed and updated at least annually?
+192,LOG-01.2,,,"Are policies and procedures reviewed and updated at least annually?
 ",,,
-,LOG-02.1,Audit Logs Protection,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to ensure audit log security and retention?
+193,LOG-02.1,Audit Logs Protection,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to ensure audit log security and retention?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,LOG-03.1,Security Monitoring and Alerting,,"Are security-related events identified and monitored within applications and the underlying infrastructure?
+194,LOG-03.1,Security Monitoring and Alerting,,"Are security-related events identified and monitored within applications and the underlying infrastructure?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,LOG-03.2,,,"Is a system defined and implemented to generate alerts to responsible stakeholders based on security events and their corresponding metrics?
+195,LOG-03.2,,,"Is a system defined and implemented to generate alerts to responsible stakeholders based on security events and their corresponding metrics?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,LOG-04.1,Audit Logs Access and Accountability,,"Is access to audit logs restricted to authorized personnel, and are records maintained to provide unique access accountability?
+196,LOG-04.1,Audit Logs Access and Accountability,,"Is access to audit logs restricted to authorized personnel, and are records maintained to provide unique access accountability?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,LOG-05.1,Audit Logs Monitoring and Response,,"Are security audit logs monitored to detect activity outside of typical or expected patterns?
+197,LOG-05.1,Audit Logs Monitoring and Response,,"Are security audit logs monitored to detect activity outside of typical or expected patterns?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,LOG-05.2,,,"Is a process established and followed to review and take appropriate and timely actions on detected anomalies?
+198,LOG-05.2,,,"Is a process established and followed to review and take appropriate and timely actions on detected anomalies?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,LOG-06.1,Clock Synchronization,,"Is a reliable time source being used across all relevant information processing systems?
+199,LOG-06.1,Clock Synchronization,,"Is a reliable time source being used across all relevant information processing systems?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,LOG-07.1,Logging Scope,,"Are logging requirements for information meta/data system events established, documented, and implemented?
+200,LOG-07.1,Logging Scope,,"Are logging requirements for information meta/data system events established, documented, and implemented?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,LOG-07.2,,,"Is the scope reviewed and updated at least annually, or whenever there is a change in the threat environment?
+201,LOG-07.2,,,"Is the scope reviewed and updated at least annually, or whenever there is a change in the threat environment?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,LOG-08.1,Log Records,,"Are audit records generated, and do they contain relevant security information?
+202,LOG-08.1,Log Records,,"Are audit records generated, and do they contain relevant security information?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,LOG-09.1,Log Protection,,"Does the information system protect audit records from unauthorized access, modification, and deletion?
+203,LOG-09.1,Log Protection,,"Does the information system protect audit records from unauthorized access, modification, and deletion?
 ",Snapshots of Consul data are encrypted and transferred to a separate cloud account which the account used for write cannot delete.,,
-,LOG-10.1,Encryption Monitoring and Reporting,,"Are monitoring and internal reporting capabilities established to report on cryptographic operations, encryption, and key management policies, processes, procedures, and controls?
+204,LOG-10.1,Encryption Monitoring and Reporting,,"Are monitoring and internal reporting capabilities established to report on cryptographic operations, encryption, and key management policies, processes, procedures, and controls?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,LOG-11.1,Transaction/Activity Logging,,"Are key lifecycle management events logged and monitored to enable auditing and reporting on cryptographic keys' usage?
+205,LOG-11.1,Transaction/Activity Logging,,"Are key lifecycle management events logged and monitored to enable auditing and reporting on cryptographic keys' usage?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,LOG-12.1,Access Control Logs,,"Is physical access logged and monitored using an auditable access control system?
+206,LOG-12.1,Access Control Logs,,"Is physical access logged and monitored using an auditable access control system?
 ",,,
-,LOG-13.1,Failures and Anomalies Reporting,,"Are processes and technical measures for reporting monitoring system anomalies and failures defined, implemented, and evaluated?
+207,LOG-13.1,Failures and Anomalies Reporting,,"Are processes and technical measures for reporting monitoring system anomalies and failures defined, implemented, and evaluated?
 ",,,
-,LOG-13.2,,,"Are accountable parties immediately notified about anomalies and failures?
+208,LOG-13.2,,,"Are accountable parties immediately notified about anomalies and failures?
 ","QUESTION: When ACL is turned off, the SOC is notified",,
-,SEF-01.1,Security Incident Management Policy and Procedures,,"Are policies and procedures for security incident management, e-discovery, and cloud forensics established, documented, approved, communicated, applied, evaluated, and maintained?
+209,SEF-01.1,Security Incident Management Policy and Procedures,,"Are policies and procedures for security incident management, e-discovery, and cloud forensics established, documented, approved, communicated, applied, evaluated, and maintained?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,SEF-01.2,,,"Are policies and procedures reviewed and updated annually?
+210,SEF-01.2,,,"Are policies and procedures reviewed and updated annually?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,SEF-02.1,Service Management Policy and Procedures,,"Are policies and procedures for timely management of security incidents established, documented, approved, communicated, applied, evaluated, and maintained?
+211,SEF-02.1,Service Management Policy and Procedures,,"Are policies and procedures for timely management of security incidents established, documented, approved, communicated, applied, evaluated, and maintained?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,SEF-02.2,,,"Are policies and procedures for timely management of security incidents reviewed and updated at least annually?
+212,SEF-02.2,,,"Are policies and procedures for timely management of security incidents reviewed and updated at least annually?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,SEF-03.1,Incident Response Plans,,"Is a security incident response plan that includes relevant internal departments, impacted CSCs, and other business-critical relationships (such as supply-chain) established, documented, approved, communicated, applied, evaluated, and maintained?
+213,SEF-03.1,Incident Response Plans,,"Is a security incident response plan that includes relevant internal departments, impacted CSCs, and other business-critical relationships (such as supply-chain) established, documented, approved, communicated, applied, evaluated, and maintained?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
-,SEF-04.1,Incident Response Testing,,"Is the security incident response plan tested and updated for effectiveness, as necessary, at planned intervals or upon significant organizational or environmental changes?
+214,SEF-04.1,Incident Response Testing,,"Is the security incident response plan tested and updated for effectiveness, as necessary, at planned intervals or upon significant organizational or environmental changes?
 ",,,
-,SEF-05.1,Incident Response Metrics,,"Are information security incident metrics established and monitored?
+215,SEF-05.1,Incident Response Metrics,,"Are information security incident metrics established and monitored?
 ",,,
-,SEF-06.1,Event Triage Processes,,"Are processes, procedures, and technical measures supporting business processes to triage security-related events defined, implemented, and evaluated?
+216,SEF-06.1,Event Triage Processes,,"Are processes, procedures, and technical measures supporting business processes to triage security-related events defined, implemented, and evaluated?
 ",,,
-,SEF-07.1,Security Breach Notification,,"Are processes, procedures, and technical measures for security breach notifications defined and implemented?
+217,SEF-07.1,Security Breach Notification,,"Are processes, procedures, and technical measures for security breach notifications defined and implemented?
 ",,,
-,SEF-07.2,,,"Are security breaches and assumed security breaches reported (including any relevant supply chain breaches) as per applicable SLAs, laws, and regulations?
+218,SEF-07.2,,,"Are security breaches and assumed security breaches reported (including any relevant supply chain breaches) as per applicable SLAs, laws, and regulations?
 ",,,
-,SEF-08.1,Points of Contact Maintenance,,"Are points of contact maintained for applicable regulation authorities, national and local law enforcement, and other legal jurisdictional authorities?
+219,SEF-08.1,Points of Contact Maintenance,,"Are points of contact maintained for applicable regulation authorities, national and local law enforcement, and other legal jurisdictional authorities?
 ",,,
-,STA-01.1,SSRM Policy and Procedures,,"Are policies and procedures implementing the shared security responsibility model (SSRM) within the organization established, documented, approved, communicated, applied, evaluated, and maintained?
+220,STA-01.1,SSRM Policy and Procedures,,"Are policies and procedures implementing the shared security responsibility model (SSRM) within the organization established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
-,STA-01.2,,,"Are the policies and procedures that apply the SSRM reviewed and updated annually?
+221,STA-01.2,,,"Are the policies and procedures that apply the SSRM reviewed and updated annually?
 ",,,
-,STA-02.1,SSRM Supply Chain,,"Is the SSRM applied, documented, implemented, and managed throughout the supply chain for the cloud service offering?
+222,STA-02.1,SSRM Supply Chain,,"Is the SSRM applied, documented, implemented, and managed throughout the supply chain for the cloud service offering?
 ",,,
-,STA-03.1,SSRM Guidance,,"Is the CSC given SSRM guidance detailing information about SSRM applicability throughout the supply chain?
+223,STA-03.1,SSRM Guidance,,"Is the CSC given SSRM guidance detailing information about SSRM applicability throughout the supply chain?
 ",,,
-,STA-04.1,SSRM Control Ownership,,"Is the shared ownership and applicability of all CSA CCM controls delineated according to the SSRM for the cloud service offering?
+224,STA-04.1,SSRM Control Ownership,,"Is the shared ownership and applicability of all CSA CCM controls delineated according to the SSRM for the cloud service offering?
 ",,,
-,STA-05.1,SSRM Documentation Review,,"Is SSRM documentation for all cloud services the organization uses reviewed and validated?
+225,STA-05.1,SSRM Documentation Review,,"Is SSRM documentation for all cloud services the organization uses reviewed and validated?
 ",,,
-,STA-06.1,SSRM Control Implementation,,"Are the portions of the SSRM the organization is responsible for implemented, operated, audited, or assessed?
+226,STA-06.1,SSRM Control Implementation,,"Are the portions of the SSRM the organization is responsible for implemented, operated, audited, or assessed?
 ",,,
-,STA-07.1,Supply Chain Inventory,,"Is an inventory of all supply chain relationships developed and maintained?
+227,STA-07.1,Supply Chain Inventory,,"Is an inventory of all supply chain relationships developed and maintained?
 ",,,
-,STA-08.1,Supply Chain Risk Management,,"Are risk factors associated with all organizations within the supply chain periodically reviewed by CSPs?
+228,STA-08.1,Supply Chain Risk Management,,"Are risk factors associated with all organizations within the supply chain periodically reviewed by CSPs?
 ",,,
-,STA-09.1,Primary Service and Contractual Agreement,,"Do service agreements between CSPs and CSCs (tenants) incorporate at least the following mutually agreed upon provisions and/or terms? • Scope, characteristics, and location of business relationship and services offered • Information security requirements (including SSRM) • Change management process • Logging and monitoring capability • Incident management and communication procedures • Right to audit and third-party assessment • Service termination • Interoperability and portability requirements • Data privacy ",,,
-,STA-10.1,Supply Chain Agreement Review,,"Are supply chain agreements between CSPs and CSCs reviewed at least annually?
+229,STA-09.1,Primary Service and Contractual Agreement,,"Do service agreements between CSPs and CSCs (tenants) incorporate at least the following mutually agreed upon provisions and/or terms? • Scope, characteristics, and location of business relationship and services offered • Information security requirements (including SSRM) • Change management process • Logging and monitoring capability • Incident management and communication procedures • Right to audit and third-party assessment • Service termination • Interoperability and portability requirements • Data privacy ",,,
+230,STA-10.1,Supply Chain Agreement Review,,"Are supply chain agreements between CSPs and CSCs reviewed at least annually?
 ",,,
-,STA-11.1,Internal Compliance Testing,,"Is there a process for conducting internal assessments at least annually to confirm the conformance and effectiveness of standards, policies, procedures, and SLA activities?
+231,STA-11.1,Internal Compliance Testing,,"Is there a process for conducting internal assessments at least annually to confirm the conformance and effectiveness of standards, policies, procedures, and SLA activities?
 ",,,
-,STA-12.1,Supply Chain Service Agreement Compliance,,"Are policies that require all supply chain CSPs to comply with information security, confidentiality, access control, privacy, audit, personnel policy, and service level requirements and standards implemented?
+232,STA-12.1,Supply Chain Service Agreement Compliance,,"Are policies that require all supply chain CSPs to comply with information security, confidentiality, access control, privacy, audit, personnel policy, and service level requirements and standards implemented?
 ",,,
-,STA-13.1,Supply Chain Governance Review,,"Are supply chain partner IT governance policies and procedures reviewed periodically?
+233,STA-13.1,Supply Chain Governance Review,,"Are supply chain partner IT governance policies and procedures reviewed periodically?
 ",,,
-,STA-14.1,Supply Chain Data Security Assessment,,"Is a process to conduct periodic security assessments for all supply chain organizations defined and implemented?
+234,STA-14.1,Supply Chain Data Security Assessment,,"Is a process to conduct periodic security assessments for all supply chain organizations defined and implemented?
 ",,,
-,TVM-01.1,Threat and Vulnerability Management Policy and Procedures,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained to identify, report, and prioritize the remediation of vulnerabilities to protect systems against vulnerability exploitation?
+235,TVM-01.1,Threat and Vulnerability Management Policy and Procedures,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained to identify, report, and prioritize the remediation of vulnerabilities to protect systems against vulnerability exploitation?
 ",,,
-,TVM-01.2,,,"Are threat and vulnerability management policies and procedures reviewed and updated at least annually?
+236,TVM-01.2,,,"Are threat and vulnerability management policies and procedures reviewed and updated at least annually?
 ",,,
-,TVM-02.1,Malware Protection Policy and Procedures,,"Are policies and procedures to protect against malware on managed assets established, documented, approved, communicated, applied, evaluated, and maintained?
+237,TVM-02.1,Malware Protection Policy and Procedures,,"Are policies and procedures to protect against malware on managed assets established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
-,TVM-02.2,,,"Are asset management and malware protection policies and procedures reviewed and updated at least annually?
+238,TVM-02.2,,,"Are asset management and malware protection policies and procedures reviewed and updated at least annually?
 ",,,
-,TVM-03.1,Vulnerability Remediation Schedule,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to enable scheduled and emergency responses to vulnerability identifications (based on the identified risk)?
+239,TVM-03.1,Vulnerability Remediation Schedule,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to enable scheduled and emergency responses to vulnerability identifications (based on the identified risk)?
 ",,,
-,TVM-04.1,Detection Updates,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to update detection tools, threat signatures, and compromise indicators weekly (or more frequent) basis?
+240,TVM-04.1,Detection Updates,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to update detection tools, threat signatures, and compromise indicators weekly (or more frequent) basis?
 ",,,
-,TVM-05.1,External Library Vulnerabilities,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to identify updates for applications that use third-party or open-source libraries (according to the organization's vulnerability management policy)?
+241,TVM-05.1,External Library Vulnerabilities,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to identify updates for applications that use third-party or open-source libraries (according to the organization's vulnerability management policy)?
 ",,,
-,TVM-06.1,Penetration Testing,,"Are processes, procedures, and technical measures defined, implemented, and evaluated for periodic, independent, third-party penetration testing?
+242,TVM-06.1,Penetration Testing,,"Are processes, procedures, and technical measures defined, implemented, and evaluated for periodic, independent, third-party penetration testing?
 ",,,
-,TVM-07.1,Vulnerability Identification,,"Are processes, procedures, and technical measures defined, implemented, and evaluated for vulnerability detection on organizationally managed assets at least monthly?
+243,TVM-07.1,Vulnerability Identification,,"Are processes, procedures, and technical measures defined, implemented, and evaluated for vulnerability detection on organizationally managed assets at least monthly?
 ",,,
-,TVM-08.1,Vulnerability Prioritization,,"Is vulnerability remediation prioritized using a risk-based model from an industry-recognized framework?
+244,TVM-08.1,Vulnerability Prioritization,,"Is vulnerability remediation prioritized using a risk-based model from an industry-recognized framework?
 ",,,
-,TVM-09.1,Vulnerability Management Reporting,,"Is a process defined and implemented to track and report vulnerability identification and remediation activities that include stakeholder notification?
+245,TVM-09.1,Vulnerability Management Reporting,,"Is a process defined and implemented to track and report vulnerability identification and remediation activities that include stakeholder notification?
 ",,,
-,TVM-10.1,Vulnerability Management Metrics,,"Are metrics for vulnerability identification and remediation established, monitored, and reported at defined intervals?
+246,TVM-10.1,Vulnerability Management Metrics,,"Are metrics for vulnerability identification and remediation established, monitored, and reported at defined intervals?
 ",,,
-,UEM-01.1,Endpoint Devices Policy and Procedures,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for all endpoints?
+247,UEM-01.1,Endpoint Devices Policy and Procedures,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for all endpoints?
 ",,,
-,UEM-01.2,,,"Are universal endpoint management policies and procedures reviewed and updated at least annually?
+248,UEM-01.2,,,"Are universal endpoint management policies and procedures reviewed and updated at least annually?
 ",,,
-,UEM-02.1,Application and Service Approval,,"Is there a defined, documented, applicable and evaluated list containing approved services, applications, and the sources of applications (stores) acceptable for use by endpoints when accessing or storing organization-managed data?
+249,UEM-02.1,Application and Service Approval,,"Is there a defined, documented, applicable and evaluated list containing approved services, applications, and the sources of applications (stores) acceptable for use by endpoints when accessing or storing organization-managed data?
 ",,,
-,UEM-03.1,Compatibility,,"Is a process defined and implemented to validate endpoint device compatibility with operating systems and applications?
+250,UEM-03.1,Compatibility,,"Is a process defined and implemented to validate endpoint device compatibility with operating systems and applications?
 ",,,
-,UEM-04.1,Endpoint Inventory,,"Is an inventory of all endpoints used and maintained to store and access company data?
+251,UEM-04.1,Endpoint Inventory,,"Is an inventory of all endpoints used and maintained to store and access company data?
 ",We installed Consul to maintain a Service Catalog which associates identities with each IP address used.,,
-,UEM-05.1,Endpoint Management,,"Are processes, procedures, and technical measures defined, implemented and evaluated, to enforce policies and controls for all endpoints permitted to access systems and/or store, transmit, or process organizational data?
+252,UEM-05.1,Endpoint Management,,"Are processes, procedures, and technical measures defined, implemented and evaluated, to enforce policies and controls for all endpoints permitted to access systems and/or store, transmit, or process organizational data?
 ",,,
-,UEM-06.1,Automatic Lock Screen,,"Are all relevant interactive-use endpoints configured to require an automatic lock screen?
+253,UEM-06.1,Automatic Lock Screen,,"Are all relevant interactive-use endpoints configured to require an automatic lock screen?
 ",,,
-,UEM-07.1,Operating Systems,,"Are changes to endpoint operating systems, patch levels, and/or applications managed through the organizational change management process?
+254,UEM-07.1,Operating Systems,,"Are changes to endpoint operating systems, patch levels, and/or applications managed through the organizational change management process?
 ","We installed Consul Enterprise to automatically upgrade agent versions at the same time (by creating new instances and switching en masse), to avoid issues of partial implementations.",,
-,UEM-08.1,Storage Encryption,,"Is information protected from unauthorized disclosure on managed endpoints with storage encryption?
+255,UEM-08.1,Storage Encryption,,"Is information protected from unauthorized disclosure on managed endpoints with storage encryption?
 ",,,
-,UEM-09.1,Anti-Malware Detection and Prevention,,"Are anti-malware detection and prevention technology services configured on managed endpoints?
+256,UEM-09.1,Anti-Malware Detection and Prevention,,"Are anti-malware detection and prevention technology services configured on managed endpoints?
 ",,,
-,UEM-10.1,Software Firewall,,"Are software firewalls configured on managed endpoints?
+257,UEM-10.1,Software Firewall,,"Are software firewalls configured on managed endpoints?
 ",,,
-,UEM-11.1,Data Loss Prevention,,"Are managed endpoints configured with data loss prevention (DLP) technologies and rules per a risk assessment?
+258,UEM-11.1,Data Loss Prevention,,"Are managed endpoints configured with data loss prevention (DLP) technologies and rules per a risk assessment?
 ",,,
-,UEM-12.1,Remote Locate,,"Are remote geolocation capabilities enabled for all managed mobile endpoints?
+259,UEM-12.1,Remote Locate,,"Are remote geolocation capabilities enabled for all managed mobile endpoints?
 ",,,
-,UEM-13.1,Remote Wipe,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to enable remote company data deletion on managed endpoint devices?
+260,UEM-13.1,Remote Wipe,,"Are processes, procedures, and technical measures defined, implemented, and evaluated to enable remote company data deletion on managed endpoint devices?
 ",,,
-,UEM-14.1,Third-Party Endpoint Security Posture,,"Are processes, procedures, and technical and/or contractual measures defined, implemented, and evaluated to maintain proper security of third-party endpoints with access to organizational assets?
+261,UEM-14.1,Third-Party Endpoint Security Posture,,"Are processes, procedures, and technical and/or contractual measures defined, implemented, and evaluated to maintain proper security of third-party endpoints with access to organizational assets?
 ",,,
