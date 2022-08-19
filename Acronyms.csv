@@ -172,6 +172,7 @@ ID,Acronymn,EQ,Definition,Type
 *,FYE,=,Fiscal Year End,
 *,GAPP,=,Generally Accepted Privacy Principles,(developed by accountants)
 *,GA,=,General Availability,
+*,GAM,=,Global Account Manager,(job role)
 *,GB,=,Gigabytes,(173741824 bytes or 1024 megabytes)
 *,GCE,=,Google Compute Engine,
 *,GCP,=,Google Cloud Platform,

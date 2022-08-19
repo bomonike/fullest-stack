@@ -414,7 +414,7 @@
 207,LOG-13.1,Failures and Anomalies Reporting,,"Are processes and technical measures for reporting monitoring system anomalies and failures defined, implemented, and evaluated?
 ",,,
 208,LOG-13.2,,,"Are accountable parties immediately notified about anomalies and failures?
-","QUESTION: When ACL is turned off, the SOC is notified",,
+","When ACL is turned off, the SOC is notified. See https://github.com/hashicorp/consul/issues/14039",,
 209,SEF-01.1,Security Incident Management Policy and Procedures,,"Are policies and procedures for security incident management, e-discovery, and cloud forensics established, documented, approved, communicated, applied, evaluated, and maintained?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
 210,SEF-01.2,,,"Are policies and procedures reviewed and updated annually?

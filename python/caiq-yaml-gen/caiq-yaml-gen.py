@@ -269,7 +269,7 @@ with open(caiq_file_to_open, mode='r') as csv_file:
                     try:
                         # TODO: If CCM_ID is a Series in dataframe (not unique):
 
-                        metrics_line='<a name="'+ df.loc[caiq_ccm_id,'_Metric_ID'] +'"></a>'+ df.loc[caiq_ccm_id,'_Metric_ID'] +" CCM METRIC SLO = "+ str(df.loc[caiq_ccm_id,'_SLO']) +" " + df.loc[caiq_ccm_id,'_Metric_Desc']
+                        metrics_line='<a name="'+ df.loc[caiq_ccm_id,'_Metric_ID'] +'"></a>'+ df.loc[caiq_ccm_id,'_Metric_ID'] +" CCM METRIC SLO = "+ str(df.loc[caiq_ccm_id,'_SLO']) +" <strong>" + df.loc[caiq_ccm_id,'_Metric_Title'] +"</strong> (" + df.loc[caiq_ccm_id,'_Metric_Desc'] +")"
                         if bool_output_console == True :
                             print("\r\n"+line_prefix+metrics_line +"\r\n")
                         if bool_output_file == True :
