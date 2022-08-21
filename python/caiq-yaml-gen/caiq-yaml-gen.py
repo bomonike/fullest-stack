@@ -116,9 +116,6 @@ if bool_output_file == True :
 #    f.write("<!-- At https://github.com/bomonike/fullest-stack/blob/main/python/caiq-yaml-gen/ -->\r\n")
 #    f.write("\r\n")
 
-    f.write("## Categories in the CAIQ : \r\n")
-    f.write("\r\n")
-
 # Output Category summary:
 caiq_categories = {
     'A&A': 'Audit Assurance & Compliance',
@@ -141,6 +138,8 @@ caiq_categories = {
     }
     # TODO: UEM DEFINITION: Unified Endpoint Management (UEM) allows IT to manage, secure, and deploy corporate resources and applications on any device from a single console. UEM “unifies” legacy mobile device management (MDM) by incorporating IoT and other new device technologies.
 if print_category_list == True :
+    f.write("\r\n## Categories in the CAIQ : \r\n")
+    f.write("\r\n")
     for key, value in caiq_categories.items():
         print_line="1. <a href=\"#"+ key +"-\"><tt>"+ key +"</tt></a> = "+ value
         if bool_output_console == True :
@@ -263,28 +262,41 @@ with open(caiq_file_to_open, mode='r') as csv_file:
 
 
             if bool_print_metrics == True :
-                caiq_ccm_id=row["_QID"][0:6]       # such as "A&A-01" to lookup metric 
+                caiq_ccm_id=row["_QID"][0:6]   # such as "A&A-01" to lookup metric 
                 metrics_line=""  # clear from previous.
                 if caiq_ccm_id != prev_caiq_ccm_id :
                     try:
-                        # TODO: If CCM_ID is a Series in dataframe (not unique):
+                        # This multi-line metrics works for CCM ID AIS-07, DSP-04, DSP-05, SEF-06, STA-07
+                        # print("shape="+ df.loc[caiq_ccm_id].shape[0] )  # causes an exception!
+                        for index, mrow in df.loc[caiq_ccm_id].iterrows() :
+                            metrics_line='<a name="'+ mrow['_Metric_ID'] +'"></a>'+ mrow['_Metric_ID'] +" CCM METRIC SLO: "+ str(mrow['_SLO']) +" <strong>" + mrow['_Metric_Title'] +"</strong> = " + mrow['_Metric_Desc']
+                            if bool_output_console == True :
+                                print("\r\n"+line_prefix+metrics_line +"\r\n")
+                            if bool_output_file == True :
+                                if bool_output_table == True :
+                                    f.write('<tr valign="top" colspan="4"><td>'+metrics_line+'</td></tr')
+                                else:
+                                    f.write('\r\n\r\n'+line_prefix+'<table border="2" cellpadding="4" cellspacing="0"><tr valign="top"><td>'+ metrics_line +'</td></tr></table>\r\n')
+                            metric_rows_printed += 1
+                        else:
+                            # This single-line metrics does not work for AIS-06:
+                            # metrics_line='<a name="'+ mrow['_Metric_ID']
+                            # print("At "+ df.loc[caiq_ccm_id].shape[0] )
+                            # metrics_line="safe"
+                            # metrics_line='<a name="'+ mrow['_Metric_ID'] +'"></a>'+ mrow['_Metric_ID'] +" CCM METRIC SLO: "+ str(mrow['_SLO']) +" <strong>" + mrow['_Metric_Title'] +"</strong> = " + mrow['_Metric_Desc']
+                            metrics_line='<a name="'+ df.loc[caiq_ccm_id,'_Metric_ID'] +'"></a>'+ df.loc[caiq_ccm_id,'_Metric_ID'] +" CCM METRIC SLO: "+ str(df.loc[caiq_ccm_id,'_SLO']) +" <strong>" + df.loc[caiq_ccm_id,'_Metric_Title'] +"</strong> = " + df.loc[caiq_ccm_id,'_Metric_Desc']
 
-                        metrics_line='<a name="'+ df.loc[caiq_ccm_id,'_Metric_ID'] +'"></a>'+ df.loc[caiq_ccm_id,'_Metric_ID'] +" CCM METRIC SLO = "+ str(df.loc[caiq_ccm_id,'_SLO']) +" <strong>" + df.loc[caiq_ccm_id,'_Metric_Title'] +"</strong> (" + df.loc[caiq_ccm_id,'_Metric_Desc'] +")"
-                        if bool_output_console == True :
-                            print("\r\n"+line_prefix+metrics_line +"\r\n")
-                        if bool_output_file == True :
-                            if bool_output_table == True :
-                                f.write('<tr valign="top" colspan="4"><td>'+metrics_line+'</td></tr')
-                            else:
-                                f.write('\r\n\r\n'+line_prefix+'<table border="1" cellpadding="4" cellspacing="0"><tr valign="top"><td>'+ metrics_line +'</td></tr></table>\r\n')
-                        metric_rows_printed += 1
+                            if bool_output_console == True :
+                                print("\r\n"+line_prefix+metrics_line +"\r\n")
+                            if bool_output_file == True :
+                                if bool_output_table == True :
+                                    f.write('<tr valign="top" colspan="4"><td>'+metrics_line+'</td></tr')
+                                else:
+                                    f.write('\r\n\r\n'+line_prefix+'<table border="2" cellpadding="4" cellspacing="0"><tr valign="top"><td>'+ metrics_line +'</td></tr></table>\r\n')
+                            metric_rows_printed += 1
+
                     except:
-                        # FIX: error when more than one metric for a CAIQ CCM ID. AIS-07-M3 & AIS-07-M6
-                        # TODO: Check in dataframe if response
-                            # SEF-06         <a name="SEF-06-M1">CCM SEF-06-M1</a> MET...
-                            # SEF-06         <a name="SEF-06-M2">CCM SEF-06-M2</a> MET...
-                            # dtype: object
-                        # TODO: Loop for multiple metrics per CAIQ item
+                        # print("At "+ df.loc[caiq_ccm_id].shape[0] )  # DEBUGGING
                         if bool_output_console == True :
                             print(line_prefix+"*** No metric for "+ caiq_ccm_id )
                             quit

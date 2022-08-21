@@ -8,7 +8,7 @@ _ID,_CCM_ID,_Metric_ID,_Metric_Title,_Metric_Desc,_SLO,_Note1
 ,CEK-03,CEK-03-M2,Cryto Assets assured,percent of cryptographic modules continue to be up to approved standards.,85%,
 ,CEK-04,CEK-04-M1,Crypto Functions meeting req.,percent of assets with cryptographic functions meet the organization's defined cryptographic requirements.,90%,
 ,DCS-06,DCS-06-M1,Audit Log Items tracked,percent of managed assets are cataloged and tracked to detected assets.,95%,ratio?
-,AIS-07,AIS-07-M3,Data records classified,percent of data assets classified according to the data classification policies specific to the organization.,99%,ratio?
+,DSP-04,DSP-04-M2,Data records classified,percent of data assets classified according to the data classification policies specific to the organization.,99%,ratio?
 ,DSP-04,DSP-04-M3,Assets classified,percent (ratio) of assets in the asset catalog classified according to the data classification policies specific to each organization.,99%,
 ,DSP-05,DSP-05-M1,Data records documented,percent of records from the data inventory required by control DSP-03 included in data flow documentation.,80%,
 ,DSP-05,DSP-05-M2,Data streams documented,percent of data streams from the data inventory required by control DSP-03 are included in the data flow documentation.,80%,
@@ -17,7 +17,7 @@ _ID,_CCM_ID,_Metric_ID,_Metric_Title,_Metric_Desc,_SLO,_Note1
 ,IAM-08,IAM-08-M2,Account access correct,"percent of time elapsed since the last recertification for all types of privileges (including user roles, group memberships, read/write/ execute permissions to files/databases/scripts/jobs, etc).",95%,desc revised
 ,IAM-09,IAM-09-M1,Privileged users as admin,percent of users with production access have admin access (duties segregated).,99%,desc revised
 ,IPY-03,IPY-03-M2,Data flows cryptographic,"percent of data flows use an approved, standardized cryptographic security function for interoperable transmissions of data.",99.99%,
-,IVS-04,IVS-04-M1,Assets hardened,"percent of assets in compliance with the providerÕs configuration security policy and hardening baselines derived from accepted industry sources (e.g., NIST, vendor recommendations, Center for Internet Security Benchmarks, etc.).",99.99%,
+,IVS-04,IVS-04-M1,Assets hardened,"percent of assets in compliance with the providerï¿½s configuration security policy and hardening baselines derived from accepted industry sources (e.g., NIST, vendor recommendations, Center for Internet Security Benchmarks, etc.).",99.99%,
 ,LOG-03,LOG-03-M1,Log sources with sec. alerts,percent of logs configured to generate security alerts for anomalous activity across control domains.,95%,
 ,LOG-05,LOG-05-M1,Anomalies review timeliness,percent of discovered anomalies resolved within required timelines  (effective log monitoring and response process).,95%,desc revised
 ,LOG-10,LOG-10-M1,CEK Controls with metrics,"percent of CEK (cryptography, encryption, and key management) controls have defined metrics.",80%,desc revised
@@ -27,9 +27,9 @@ _ID,_CCM_ID,_Metric_ID,_Metric_Title,_Metric_Desc,_SLO,_Note1
 ,SEF-06,SEF-06-M2,Event triage timeliness trend,"SLOPE (Y) of a linear regression of the triage times over time is > 0 (improving), not <0 (worsening).",0.5+?,desc revised
 ,TA-07,TA-07-M3,3rd party components authorized,percent of third-party software components seen in [production assets] are sourced from an approved supplier in the software inventory.,99.90%,
 ,STA-07,STA-07-M5,Providers connected,percent of approved supply chain upstream cloud services relationships recorded in logged data connections.,99%,
-,TVM-03,TVM-03-M1,Vulnerability remediation timeliness,percent of high and critical vulnerabilities remediated within the organizationÕs policy timeframes. This reflects the time between when a vulnerability is identified on an organizationÕs assets and when remediation is complete.,99%,
+,TVM-03,TVM-03-M1,Vulnerability remediation timeliness,percent of high and critical vulnerabilities remediated within the organizationï¿½s policy timeframes. This reflects the time between when a vulnerability is identified on an organizationï¿½s assets and when remediation is complete.,99%,
 ,TVM-07,TVM-07-M1,Assets scanned,percent of managed assets scanned monthly.,99%,
-,TVM-10,TVM-10-M1,Public Vulnerability remediation timeliness,percent of publicly known vulnerabilities are identified for an organizationÕs assets within the organizationÕs required timeframes.,99%?,SLO added
+,TVM-10,TVM-10-M1,Public Vulnerability remediation timeliness,percent of publicly known vulnerabilities are identified for an organizationï¿½s assets within the organizationï¿½s required timeframes.,99%?,SLO added
 ,UEM-04,UEM-04-M1,Endpoints logged,percent of endpoints actively maintained in the asset inventory (appearing in security audit logs).,95%,desc revised
 ,UEM-05,UEM-05-M1,Endpoints in compliance,"percent of unique endpoints with suitable policy enforcement tools have reported compliance state within the sampling period (ability of an organization to control the configuration and behavior of assets which directly create, read, write, or delete organizational data).",99%,desc revised
 ,UEM-09,UEM-09-M1,Active endpoints being scanned,percent of instances run anti-malware/virus services.,99%,
