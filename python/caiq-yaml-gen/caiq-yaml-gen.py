@@ -282,9 +282,6 @@ with open(caiq_file_to_open, mode='r') as csv_file:
                             metric_rows_printed += 1
                         else:
                             # This single-line metrics does not work for AIS-06, etc.
-                            # metrics_line='<a name="'+ mrow['_Metric_ID']
-                            # print("At "+ df.loc[caiq_ccm_id].shape[0] )
-                            # metrics_line="safe"
                             # metrics_line='<a name="'+ mrow['_Metric_ID'] +'"></a>'+ mrow['_Metric_ID'] +" CCM METRIC SLO: "+ str(mrow['_SLO']) +" <strong>" + mrow['_Metric_Title'] +"</strong> = " + mrow['_Metric_Desc']
                             for index, mrow in df.loc[caiq_ccm_id].iterrows() :
                                 metrics_line='<a name="'+ mrow['_Metric_ID'] +'"></a>'+ mrow['_Metric_ID'] +" CCM METRIC SLO: "+ str(mrow['_SLO']) +" <strong>" + mrow['_Metric_Title'] +"</strong> = " + mrow['_Metric_Desc']
