@@ -25,7 +25,7 @@ _ID,_CCM_ID,_Metric_ID,_Metric_Title,_Metric_Desc,_SLO,_Note1
 ,SEF-05,SEF-05-M1,Security Events automated,percent of security events sourced from automated systems.,90%,
 ,SEF-06,SEF-06-M1,Security Events triage timeliness,percent of security events triaged within policy timeframe targets.,99%,
 ,SEF-06,SEF-06-M2,Event triage timeliness trend,"SLOPE (Y) of a linear regression of the triage times over time is > 0 (improving), not <0 (worsening).",0.5+?,desc revised
-,TA-07,TA-07-M3,3rd party components authorized,percent of third-party software components seen in [production assets] are sourced from an approved supplier in the software inventory.,99.90%,
+,STA-07,STA-07-M3,3rd party components authorized,percent of third-party software components seen in [production assets] are sourced from an approved supplier in the software inventory.,99.90%,
 ,STA-07,STA-07-M5,Providers connected,percent of approved supply chain upstream cloud services relationships recorded in logged data connections.,99%,
 ,TVM-03,TVM-03-M1,Vulnerability remediation timeliness,percent of high and critical vulnerabilities remediated within the organization�s policy timeframes. This reflects the time between when a vulnerability is identified on an organization�s assets and when remediation is complete.,99%,
 ,TVM-07,TVM-07-M1,Assets scanned,percent of managed assets scanned monthly.,99%,

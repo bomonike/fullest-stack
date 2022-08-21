@@ -268,8 +268,10 @@ with open(caiq_file_to_open, mode='r') as csv_file:
                     try:
                         # This multi-line metrics works for CCM ID AIS-07, DSP-04, DSP-05, SEF-06, STA-07
                         # print("shape="+ df.loc[caiq_ccm_id].shape[0] )  # causes an exception!
-                        for index, mrow in df.loc[caiq_ccm_id].iterrows() :
-                            metrics_line='<a name="'+ mrow['_Metric_ID'] +'"></a>'+ mrow['_Metric_ID'] +" CCM METRIC SLO: "+ str(mrow['_SLO']) +" <strong>" + mrow['_Metric_Title'] +"</strong> = " + mrow['_Metric_Desc']
+                        if df.loc[caiq_ccm_id].shape[0] == 1 :
+#                            for index, mrow in df.loc[caiq_ccm_id].iterrows() :
+#                                metrics_line='<a name="'+ mrow['_Metric_ID'] +'"></a>'+ mrow['_Metric_ID'] +" CCM METRIC SLO: "+ str(mrow['_SLO']) +" <strong>" + mrow['_Metric_Title'] +"</strong> = " + mrow['_Metric_Desc']
+                            metrics_line='<a name="'+ df.loc[caiq_ccm_id,'_Metric_ID'] +'"></a>'+ df.loc[caiq_ccm_id,'_Metric_ID'] +" CCM METRIC SLO: "+ str(df.loc[caiq_ccm_id,'_SLO']) +" <strong>" + df.loc[caiq_ccm_id,'_Metric_Title'] +"</strong> = " + df.loc[caiq_ccm_id,'_Metric_Desc']
                             if bool_output_console == True :
                                 print("\r\n"+line_prefix+metrics_line +"\r\n")
                             if bool_output_file == True :
@@ -279,21 +281,21 @@ with open(caiq_file_to_open, mode='r') as csv_file:
                                     f.write('\r\n\r\n'+line_prefix+'<table border="2" cellpadding="4" cellspacing="0"><tr valign="top"><td>'+ metrics_line +'</td></tr></table>\r\n')
                             metric_rows_printed += 1
                         else:
-                            # This single-line metrics does not work for AIS-06:
+                            # This single-line metrics does not work for AIS-06, etc.
                             # metrics_line='<a name="'+ mrow['_Metric_ID']
                             # print("At "+ df.loc[caiq_ccm_id].shape[0] )
                             # metrics_line="safe"
                             # metrics_line='<a name="'+ mrow['_Metric_ID'] +'"></a>'+ mrow['_Metric_ID'] +" CCM METRIC SLO: "+ str(mrow['_SLO']) +" <strong>" + mrow['_Metric_Title'] +"</strong> = " + mrow['_Metric_Desc']
-                            metrics_line='<a name="'+ df.loc[caiq_ccm_id,'_Metric_ID'] +'"></a>'+ df.loc[caiq_ccm_id,'_Metric_ID'] +" CCM METRIC SLO: "+ str(df.loc[caiq_ccm_id,'_SLO']) +" <strong>" + df.loc[caiq_ccm_id,'_Metric_Title'] +"</strong> = " + df.loc[caiq_ccm_id,'_Metric_Desc']
-
-                            if bool_output_console == True :
-                                print("\r\n"+line_prefix+metrics_line +"\r\n")
-                            if bool_output_file == True :
-                                if bool_output_table == True :
-                                    f.write('<tr valign="top" colspan="4"><td>'+metrics_line+'</td></tr')
-                                else:
-                                    f.write('\r\n\r\n'+line_prefix+'<table border="2" cellpadding="4" cellspacing="0"><tr valign="top"><td>'+ metrics_line +'</td></tr></table>\r\n')
-                            metric_rows_printed += 1
+                            for index, mrow in df.loc[caiq_ccm_id].iterrows() :
+                                metrics_line='<a name="'+ mrow['_Metric_ID'] +'"></a>'+ mrow['_Metric_ID'] +" CCM METRIC SLO: "+ str(mrow['_SLO']) +" <strong>" + mrow['_Metric_Title'] +"</strong> = " + mrow['_Metric_Desc']
+                                if bool_output_console == True :
+                                    print("\r\n"+line_prefix+metrics_line +"\r\n")
+                                if bool_output_file == True :
+                                    if bool_output_table == True :
+                                        f.write('<tr valign="top" colspan="4"><td>'+metrics_line+'</td></tr')
+                                    else:
+                                        f.write('\r\n\r\n'+line_prefix+'<table border="2" cellpadding="4" cellspacing="0"><tr valign="top"><td>'+ metrics_line +'</td></tr></table>\r\n')
+                                metric_rows_printed += 1
 
                     except:
                         # print("At "+ df.loc[caiq_ccm_id].shape[0] )  # DEBUGGING
