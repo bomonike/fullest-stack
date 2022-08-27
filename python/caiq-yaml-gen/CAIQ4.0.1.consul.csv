@@ -60,7 +60,7 @@
 30,BCR-08.1,Backup,,"Is cloud data periodically backed up?
 ","A Consul Enterprise feature is used to automatically back up snapshots of data in Consul, even what's in memory.",,
 31,BCR-08.2,,,"Is the confidentiality, integrity, and availability of backup data ensured?
-",Snapshots of Consul data are encrypted and transferred to a separate cloud account which the account used for write cannot delete.,,
+",Snapshots of Consul data are encrypted and transferred to a separate cloud account, and the account used for writing cannot delete..,,
 32,BCR-08.3,,,"Can backups be restored appropriately for resiliency?
 ",Restore of Consul snapshots from backup is tested during the implementation.,,
 33,BCR-09.1,Disaster Response Plan,,"Is a disaster response plan established, documented, approved, applied, evaluated, and maintained to ensure recovery from natural and man-made disasters?
@@ -308,7 +308,7 @@
 154,IAM-05.1,Least Privilege,,"Is the least privilege principle employed when implementing information system access?
 ",,,
 155,IAM-06.1,User Access Provisioning,,"Is a user access provisioning process defined and implemented which authorizes, records, and communicates data and assets access changes?
-","Because Consul is configured to continuously use Health Checks, Consul is able to only route traffic to healthy app services.",,
+","We configure Consul to use health checks continuously, so Consul can only route traffic to healthy app services..",,
 156,IAM-07.1,User Access Changes and Revocation,,"Is a process in place to de-provision or modify the access, in a timely manner, of movers / leavers or system identity changes, to effectively adopt and communicate identity and access management policies?
 ",,,
 157,IAM-08.1,User Access Review,,"Are reviews and revalidation of user access for least privilege and separation of duties completed with a frequency commensurate with organizational risk tolerance?
@@ -340,13 +340,13 @@
 170,IPY-01.2,,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for information processing interoperability?
 ",,,
 171,IPY-01.3,,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for application development portability?
-",Consul is designed to operate using legacy and modern operating systems on mult-platforms within multiple regions on multiple clouds.,,
+",Consul is designed to operate using legacy and modern operating systems on multi-platforms within multiple regions on multiple clouds.,,
 172,IPY-01.4,,,"Are policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained for information/data exchange, usage, portability, integrity, and persistence?
 ",,,
 173,IPY-01.5,,,"Are interoperability and portability policies and procedures reviewed and updated at least annually?
 ",,,
 174,IPY-02.1,Application Interface Availability,,"Are CSCs able to programmatically retrieve their data via an application interface(s) to enable interoperability and portability?
-",Consul agents provide a clicable user interface as well as CLI and API.,,
+",Consul agents provide a clickable user interface as well as CLI and API.,,
 175,IPY-03.1,Secure Interoperability and Portability Management,,"Are cryptographically secure and standardized network protocols implemented for the management, import, and export of data?
 ",,,
 176,IPY-04.1,Data Portability Contractual Obligations,,"Do agreements include provisions specifying CSC data access upon contract termination, and have the following? a. Data format b. Duration data will be stored c. Scope of the data retained and made available to the CSCs d. Data deletion policy
@@ -356,13 +356,13 @@
 178,IVS-01.2,,,"Are infrastructure and virtualization security policies and procedures reviewed and updated at least annually?
 ",,,
 179,IVS-02.1,Capacity and Resource Planning,,"Is resource availability, quality, and capacity planned and monitored in a way that delivers required system performance, as determined by the business?
-",Performance evaluation is part of the Reliability Plan of the Consul Aceleration Program.,,
+",Performance evaluation is part of the Reliability Plan of the Consul Acceleration Program.,,
 180,IVS-03.1,Network Security,,"Are communications between environments monitored?
-",We configure Consul to emit a logs of each communication.,,
+",We configure Consul to emit a log of each communication.,,
 181,IVS-03.2,,,"Are communications between environments encrypted?
-",We installed Enterprise Consul to use a Consul Network Mesh to provide mTLS (Mutual TLS) communicatons between app services and also with services (through a Gateway) on a wide variety of services,,
+",We installed Enterprise Consul to use a Consul Network Mesh to provide mTLS (Mutual TLS) communications between app services and also with services (through a Gateway) on a wide variety of services,,
 182,IVS-03.3,,,"Are communications between environments restricted to only authenticated and authorized connections, as justified by the business?
-",We installed Enterprise Consul to ensure that communicatons between app services are authenticated based on the cryptographic identity of sender and receiver.,,
+",We installed Enterprise Consul to ensure that communications between app services are authenticated based on the cryptographic identity of sender and receiver.,,
 183,IVS-03.4,,,"Are network configurations reviewed at least annually?
 ",,,
 184,IVS-03.5,,,"Are network configurations supported by the documented justification of all allowed services, protocols, ports, and compensating controls?
@@ -376,9 +376,9 @@
 188,IVS-07.1,Migration to Cloud Environments,,"Are secure and encrypted communication channels including only up-to-date and approved protocols used when migrating servers, services, applications, or data to cloud environments?
 ",Yes,,
 189,IVS-08.1,Network Architecture Documentation,,"Are high-risk environments identified and documented?
-",This is identified during part of the Consul Acellerator Program.,,
+",This is identified during part of the Consul Accelerator Program.,,
 190,IVS-09.1,Network Defense,,"Are processes, procedures, and defense-in-depth techniques defined, implemented, and evaluated for protection, detection, and timely response to network-based attacks?
-","We configure Consul to use the ""consul-terraform-sync"" (CTS) module broadcast changes recognized which can be used to update Terraform code dynamically for automatic resources reconfiguration -- This decreases the possibility of human error in manually editing configuration files and decreases time to propagate configuration changes to networks. ",,
+","We configure Consul to use the ""consul-terraform-sync"" (CTS) module to broadcast changes recognition which Terraform can use to update code dynamically for automatic resources reconfiguration. Automating updates decreases the possibility of human error compared to manually editing configuration files and reduces the time to propagate configuration changes to networks. ",,
 191,LOG-01.1,Logging and Monitoring Policy and Procedures,,"Are logging and monitoring policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,,
 192,LOG-01.2,,,"Are policies and procedures reviewed and updated at least annually?
@@ -404,7 +404,7 @@
 202,LOG-08.1,Log Records,,"Are audit records generated, and do they contain relevant security information?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
 203,LOG-09.1,Log Protection,,"Does the information system protect audit records from unauthorized access, modification, and deletion?
-",Snapshots of Consul data are encrypted and transferred to a separate cloud account which the account used for write cannot delete.,,
+",Snapshots of Consul data are encrypted and transferred to a separate cloud account that the account used for writing cannot delete.,,
 204,LOG-10.1,Encryption Monitoring and Reporting,,"Are monitoring and internal reporting capabilities established to report on cryptographic operations, encryption, and key management policies, processes, procedures, and controls?
 ",This is conducted while following the Adoption Plan defined during the Consul Accelerator Program.,,
 205,LOG-11.1,Transaction/Activity Logging,,"Are key lifecycle management events logged and monitored to enable auditing and reporting on cryptographic keys' usage?

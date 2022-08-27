@@ -43,17 +43,17 @@ local_tzname = local_tz.tzname(local_now)
 # User selections: TODO: choose in parameters within a GUI:
 bool_output_console=True
 bool_output_file=True
-bool_output_table=False
+bool_output_table=True
 
 print_category_list=False
-bool_print_categories=True
 
+bool_print_categories=True
 bool_print_metrics=True
 print_questions=True
 print_annually=True
 print_annually_only=False   # True to ignore lines with no annual in question
 print_answers=True
-print_answers_only=False     # True to ignore lines with no answers
+print_answers_only=True     # True to ignore lines with no answers
 
 stop_after_caiq_item=18
 
@@ -65,7 +65,7 @@ caiq_file_to_open='CAIQ4.0.1.consul.csv'
 metrics_file_to_open='caiq-metrics-v1.csv'
 
 #output_file_date=str(local_dt)[0:10]
-output_file_date="2022-08-09"
+output_file_date="2022-08-27"
 output_file_prefix="CAIQ4.0.1.consul"
 output_file_name=output_file_date+"-"+output_file_prefix+".md"  # Like 2021-05-12-caiq-yaml-gen.md
     # See https://courses.cs.washington.edu/courses/cse140/13wi/csv-parsing.html
@@ -239,7 +239,7 @@ with open(caiq_file_to_open, mode='r') as csv_file:
                         print("\r\n"+ category_prefix+category_line+"\r\n")
                     if bool_output_file == True :
                         if bool_output_table == True :
-                            f.write('\r\n<tr valign="top"><td colspan="4">' +category_line )
+                            f.write('\r\n<tr valign="top" align="right"><td colspan="4">' +category_line )
                         else:
                             f.write("\r\n"+ category_prefix + category_line)
 
