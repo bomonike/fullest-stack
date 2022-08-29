@@ -35,7 +35,7 @@ ID,Acronymn,EQ,Definition,Type
 *,ASM,=,AWS Secrets Manager,(Amazon)
 *,ASN,=,Autonomous System Number.
 *,ATO,=,Authority To Operate,(FEDRAMP)
-*,AWS,=,Amazon Web Services,
+*,AWS,=,Amazon Web Services,(cloud services provider)
 *,BANT,=,Budget + Authority + Need + Timeframe,(framework for evaluating readiness)
 *,B2B,=,Business to Business,(marketing)
 *,B2C,=,Business to Consumer,(marketing)
@@ -66,10 +66,12 @@ ID,Acronymn,EQ,Definition,Type
 *,CCM,=,Customer Communications Management,
 *,CCP,=,Crisis Communication Plan,
 *,CDK,=,Cloud Development Kit,(Amazon)
+*,CDM,=,Continuous Diagnostics and Mitigation,
 *,CDN,=,Content Distribution Network,
 *,CEO,=,Chief Exective Office,
 *,CfCT,=,Customizations for Control Tower,Amazon
 *,CD,=,Continuous Deployment,(into Production for Productive use)
+*,CE,=,Community Edition,
 *,CF,=,CloudFormation,
 *,CI,=,Continuous Integration,
 *,CIDR,=,Classless Inter-Domain Routing,
@@ -80,6 +82,7 @@ ID,Acronymn,EQ,Definition,Type
 *,CKMS,=,Cryptographic Key Management System,
 *,CLI,=,Command Line Interface,
 *,CMK,=,Customer-Managed Key,(for encryption)
+*,CMP,=,Cloud Management Platform,(for easier use of multiple clouds)
 *,CNAME,=,Canonical Name Record,(DNS)
 *,CNI,=,Container Network Interface,(Kubernetes)
 *,CMDB,=,Configuration Management Database,(ITIL term for where all aspects of the system is defined)
@@ -115,10 +118,12 @@ ID,Acronymn,EQ,Definition,Type
 *,DEI,=,Diversity + Equity + Inclusion,
 *,DES,=,Digital Encryption Standard,(56 bits),
 *,DHCP,=,Dynamic Host Configuration Protocol,(automatically assigns IP addresses to devices on a network)
+*,DHS,=,Department of Homeland Security,(US government organization)
 *,DLP,=,Data Loss Prevention,
 *,DMZ,=,De-Militarized Zone,
 *,DNC,=,Do Not Connect,
 *,DNS,=,Domain Name Service,
+*,DOD,=,Department of Defense,(US government organization)
 *,DPIA,=,Data Protection Impact Assessment,
 *,DR,=,Disaster Recovery,
 *,DRI,=,Directly Responsible Individual,(Coined by Apple for the person to make sure that a task is completed)
@@ -137,6 +142,7 @@ ID,Acronymn,EQ,Definition,Type
 *,EBS,=,Elastic Block Store,(Amazon)
 *,ECDSA,=,Elliptic Curve Digital Signature Algorithm,(algorithm for signatures)
 *,EDI,=,Electronic Data Interchange,
+*,EE,=,Enterprise Edition,
 *,EIN,=,Employer Identification Number,
 *,EC2,=,Elastic Cloud Compute,
 *,ECR,=,Elastic Container Registry,(Amazon)
@@ -145,6 +151,7 @@ ID,Acronymn,EQ,Definition,Type
 *,EDR,=,Endpoint Detection and Remediation,
 *,EFS,=,Elastic File System,(Amazon)
 *,EFT,=,Electronic Funds Transfer,
+*,ELA,=,Enterprise License Agreement,
 *,EMR,=,Elastic Map Reduce,(Amazon)
 *,EKS,=,Elastic Kubernetes Service,(Amazon)
 *,ELB,=,Elastic Load Balancer,
@@ -155,6 +162,7 @@ ID,Acronymn,EQ,Definition,Type
 *,ETL,=,Extract Transform and Load,
 *,EOQ,=,End of Quarter,
 *,EOM,=,End of Month,
+*,EO,=,Executive Order,
 *,EOY,=,End of Year,
 *,ERM,=,Enterprise Risk Management,
 *,ERP,=,Enterprise Resource Planning,(SAP does this)
@@ -170,6 +178,7 @@ ID,Acronymn,EQ,Definition,Type
 *,FTE,=,Full Time Employee/Equivalent,
 *,FQDN,=,Fully Qualified Domain Name,
 *,FYE,=,Fiscal Year End,
+*,FUD,=,Fear Uncertainty and Doubt,
 *,GAPP,=,Generally Accepted Privacy Principles,(developed by accountants)
 *,GA,=,General Availability,
 *,GAM,=,Global Account Manager,(job role)
@@ -203,6 +212,7 @@ ID,Acronymn,EQ,Definition,Type
 *,HR,=,Human Resources,
 *,HSM,=,Hardware Security Module,
 *,HTML,=,HyperText Markup Language,
+*,HVA,=,High Value Asset,
 *,HVN,=,HashiCorp Virtual Network,
 *,I8N,=,Internationalization,(numeronym - 18 letters between "i" and "n")
 *,IA,=,Interoperability Agreement,(between enterprises)
@@ -213,7 +223,7 @@ ID,Acronymn,EQ,Definition,Type
 *,IAST,=,Interactive Application Security Testing,
 *,IC,=,Integrated Circuit,
 *,ICFR,=,Internal Control over Financial Reporting,
-*,ICMP,=,Internet Control Message Protocol,
+*,ICMP,=,Internet Control Message Protocol,(used by the Linux ping command)
 *,ICT,=,Information and Communication Technology,
 *,ICYMI,=,In Case You Missed It,
 *,ID,=,Identifier,
@@ -277,6 +287,7 @@ ID,Acronymn,EQ,Definition,Type
 *,MTTR,=,Mean Time To Restore/Resolution,
 *,MTU,=,Maximum Transmission Unit,(networking)
 *,MVP,=,Minimal Viable Product,
+*,NAC,=,Network Admission Control/Controller,(Cisco)
 *,NAT,=,Network Address Translation,(allows devices on a private network to communicate with a public network through a networking gateway)
 *,NB,=,No Problem,
 *,NDE,=,Net Dollar Expansion,
@@ -288,6 +299,7 @@ ID,Acronymn,EQ,Definition,Type
 *,NIST,=,National Institute of Standards and Technology,(US)
 *,NLB,=,Network Load Balancer,(Amazon)
 *,NPS,=,Net Promoter Score,
+*,NDAA,=,National Defense Authorization Act of 2020 and 2021,
 *,NSG,=,Network Security Group,(Azure)
 *,NTA,=,Network Traffic Anomaly,
 *,NTP,=,Network Time Protocol,
@@ -341,7 +353,7 @@ ID,Acronymn,EQ,Definition,Type
 *,RACI,=,Responsible + Accountable + Consulted + Informed,(Responsibility Assignment Matrix)
 *,RAID,=,Redundant Array of Independent Disks,
 *,RAM,=,Random Access Memory,
-*,RBAC,=,Role Based Access Controls,
+*,RBAC,=,Role Based Access Control,
 *,RCA,=,Root Cause Analysis,
 *,RDP,=,Remote Desktop,(Microsoft technology for users to access a Windows computer remotely)
 *,REST,=,Representational State Transfer,
@@ -370,12 +382,13 @@ ID,Acronymn,EQ,Definition,Type
 *,SAP,=,Systems Applications and Product,(large German ERP software company)
 *,SAP,=,System Assessment Plan,
 *,SARs,=,System Assessment Results,
-*,SASE,=,Secure Access Service Edge,
+*,SASE,=,Secure Access Service Edge,(Trust Broker SaaS by Palo Alto Prisma, zScaler, Cato, Cloudfare)
 *,SAST,=,Static Application Security Testing,
 *,SCA,=,Software Composition Analysis,
 *,SCADA,=,Supervisory Control And Data Acquisition,
 *,SCC,=,Security Command Center,(Google's SOC service)
 *,SCEP,=,Simple Certificate Enrollment Protocol,
+*,SCM,=,Source Control Manager,(such as GitHub)
 *,SCP,=,Service Control Policies,(in AWS to govern the use of other IAM policies)
 *,SEA,=,Solutions Engineering & Architecture,(HashiCorp pre and post sale grouping)
 *,SDK,=,Software Development Kit,
@@ -412,6 +425,7 @@ ID,Acronymn,EQ,Definition,Type
 *,SRE,=,Site Reliability Engineer,(job role)
 *,SSAE,=,Statement on Standards for Attestation Engagements,
 *,SSD,=,Solid-State Drive,
+*,SSE,=,Security Service Edge,
 *,SSE,=,Server-Side Encryption,
 *,SSDLC,=,Secure Software Development Lifecycle,
 *,SSH,=,Secure Shell,(a Linux feature to enable remote access of computers)
@@ -425,6 +439,9 @@ ID,Acronymn,EQ,Definition,Type
 *,SWG,=,Secure Web Gateway,
 *,TAM,=,Total Addressable Market,
 *,TB,=,TerraByte,
+*,TFC,=,Terraform Cloud,(SaaS Terraform offering)
+*,TFE,=,Terraform Enterprise,(self-installed/managed Terraform)
+*,TIC,=,Tusted Internet Connection,
 *,TIN,=,Tax Identification Number,
 *,TCSEC,=,Trusted Computer System Evaluation Criteria,
 *,TCO,=,Total Cost of Ownership,
@@ -432,11 +449,13 @@ ID,Acronymn,EQ,Definition,Type
 *,TDM,=,Technical Decision Maker,
 *,TFE,=,Terraform Enterprise,
 *,TGW,=,Transit GateWay,(in AWS cloud)
+*,TH,=,Threat Hunting,
 *,TIP,=,Threat Intelligence Platform,
 *,TLD,=,Top Level Domain,(the letters after the last dot on URLs processed by DNS)
 *,TLS,=,Transport Layer Security,
 *,TOE,=,Target of Evaluation,(what is being evaluated by the Common Criteria EAL)
 *,TOTP,=,TIme-Based One Time Password,
+*,TPM,=,Trusted Platform Module,
 *,TPRM,=,Third Party Risk Management,
 *,TSC,=,Trust Service Criteria,
 *,TSI,=,Trustworthy Software Initiative,(UK)
@@ -444,6 +463,7 @@ ID,Acronymn,EQ,Definition,Type
 *,TTL,=,Time To Live,
 *,TTS,=,Text To Speech,
 *,UAT,=,User Acceptance Test,
+*,UCS,=,User,
 *,UDS,=,Unified Diagnostic Services,(use in vehicles)
 *,UEBA,=,User and Entity Behavior Analytics,(detect any anomalous behavior - deviations from normal patterns of usage which have security implications)
 *,UEM,=,Unified Endpoint Management,
@@ -457,9 +477,8 @@ ID,Acronymn,EQ,Definition,Type
 *,VAT,=,Value Added Tax,
 *,VBO,=,Value Based Outcome,
 *,VCS,=,Version Control System,
-*,vTPM,=,Virtual Trusted Platform Module,
-*,VIP,=,Virtual IP,(address)
 *,VDP,=,Vulnerability Disclosure Program,
+*,VIP,=,Virtual IP,(address)
 *,VLAN,=,Virtual Local Area Network,
 *,VM,=,Virtual Machine,
 *,VoIP,=,Voice over Internet Protocol,
@@ -468,6 +487,8 @@ ID,Acronymn,EQ,Definition,Type
 *,VPA,=,Vertical Pod Autoscaler,(Kubernetes)
 *,VPC,=,Virtual Private Cloud,(Amazon)
 *,VPN,=,Virtual Private Network,
+*,vTPM,=,Virtual Trusted Platform Module,
+*,VUCA,=,Volatile + Uncertain + Complex + Ambiguous,
 *,W3C,=,World Wide Web Consortium,
 *,WAAP,=,Web application and API protection,(a comprehensive security approach as enhancement over web application firewalls)
 *,WABD,=,Well Architected By Design,
@@ -484,4 +505,5 @@ ID,Acronymn,EQ,Definition,Type
 *,YTD,=,Year-To-Date,
 *,ZT,=,Zero Trust,
 *,ZTA,=,Zero Trust Architecture,
-*,ZTNA,=,Zero Trust Network Access,
+*,ZTS,=,Zero Trust Security,
+*,ZTNA,=,Zero Trust Network Access/Architecture,
