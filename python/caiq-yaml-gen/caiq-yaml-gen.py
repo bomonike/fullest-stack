@@ -239,7 +239,7 @@ with open(caiq_file_to_open, mode='r') as csv_file:
                         print("\r\n"+ category_prefix+category_line+"\r\n")
                     if bool_output_file == True :
                         if bool_output_table == True :
-                            f.write('\r\n<tr valign="top" align="right"><td colspan="4">' +category_line )
+                            f.write('\r\n<tr valign="top"><td colspan="4">' +category_line )
                         else:
                             f.write("\r\n"+ category_prefix + category_line)
 
@@ -331,7 +331,7 @@ with open(caiq_file_to_open, mode='r') as csv_file:
             #    f.write("</td><td> Y ")
 
             if print_answers == True :
-                if len(row["_Answer_ID"]) != 0 :  # blank value
+                if len(row["_Answer"]) != 0 :  # blank value
                     answer_text=row["_Answer_ID"] + " : "+ row["_Answer"]
                     answer_line=line_prefix+ "ANSWER : "+ answer_text +"\r\n"
                     if bool_output_console == True :
