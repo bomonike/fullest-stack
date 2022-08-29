@@ -34,9 +34,9 @@
 17,AIS-06.2,,,"Is the deployment and integration of application code automated where possible?
 ",We installed Consul using automated CI/CD for repeatability.,
 18,AIS-07.1,Application Vulnerability Remediation,,"Are application security vulnerabilities remediated following defined processes?
-",,
+",debugging,
 19,AIS-07.2,,,"Is the remediation of application security vulnerabilities automated when possible?
-",,
+",debugging,
 20,BCR-01.1,Business Continuity Management Policy and Procedures,,"Are business continuity management and operational resilience policies and procedures established, documented, approved, communicated, applied, evaluated, and maintained?
 ",,
 21,BCR-01.2,,,"Are the policies and procedures reviewed and updated at least annually?
