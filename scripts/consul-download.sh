@@ -12,13 +12,12 @@
 # Techniques for shell scripting used here are explained at https://wilsonmar.github.io/shell-scripts
 # Explainer: https://serverfault.com/questions/896228/how-to-verify-a-file-using-an-asc-signature-file
 
-# This is gas "v1.06 gitignore EULA.txt TermsOfEvaluation.txt"
-# TODO: parametize CONSUL_VERSION_IN use -ver 1.13.1
-   # TODO: Enable user selection of -ent or -foss parameter?
-
-   # Kermit TODO: The expires: date above must be in the future ..."
-   # Kermit? TODO: Change file name with time stamp instead of removing.
-   # TODO: Add processing on other OS/Platforms.
+# This is gas "v1.08 fix gpg key for verified"  -S --amend --reset-author
+    # Kermit TODO: The expires: date above must be in the future ..."
+    # Kermit? TODO: Change file name with time stamp instead of removing.
+    # TODO: Add install of more utilities
+    # TODO: Add install of more HashiCorp programs: terraform, vault, consul-k8s, etc.
+    # TODO: Add processing on other OS/Platforms.
 
 # shellcheck disable=SC3010,SC2155,SC2005,SC2046
    # SC3010 POSIX compatibility per http://mywiki.wooledge.org/BashFAQ/031 where [[ ]] is undefined.
@@ -154,7 +153,7 @@ while test $# -gt 0; do
       shift
       ;;
     *)
-      error "Parameter \"$1\" not recognized. Aborting."
+      fatal "Parameter \"$1\" not recognized. Aborting."
       exit 0
       break
       ;;
@@ -223,7 +222,6 @@ CONSUL_LATEST_VERSION=$( curl -sL "https://api.github.com/repos/hashicorp/consul
 
 # Enable run specification of this variable within https://releases.hashicorp.com/consul
 # Thanks to https://fabianlee.org/2021/02/16/bash-determining-latest-github-release-tag-and-version/
-echo "*** CONSUL_VERSION_IN=\"$CONSUL_VERSION_IN\" DEBUGGING CONSUL_VERSION_PARM=\"$CONSUL_VERSION_PARM\""
 
 if [ -n "${CONSUL_VERSION_PARM}" ]; then  # specified by parameter
    # lastest spec wins (use parameter with run)
@@ -258,20 +256,25 @@ else
 fi
 
 if [[ ! ":$PATH:" == *":$TARGET_FOLDER:"* ]]; then
-   echo "*** TARGET_FOLDER=\"${TARGET_FOLDER}\" not in PATH to be found. Aborting."
+   fatal "*** TARGET_FOLDER=\"${TARGET_FOLDER}\" not in PATH to be found. Aborting."
    exit
 fi
 
 
 if [ "${INSTALL_UTILS}" = true ]; then  # -I
 
-      note "$( gcc --version )"  #  note "$(  cc --version )"
-      note "$( xcode-select --version )"  # Example output: xcode-select version 2395 (as of 23APR2022).
-         # XCode version: https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/pkgutil.1.html
-         # pkgutil --pkg-info=com.apple.pkg.CLTools_Executables | grep version
-         # Tools_Executables | grep version
-         # version: 9.2.0.0.1.1510905681
-      # TODO: https://gist.github.com/tylergets/90f7e61314821864951e58d57dfc9acd
+    if ! command -v gcc ; then
+        # TODO: Install XCode command utilities: https://gist.github.com/tylergets/90f7e61314821864951e58d57dfc9acd
+        fatal "*** gcc not found. Please install Xcode. Aborting."
+        exit
+    else
+        note "$( gcc --version )"  #  note "$(  cc --version )"
+        note "$( xcode-select --version )"  # Example output: xcode-select version 2395 (as of 23APR2022).
+            # XCode version: https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/pkgutil.1.html
+            # pkgutil --pkg-info=com.apple.pkg.CLTools_Executables | grep version
+            # Tools_Executables | grep version
+            # version: 9.2.0.0.1.1510905681
+    fi
 
     if ! command -v brew ; then
         h2 "Installing brew package manager on macOS using Ruby ..."
@@ -295,10 +298,12 @@ if [ "${INSTALL_UTILS}" = true ]; then  # -I
         brew install wget
     fi
 
+    # TODO: Add install of more utilities
     # shellcheck, tfsec,go, gpg2, awscli, vscode, python
 
 fi  # INSTALL_UTILS
 
+    # TODO: Add install of more HashiCorp programs: terraform, vault, consul-k8s, instruqt, etc.
 
 if ! command -v consul ; then  # executable not found:
     echo "*** consul executable not found. Installing ..."
@@ -352,7 +357,7 @@ else
     echo "*** Using existing HashiCorp.asc file ..."
 fi
 if [ ! -f "hashicorp.asc" ]; then  # not found:
-   echo "*** Download of hashicorp.asc failed. Aborting."
+   fatal "*** Download of hashicorp.asc failed. Aborting."
    exit
 else
    ls -alT hashicorp.asc
@@ -364,7 +369,7 @@ if ! command -v gpg ; then
     brew install gnupg2
     chmod 700 ~/.gnupg
 fi
-echo "*** gpg import hashicorp.asc ..."
+h2 "gpg import hashicorp.asc ..."
 # No Using gpg --list-keys @34365D9472D7468F to check if asc file is already been imported into keychain (a one-time process)
     # gpg --import hashicorp.asc
     # gpg: key 34365D9472D7468F: public key "HashiCorp Security (hashicorp.com/security) <security@hashicorp.com>" imported
@@ -380,7 +385,7 @@ RESPONSE=$( gpg --show-keys hashicorp.asc )
     # sub   rsa4096 2021-04-21 [S] [expires: 2026-04-20]
     # The "C874..." fingerprint is used for verification:
 
-echo "*** Verifying fingerprint ..."
+h2 "Verifying fingerprint ..."
 # Extract 2nd line (containing fingerprint):
 RESPONSE2=$( echo "$RESPONSE" | sed -n 2p ) 
 # Remove spaces:
@@ -427,7 +432,7 @@ if [ ! -f "consul_${CONSUL_VERSION}_SHA256SUMS.sig" ]; then  # not found:
         # 566  --.-KB/s    in 0s      
 fi
 
-echo "*** gpg --verify consul_${CONSUL_VERSION}_SHA256SUMS.sig consul_${CONSUL_VERSION}_SHA256SUMS"
+h2 "*** gpg --verify consul_${CONSUL_VERSION}_SHA256SUMS.sig consul_${CONSUL_VERSION}_SHA256SUMS"
 RESPONSE=$( gpg --verify "consul_${CONSUL_VERSION}_SHA256SUMS.sig" \
     "consul_${CONSUL_VERSION}_SHA256SUMS" )
     # gpg: Signature made Fri Jun  3 13:58:17 2022 MDT
@@ -483,24 +488,19 @@ if [ -f "consul_${CONSUL_VERSION}_${PLATFORM}.zip" ]; then  # found:
 fi
 
 if [ ! -f "consul" ]; then  # not found:
-    echo "*** consul file not found. Aborting."
+    fatal "*** consul file not found. Aborting."
     exit
 fi
 
-# Move consul executable binary to folder in $PATH :
+h2 "Move consul executable binary to folder in $PATH "
 mv consul "${TARGET_FOLDER}"
 if [ ! -f "${TARGET_FOLDER}/consul" ]; then  # not found:
-   echo "*** ${TARGET_FOLDER}/consul not found after move. Aborting."
+   fatal "*** ${TARGET_FOLDER}/consul not found after move. Aborting."
    exit
-else
-   echo "*** consul_${CONSUL_VERSION} date/time stamp and bytes:"
-   ls -alT "${TARGET_FOLDER}/consul"
-      # -rwxr-xr-x  1 user  group  117722304 Jun  3 13:44:36 2022 /usr/local/bin/consul # for consul_1.12.2 (open source)
-      # -rwxr-xr-x@ 1 user  group  127929168 Jun  3 13:46 2022 /usr/local/bin/consul  # for consul_1.12.2+ent
 fi
 
 # Cleanup:
-echo "*** Removing downloaded files for consul_${CONSUL_VERSION} :"
+h2 "*** Removing downloaded files for consul_${CONSUL_VERSION} :"
 rm "hashicorp.asc"
 rm "consul_${CONSUL_VERSION}_SHA256SUMS"
 rm "consul_${CONSUL_VERSION}_SHA256SUMS.72D7468F.sig"
@@ -508,6 +508,11 @@ rm "consul_${CONSUL_VERSION}_SHA256SUMS.sig"
 rm "consul_${CONSUL_VERSION}_${PLATFORM}.zip"
 
 # Now you can do git push.
+
+echo "*** consul_${CONSUL_VERSION} date/time stamp and bytes:"
+ls -alT "${TARGET_FOLDER}/consul"
+    # -rwxr-xr-x  1 user  group  117722304 Jun  3 13:44:36 2022 /usr/local/bin/consul # for consul_1.12.2 (open source)
+    # -rwxr-xr-x@ 1 user  group  127929168 Jun  3 13:46 2022 /usr/local/bin/consul  # for consul_1.12.2+ent
 
 RESPONSE=$( consul --version )
    # Consul v1.13.1+ent
@@ -521,12 +526,9 @@ RESPONSE=$( consul --version )
    # Protocol 2 spoken by default, understands 2 to 3 (agent will automatically use protocol >2 when speaking to compatible agents)
 if [[ "${CONSUL_VERSION}" == *"${RESPONSE}"* ]]; then  # contains it:
    echo "${RESPONSE}"
-   echo "*** Consul is NOT the desired version ${CONSUL_VERSION} - Aborting."
+   fatal "*** Consul is NOT the desired version ${CONSUL_VERSION} - Aborting."
    exit
 fi
-
-echo "*** What we're using: consul_${CONSUL_VERSION}."
-consul version
 
 echo "*** END"
 # END
