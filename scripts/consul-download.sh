@@ -12,7 +12,7 @@
 # Techniques for shell scripting used here are explained at https://wilsonmar.github.io/shell-scripts
 # Explainer: https://serverfault.com/questions/896228/how-to-verify-a-file-using-an-asc-signature-file
 
-# This is gas "v1.08 fix gpg key for verified"  -S --amend --reset-author
+# This is gas "v1.09 fix gpg key for verified" -S --amend --reset-author
     # Kermit TODO: The expires: date above must be in the future ..."
     # Kermit? TODO: Change file name with time stamp instead of removing.
     # TODO: Add install of more utilities
