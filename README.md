@@ -70,6 +70,12 @@ For your domain to keep up with competitors, consider how quickly you can adopt 
 
 ## References
 
-https://www.youtube.com/watch?v=jpRTonLCAjk
-How To Be A Full Stack Developer In 2022
+<a target="_blank" href="https://www.youtube.com/watch?v=jpRTonLCAjk">
+How To Be A Full Stack Developer in 2022</a>
 
+https://todomvc.com/ and http://todobackend.com/
+provides sample code with documentation) for ToDo apps in many languages and platforms.
+
+https://blog.palantir.com/introducing-palantirs-next-gen-pipeline-builder-cc19cb48b47e
+Palantir defied conventional tradeoffs to create their Foundry Next Generation Data Pipeline Builder.
+Select from a menu to clean, transform, and union datasets in various formats.
