@@ -12,6 +12,7 @@
 # Techniques for shell scripting used here are explained at https://wilsonmar.github.io/shell-scripts
 # Explainer: https://serverfault.com/questions/896228/how-to-verify-a-file-using-an-asc-signature-file
 
+# This is gas "v1.06 gitignore EULA.txt TermsOfEvaluation.txt"
 # TODO: parametize CONSUL_VERSION_IN use -ver 1.13.1
    # TODO: Enable user selection of -ent or -foss parameter?
 
@@ -19,7 +20,6 @@
    # Kermit? TODO: Change file name with time stamp instead of removing.
    # TODO: Add processing on other OS/Platforms.
 
-# This is v1.04 tool: add parms
 # shellcheck disable=SC3010,SC2155,SC2005,SC2046
    # SC3010 POSIX compatibility per http://mywiki.wooledge.org/BashFAQ/031 where [[ ]] is undefined.
    # SC2155 (warning): Declare and assign separately to avoid masking return values.
